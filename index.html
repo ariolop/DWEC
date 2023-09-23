@@ -16,14 +16,23 @@
 
         td{
             border: 1px solid black;
+            width: 300px;
         }
 
         tr{
             height: 50px;
         }
 
+        label{
+            margin-right: 5px;
+        }
+
+        input[type="text"], input[type="tel"]
+        {
+            width: 100px;
+        }
+
         input{
-            width: 50px;
             text-align: left;
             margin-left:5px;
         }
@@ -68,7 +77,7 @@
                     <label for="definicion">¿Cómo te definirias?: </label>
                 </td>
                 <td>
-                    <textarea name="definicion"></textarea>
+                    <textarea name="definicion" rows="5" cols="30"></textarea>
                 </td>
             </tr>
             <tr>
@@ -76,10 +85,40 @@
                     <label for="eleccion">¿A qué bootcamp te registras?: </label>
                 </td>
                 <td>
-                    <input type="radio" name="eleccion" value="1">Programacion de Software<br>
-                    <input type="radio" name="eleccion" value="1">Montaje y mantenimiento de equipos<br>
-                    <input type="radio" name="eleccion" value="1">Desarrollo web<br>
-                    <input type="radio" name="eleccion" value="1">Ciberseguridad
+                    <input type="radio" name="eleccion" value="PS">Programacion de Software<br>
+                    <input type="radio" name="eleccion" value="MME">Montaje y mantenimiento de equipos<br>
+                    <input type="radio" name="eleccion" value="DW">Desarrollo web<br>
+                    <input type="radio" name="eleccion" value="CS">Ciberseguridad
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="diasSemana">¿Qué día/s de la semana te gustaría asistir?: </label>
+                </td>
+                <td>
+                    <input type="checkbox" name="diasSemana" value="Lunes">Lunes<br>
+                    <input type="checkbox" name="diasSemana" value="Martes">Martes<br>
+                    <input type="checkbox" name="diasSemana" value="Miercoles">Miercoles<br>
+                    <input type="checkbox" name="diasSemana" value="Jueves">Jueves<br>
+                    <input type="checkbox" name="diasSemana" value="Viernes">Viernes<br>
+                    <input type="checkbox" name="diasSemana" value="Sabado">Sabado<br>
+                    <input type="checkbox" name="diasSemana" value="Domingo">Domingo
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="lenguajeProg">¿Tienes algún lenguaje de programación favorito?: </label>
+                </td>
+                <td>
+                    <select name="lenguajeProg">
+                        <option value="ninguno">Ninguno</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="php">PHP</option>
+                        <option value="java">Java</option>
+                        <option value="python">Python</option>
+                        <option value="c#">C#</option>
+                        <option value="C++">C++</option>
+                    </select>
                 </td>
             </tr>
         </form>
