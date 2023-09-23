@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        td:first-child{
+            text-align: right;
+        }
+
+        td{
+            border: 1px solid black;
+        }
+
+        tr{
+            height: 50px;
+        }
+
+        input{
+            width: 50px;
+            text-align: left;
+            margin-left:5px;
+        }
+
+        textarea{
+            margin-left:5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Registrate en Bootcamp</h1>
+
+    <table>
+        <form>
+            <tr>
+                <td>
+                    <label for="nombre">Nombre: </label>
+                </td>
+                <td>
+                    <input name="nombre" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="apellidos">Apellidos: </label>
+                </td>
+                <td>
+                    <input name="apellidos" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="tel">Telefono: </label>
+                </td>
+                <td>
+                    <input name="tel" type="tel">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="definicion">¿Cómo te definirias?: </label>
+                </td>
+                <td>
+                    <textarea name="definicion"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="eleccion">¿A qué bootcamp te registras?: </label>
+                </td>
+                <td>
+                    <input type="radio" name="eleccion" value="1">Programacion de Software<br>
+                    <input type="radio" name="eleccion" value="1">Montaje y mantenimiento de equipos<br>
+                    <input type="radio" name="eleccion" value="1">Desarrollo web<br>
+                    <input type="radio" name="eleccion" value="1">Ciberseguridad
+                </td>
+            </tr>
+        </form>
+    </table>
+
+    <button type="submit">Enviar</button>
+    <button type="reset">Resetear</button> 
+</body>
+</html>
