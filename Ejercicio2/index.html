@@ -4,8 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio2</title>
+    <style>
+        button > img{
+            width: 200px;
+            height: 200px;
+        }
+        button{
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
+    <h1>Carrousel de Imagenes</h1>
+
+    <div>
+        <button type="button" onclick="document.getElementById('imgPrincipal').src = 'imagenes/1.jpg'">
+            <img src="imagenes/1.jpg" width="400">
+        </button>
+        <button type="button" onclick="document.getElementById('imgPrincipal').src = 'imagenes/2.jpg'">
+            <img src="imagenes/2.jpg" width="400">
+        </button>
+        <button type="button" onclick="document.getElementById('imgPrincipal').src = 'imagenes/3.jpg'">
+            <img src="imagenes/3.jpg" width="400">
+        </button>
+        <button type="button" onclick="document.getElementById('imgPrincipal').src = 'imagenes/4.webp'">
+            <img src="imagenes/4.webp" width="400">
+        </button>
+    </div>
+
+    <img id="imgPrincipal" src="imagenes/1.jpg" width="400">
     
 </body>
 </html>
