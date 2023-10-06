@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Idiomas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button type="button" onclick="cambiarIdioma('espanol')">Español</button>
-    <button type="button" onclick="cambiarIdioma('ingles')">Inglés</button>
-    <button type="button" onclick="cambiarIdioma('ruso')">Ruso</button>
+    <button id="buttonEs" type="button" onclick="cambiarIdioma('espanol')">Español</button>
+    <button id="buttonIn" type="button" onclick="cambiarIdioma('ingles')">Inglés</button>
+    <button id="buttonRu" type="button" onclick="cambiarIdioma('ruso')">Ruso</button>
+
+    <div id="myModal" class="modalContainer">
+        <div class="modal-content">
+        <span class="close">X</span> <h2>Idiomas</h2>
+        <p id="parrafo">Se ha desplegado el modal y bloqueado el scroll del body!</p>
+    </div>
 
     <script src="index.js"></script>
 </body>
