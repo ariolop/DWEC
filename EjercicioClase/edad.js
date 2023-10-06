@@ -1,15 +1,34 @@
 'use scrict'
 
-let edad = +prompt("¿Cuál es tu edad?");
+let age = +prompt("¿Cuál es tu age?");
 
-if(edad > 13 && edad < 91)
+if(age > 13 && age < 91)
 {
-    alert("La edad está entre 14 y 90");
+    alert("La age está entre 14 y 90");
+}
+else
+{
+    alert("La age no está entre 14 y 90");
 }
 
-edad = +prompt("Introduce otra edad: ");
+age = +prompt("Introduce otra age: ");
 
-if(edad < 14 && edad > 90)
+if(!(age > 13 && age < 91))
 {
-    alert("La edad está entre 14 y 90");
+    alert("La age no está entre 14 y 90");
+}
+else
+{
+    alert("La age está entre 14 y 90");
+}
+
+age = +prompt("Introduce otra age: ");
+
+if(age < 14 || age > 90)
+{
+    alert("La age no está entre 14 y 90");
+}
+else
+{
+    alert("La age está entre 14 y 90");
 }
