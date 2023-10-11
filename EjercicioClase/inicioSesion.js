@@ -2,7 +2,7 @@
 
 let usuario = prompt("Introduce el nombre de usuario: ", "");
 
-if(usuario == "Admin")
+if(usuario == "Administrador")
 {
     let contraseña = prompt("Introduce la contraseña: ","");
 
@@ -10,7 +10,7 @@ if(usuario == "Admin")
     {
         alert("Bienvenido");
     }
-    else if(contraseña == "")
+    else if(contraseña == null)
     {
         alert("Cancelado");
     }
@@ -20,7 +20,7 @@ if(usuario == "Admin")
     }
     
 }
-else if(usuario == "")
+else if(usuario == null)
 {
     alert("Cancelado");
 }
