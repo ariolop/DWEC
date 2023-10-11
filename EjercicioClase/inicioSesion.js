@@ -2,15 +2,15 @@
 
 const usuario = prompt("Introduce el nombre de usuario: ", "");
 
-if(usuario == "Administrador")
+if(usuario === "Administrador")
 {
     const contraseña = prompt("Introduce la contraseña: ","");
 
-    if(contraseña == "ElMejor")
+    if(contraseña === "ElMejor")
     {
         alert("Bienvenido");
     }
-    else if(contraseña == null)
+    else if(contraseña === null)
     {
         alert("Cancelado");
     }
@@ -20,7 +20,7 @@ if(usuario == "Administrador")
     }
     
 }
-else if(usuario == null)
+else if(usuario === null)
 {
     alert("Cancelado");
 }
