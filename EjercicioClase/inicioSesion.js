@@ -1,10 +1,10 @@
 'use strict'
 
-let usuario = prompt("Introduce el nombre de usuario: ", "");
+const usuario = prompt("Introduce el nombre de usuario: ", "");
 
 if(usuario == "Administrador")
 {
-    let contraseña = prompt("Introduce la contraseña: ","");
+    const contraseña = prompt("Introduce la contraseña: ","");
 
     if(contraseña == "ElMejor")
     {
