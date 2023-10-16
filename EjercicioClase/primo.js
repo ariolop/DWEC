@@ -1,9 +1,12 @@
 "use strict";
 
-let n = 100
-for(let num = 2; num < n; num++)
+let n = +prompt("Ingresa un número mayor que uno:")
+
+let esPrimo = true;
+
+for(let num = 2; num <= n; num++)
 {
-    let esPrimo = true;
+    esPrimo = true;
 
     for(let divisor = 2; divisor <= num/2 && esPrimo; divisor++)
     {
@@ -18,3 +21,4 @@ for(let num = 2; num < n; num++)
         console.log(num)
     }
 }
+
