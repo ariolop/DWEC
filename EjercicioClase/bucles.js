@@ -264,24 +264,13 @@ function pintaTablero(tamaño)
     let figura = "";
     let elecCaracterColumna = true;
 
-    for(let bloque = 1; bloque <= tamaño; bloque++)
+    for(let bloqueFilas = 1; bloqueFilas <= tamaño; bloqueFilas++)
     {
-        for(let i = 1; i <= tamaño; i++) //Filas
+        for(let filas = 1; filas <= tamaño; filas++) //Filas
         {
-            let fila = "";
-
             let elecCaracterFila = elecCaracterColumna;
-            for(let j = 1; j <= tamaño; j++) //Bloque columnas
-            {
-                let caracter = elecCaracterFila ? "#" : "-";
-
-                for(let k = 0; k < tamaño; k++) //Columnas y diferenciacion de caracteres
-                {
-                    fila += caracter;   
-                }
-
-                elecCaracterFila = !elecCaracterFila;
-            }
+            
+            let fila = construirFila(tamaño, elecCaracterFila);
         
             figura += fila + "\n";
         }
@@ -293,4 +282,42 @@ function pintaTablero(tamaño)
     console.log(figura);
 }
 
-pintaTablero(6);
+function elegirCaracter(eleccionCaracter)
+{
+    if(eleccionCaracter)
+    {
+        return "#";
+    }
+    
+    return "-";
+}
+
+function construirBloque(caracter, tamaño)
+{
+    let bloque = "";
+
+    for(let k = 0; k < tamaño; k++) //Columnas y diferenciacion de caracteres
+    {
+        bloque += caracter;   
+    }
+
+    return bloque;
+}
+
+function construirFila(tamaño, elecCaracterFila) 
+{
+    let fila = "";
+    
+    for(let j = 1; j <= tamaño; j++) //Bloque columnas
+    {
+        let caracter = elegirCaracter(elecCaracterFila);
+
+        fila += construirBloque(caracter, tamaño);
+
+        elecCaracterFila = !elecCaracterFila;
+    }
+
+    return fila;
+}
+
+pintaTablero(5);
