@@ -266,17 +266,9 @@ function pintaTablero(tamaño)
 
     for(let bloqueFilas = 1; bloqueFilas <= tamaño; bloqueFilas++)
     {
-        for(let filas = 1; filas <= tamaño; filas++) //Filas
-        {
-            let elecCaracterFila = elecCaracterColumna;
-            
-            let fila = construirFila(tamaño, elecCaracterFila);
-        
-            figura += fila + "\n";
-        }
+        figura += construirBloqueFilas(tamaño, elecCaracterColumna);
 
         elecCaracterColumna = !elecCaracterColumna;
-
     }    
 
     console.log(figura);
@@ -318,6 +310,22 @@ function construirFila(tamaño, elecCaracterFila)
     }
 
     return fila;
+}
+
+function construirBloqueFilas(tamaño, elecCaracterColumna) 
+{
+    let bloqueFila = "";
+
+    for(let filas = 1; filas <= tamaño; filas++) //BloqueFilas
+    {
+        let elecCaracterFila = elecCaracterColumna;
+        
+        let fila = construirFila(tamaño, elecCaracterFila);
+    
+        bloqueFila += fila + "\n";
+    }
+
+    return bloqueFila;
 }
 
 pintaTablero(5);
