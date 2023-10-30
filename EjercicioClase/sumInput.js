@@ -1,3 +1,5 @@
+"use strict";
+
 function sumInput() {
  
     const arr = [];
@@ -7,12 +9,12 @@ function sumInput() {
         
         posibleNumero = prompt("Ingresa un número para sumar: ");
 
-        if(posibleNumero != null && posibleNumero != "" && isNaN(+posibleNumero) != true)
+        if(posibleNumero !== null && posibleNumero !== "" && isFinite(posibleNumero))
         {
             arr.push(+posibleNumero);
         }
 
-    }while(posibleNumero != null && posibleNumero != "" && isNaN(+posibleNumero) != true);
+    }while(posibleNumero !== null && posibleNumero !== "" && isFinite(posibleNumero));
 
     let suma = 0;
 
