@@ -1,3 +1,5 @@
+"use strict";
+
 /* 'use strict';
 
 const num1 = +prompt("Escribe el primer numero: ");

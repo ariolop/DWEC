@@ -1,3 +1,5 @@
+"use strict";
+
 function camelize(str) 
 {
     let separado = str.split("-");
