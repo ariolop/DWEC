@@ -10,18 +10,14 @@ const filterRange = (arr,a,b) => {
     // }
 
     let arrTemp = [];
-    for (let i = arr.length-1; i >= 0; i--) 
+    let element;
+    while (element = arr.pop())
     {
-        const element = arr[i];
-        if(element < a || element > b)
+        if(element >= a && element <= b)
         {
-            arr.pop();
+            arrTemp.push(element);
         }
-        else
-        {
-            arrTemp.push(arr.pop());
-        }
-    }
+    };
 
     for (let i = 0; i < arrTemp.length; i++) {
         arr.push(arrTemp[i]);
