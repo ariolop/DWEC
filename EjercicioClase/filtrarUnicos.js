@@ -1,25 +1,11 @@
 "use strict";
 
 function unique(arr) {
-    let unicos = [];
-    
-    // unicos = arr.filter((elem, indice, arr) => {
-    //     let noEncontrado = true;
-
-    //     for(let i = 0; i < indice; i++)
-    //     {
-    //         if(arr[i] === elem)
-    //         {
-    //             noEncontrado = false;
-    //         }
-    //     }
-
-    //     return noEncontrado;
-    // });
-
-    unicos = arr.filter((elem, indice, arr) => !arr.slice(0,indice).find(subElem => subElem == elem));
+    let unicos = arr.filter((elem, indice, arr) => !arr.slice(0,indice).includes(elem));
 
     return unicos;
+    //return arr.filter((elem, indice, arr) => !arr.slice(0,indice).includes(elem));
+    //return arr.filter((elem, indice, arr) => arr.indexOf(elem)===i);
   }
   
   let strings = ["Hare", "Krishna", "Hare", "Krishna",
