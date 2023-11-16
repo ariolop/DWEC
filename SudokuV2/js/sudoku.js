@@ -21,8 +21,14 @@ class Sudoku {
             8,  3,  7,  5,  9,  6,  1,  2,  4,
             6,  5,  4,  1,  8,  2,  9,  7,  3
         ];
+
         this.nuevo(mezclas);
+
+        this.filaSelected = undefined;
+        this.columnaSelected = undefined;
+        this.miniSudokuSelected = undefined;
     }
+
     intercambiaFila(i = 10) {
         switch (i) {
             case 0:
@@ -104,6 +110,12 @@ class Sudoku {
         }
     }
 
+    #obtenerMiniSudoku() {
+        let coleccion = document.querySelectorAll("[data-minisudoku='1']");
+
+        console.log(coleccion);
+    }
+
     cambiaColumnas(a, b) {
         let indiceA = a;
         let indiceB = b;
@@ -124,29 +136,97 @@ class Sudoku {
 
     muestra(porcentaje=1) {
         for (let i = 0; i < 81; i++) {
-            document.getElementById('td' + i).innerText = this.datos[i]; //Math.random()<porcentaje ? this.datos[i]:'';
+            document.getElementById('td' + i).innerText = Math.random()<porcentaje ? this.datos[i]:'';
         }
     }
 
     estaResuelto() {
         // debe devolver true o false
     }
+
+    #despintarColumna() {
+        for (let i = this.columnaSelected; i <= this.columnaSelected+(8*9); i+=9) {
+            document.getElementById("td" + i).classList.remove("columnaSelected");      
+        }
+    }
+
+    #despintarFila() {
+        for (let i = this.filaSelected; i < this.filaSelected+9; i++) {
+                document.getElementById("td" + i).classList.remove("filaSelected");      
+        }
+    }
+
+    #despintarMiniSudoku() {
+
+    }
+
+    #pintarFila(evento) {
+        
+        let id = +(evento.target.id.slice("2"));
+
+        let fila = Math.floor(id / 9)*9;
+        this.filaSelected = fila;
+
+        for (let i = fila; i < fila+9; i++) {
+            if(i != id)
+            {
+                document.getElementById("td" + i).classList.add("filaSelected");
+            }         
+        }
+    }
+
+    #pintarColumna(evento) {
+        let id = +(evento.target.id.slice("2"));
+        let columna = id % 9;
+
+        this.columnaSelected = columna;
+
+        for (let i = columna; i <= columna+(8*9); i+=9) {
+            if(i != id)
+            {
+                document.getElementById("td" + i).classList.add("columnaSelected");
+            }         
+        }
+    }
+
+    #pintarMiniSudoku (evento) {
+        let id = +(evento.target.id.slice("2"));
+
+
+    }
+
+    despintar() {
+        this.#despintarColumna();
+        this.#despintarFila();
+        this.#despintarMiniSudoku();
+    }
+
+    pintar(evento) {
+        this.#pintarColumna(evento);
+        this.#pintarFila(evento);
+        this.#obtenerMiniSudoku();
+        this.#pintarMiniSudoku(evento);
+    }
 }
 
 
 const miSudoku = new Sudoku();
 
-let probabilidad = document.querySelector("#probabilidad").value;
+let probabilidad = document.getElementById("dificultad").value;
 miSudoku.muestra(probabilidad);
 
 function nuevoSudoku(evento) {
+    let probabilidad = document.getElementById("dificultad").value;
     evento.preventDefault();
     miSudoku.nuevo();
     miSudoku.muestra(probabilidad);
 }
 
-
 let celdaUltimoFoco = -1;
+
+// class "minisudokuSelected"
+// class "filaSelected"
+// class "columnaSelected"
 
 function clickEnTabla(evento) {
     if (evento.target.id.charAt(0) != 't' || evento.target.id.charAt(1) != 'd')
@@ -155,8 +235,10 @@ function clickEnTabla(evento) {
     console.log("último foco en " + celdaUltimoFoco);
     if (celdaUltimoFoco != -1) {
         document.getElementById(celdaUltimoFoco).classList.remove("gamehighlighttd");
+        miSudoku.despintar();
     }
     evento.target.classList.add("gamehighlighttd");
+    miSudoku.pintar(evento);
     celdaUltimoFoco = evento.target.id;
 }
 
