@@ -189,10 +189,8 @@ class Sudoku {
         }
     }
 
-    #pintarMiniSudoku (evento) {
-        let id = +(evento.target.id.slice("2"));
-
-
+    #pintarMiniSudoku () {
+        
     }
 
     despintar() {
