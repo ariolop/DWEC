@@ -23,10 +23,6 @@ class Sudoku {
         ];
 
         this.nuevo(mezclas);
-
-        this.filaSelected = undefined;
-        this.columnaSelected = undefined;
-        this.miniSudokuSelected = undefined;
     }
 
     intercambiaFila(i = 10) {
@@ -110,10 +106,11 @@ class Sudoku {
         }
     }
 
-    #obtenerMiniSudoku() {
-        let coleccion = document.querySelectorAll("[data-minisudoku='1']");
-
-        console.log(coleccion);
+    #obtenerMiniSudoku(celda) {
+        let data = celda.dataset.minisudoku;
+        let coleccion = document.querySelectorAll("[data-minisudoku='"+data+"']");
+        
+        return coleccion;
     }
 
     cambiaColumnas(a, b) {
@@ -144,28 +141,48 @@ class Sudoku {
         // debe devolver true o false
     }
 
-    #despintarColumna() {
-        for (let i = this.columnaSelected; i <= this.columnaSelected+(8*9); i+=9) {
-            document.getElementById("td" + i).classList.remove("columnaSelected");      
+    #despintarCelda(celdaUltimoFoco)
+    {
+        celdaUltimoFoco.classList.remove("gamehighlighttd");
+    }
+
+    #despintarColumna(celdaUltimoFoco) {
+        const id = +(celdaUltimoFoco.id.slice("2"));
+        const fila = id%9;
+
+        for (let i = fila; i <= fila+(8*9); i+=9) {
+            document.getElementById("td" + i).classList.remove("columnaSelected");
         }
     }
 
-    #despintarFila() {
-        for (let i = this.filaSelected; i < this.filaSelected+9; i++) {
+    #despintarFila(celdaUltimoFoco) {
+        const id = +(celdaUltimoFoco.id.slice("2"));
+        const columna = Math.floor(id / 9)*9;
+
+        for (let i = columna; i < columna+9; i++) {
                 document.getElementById("td" + i).classList.remove("filaSelected");      
         }
     }
 
-    #despintarMiniSudoku() {
+    #despintarMiniSudoku(celdaUltimoFoco) {
+        let coleccion = this.#obtenerMiniSudoku(celdaUltimoFoco)
 
+        for(let element of coleccion)
+        {
+            element.classList.remove("minisudokuSelected");
+        }
     }
 
-    #pintarFila(evento) {
+    #pintarCelda(celda)
+    {
+        celda.classList.add("gamehighlighttd");
+    }
+
+    #pintarFila(celda) {
         
-        let id = +(evento.target.id.slice("2"));
+        let id = +(celda.id.slice("2"));
 
         let fila = Math.floor(id / 9)*9;
-        this.filaSelected = fila;
 
         for (let i = fila; i < fila+9; i++) {
             if(i != id)
@@ -175,11 +192,9 @@ class Sudoku {
         }
     }
 
-    #pintarColumna(evento) {
-        let id = +(evento.target.id.slice("2"));
+    #pintarColumna(celda) {
+        let id = +(celda.id.slice("2"));
         let columna = id % 9;
-
-        this.columnaSelected = columna;
 
         for (let i = columna; i <= columna+(8*9); i+=9) {
             if(i != id)
@@ -189,28 +204,42 @@ class Sudoku {
         }
     }
 
-    #pintarMiniSudoku (evento) {
-        let id = +(evento.target.id.slice("2"));
+    #pintarMiniSudoku (celda) {
+        let coleccion = this.#obtenerMiniSudoku(celda);
 
-
+        for(let element of coleccion)
+        {
+            element.classList.add("minisudokuSelected");
+        };
     }
 
-    despintar() {
-        this.#despintarColumna();
-        this.#despintarFila();
-        this.#despintarMiniSudoku();
+    despintar(celdaUltimoFoco) {
+        
+        if(celdaUltimoFoco != 1)
+        {
+            const elemento = document.getElementById(celdaUltimoFoco);
+            this.#despintarColumna(elemento);
+            this.#despintarFila(elemento);
+            this.#despintarMiniSudoku(elemento);
+            this.#despintarCelda(elemento);
+        }
     }
 
-    pintar(evento) {
-        this.#pintarColumna(evento);
-        this.#pintarFila(evento);
-        this.#obtenerMiniSudoku();
-        this.#pintarMiniSudoku(evento);
+    pintar(idCelda) {       
+        if(document.getElementById(idCelda).tagName == "TD")
+        {   
+            const elemento = document.getElementById(idCelda);
+            this.#pintarCelda(elemento);
+            this.#pintarColumna(elemento);
+            this.#pintarFila(elemento);
+            this.#pintarMiniSudoku(elemento);
+        }
     }
 }
 
 
 const miSudoku = new Sudoku();
+let celdaUltimoFoco = -1;
 
 let probabilidad = document.getElementById("dificultad").value;
 miSudoku.muestra(probabilidad);
@@ -220,9 +249,9 @@ function nuevoSudoku(evento) {
     evento.preventDefault();
     miSudoku.nuevo();
     miSudoku.muestra(probabilidad);
+    miSudoku.despintar(celdaUltimoFoco);
 }
 
-let celdaUltimoFoco = -1;
 
 // class "minisudokuSelected"
 // class "filaSelected"
@@ -234,11 +263,9 @@ function clickEnTabla(evento) {
     console.log("click en el id: " + evento.target.id);
     console.log("último foco en " + celdaUltimoFoco);
     if (celdaUltimoFoco != -1) {
-        document.getElementById(celdaUltimoFoco).classList.remove("gamehighlighttd");
-        miSudoku.despintar();
+        miSudoku.despintar(celdaUltimoFoco);
     }
-    evento.target.classList.add("gamehighlighttd");
-    miSudoku.pintar(evento);
+    miSudoku.pintar(evento.target.id);
     celdaUltimoFoco = evento.target.id;
 }
 
