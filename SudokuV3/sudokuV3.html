@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="css/sudoku.css">
+</head>
+
+<body>
+    <div class="topgridmsg hidden-xs" id="topgridmsg">¡Buena suerte!</div>
+    <div id="playarea" dir="ltr" class="nouserselect" align="center">
+        <table dir="ltr" id="playtable" cellspacing="0" cellpadding="0" border="0" align="center">
+            <colgroup>
+                <col class="sudokucell45">
+                <col class="sudokucell43">
+                <col class="sudokucell43">
+                <col class="sudokucell44">
+                <col class="sudokucell43">
+                <col class="sudokucell43">
+                <col class="sudokucell44">
+                <col class="sudokucell43">
+                <col class="sudokucell46">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td id="td0" tabIndex="-1" class="cellnormal" data-minisudoku="0">&nbsp;</td>
+                    <td id="td1" tabIndex="-1" class="cellnormal" data-minisudoku="0">&nbsp;</td>
+                    <td id="td2" tabIndex="-1" class="cellnormal" data-minisudoku="0" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td3" tabIndex="-1" class="cellnormal" data-minisudoku="1" style="border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td4" tabIndex="-1" class="cellnormal" data-minisudoku="1">&nbsp;</td>
+                    <td id="td5" tabIndex="-1" class="cellnormal" data-minisudoku="1" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td6" tabIndex="-1" class="cellnormal" data-minisudoku="2" style="border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td7" tabIndex="-1" class="cellnormal" data-minisudoku="2">&nbsp;</td>
+                    <td id="td8" tabIndex="-1" class="cellnormal" data-minisudoku="2">6</td>
+                </tr>
+                <tr>
+                    <td id="td9"  tabindex="-1" class="cellnormal" data-minisudoku="0">9</td>
+                    <td id="td10" tabindex="-1" class="cellnormal" data-minisudoku="0">&nbsp;</td>
+                    <td id="td11" tabindex="-1" class="cellnormal" data-minisudoku="0" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td12" tabindex="-1" class="cellnormal" data-minisudoku="1" style="border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td13" tabindex="-1" class="cellnormal" data-minisudoku="1">5</td>
+                    <td id="td14" tabindex="-1" class="cellnormal" data-minisudoku="1" style="border-right: 2px solid blue;">4</td>
+                    <td id="td15" tabindex="-1" class="cellnormal" data-minisudoku="2" style="border-left: 2px solid blue;">3</td>
+                    <td id="td16" tabindex="-1" class="cellnormal" data-minisudoku="2">8</td>
+                    <td id="td17" tabindex="-1" class="cellnormal" data-minisudoku="2" >&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="td18" tabindex="-1" class="cellnormal" data-minisudoku="0" style="border-bottom: 2px solid blue;">4</td>
+                    <td id="td19" tabindex="-1" class="cellnormal" data-minisudoku="0" style="border-bottom: 2px solid blue;">5</td>
+                    <td id="td20" tabindex="-1" class="cellnormal" data-minisudoku="0" style="border-bottom: 2px solid blue; border-right: 2px solid blue;">3</td>
+                    <td id="td21" tabindex="-1" class="cellnormal" data-minisudoku="1" style="border-bottom: 2px solid blue; border-left: 2px solid blue;">8</td>
+                    <td id="td22" tabindex="-1" class="cellnormal" data-minisudoku="1" style="border-bottom: 2px solid blue;">1</td>
+                    <td id="td23" tabindex="-1" class="cellnormal" data-minisudoku="1" style="border-bottom: 2px solid blue; border-right: 2px solid blue;">6</td>
+                    <td id="td24" tabindex="-1" class="cellnormal" data-minisudoku="2" style="border-bottom: 2px solid blue; border-left: 2px solid blue;">9</td>
+                    <td id="td25" tabindex="-1" class="cellnormal" data-minisudoku="2" style="border-bottom: 2px solid blue;">&nbsp;</td>
+                    <td id="td26" tabindex="-1" class="cellnormal" data-minisudoku="2" style="border-bottom: 2px solid blue;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="td27" tabindex="-1" class="cellnormal" data-minisudoku="3" style="border-top: 2px solid blue;">&nbsp;</td>
+                    <td id="td28" tabindex="-1" class="cellnormal" data-minisudoku="3" style="border-top: 2px solid blue;">&nbsp;</td>
+                    <td id="td29" tabindex="-1" class="cellnormal" data-minisudoku="3" style="border-top: 2px solid blue; border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td30" tabindex="-1" class="cellnormal" data-minisudoku="4" style="border-top: 2px solid blue; border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td31" tabindex="-1" class="cellnormal" data-minisudoku="4" style="border-top: 2px solid blue;">&nbsp;</td>
+                    <td id="td32" tabindex="-1" class="cellnormal" data-minisudoku="4" style="border-top: 2px solid blue; border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td33" tabindex="-1" class="cellnormal" data-minisudoku="5" style="border-top: 2px solid blue; border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td34" tabindex="-1" class="cellnormal" data-minisudoku="5" style="border-top: 2px solid blue;">5</td>
+                    <td id="td35" tabindex="-1" class="cellnormal" data-minisudoku="5" style="border-top: 2px solid blue;">4</td>
+                </tr>
+                <tr>
+                    <td id="td36" tabindex="-1" class="cellnormal" data-minisudoku="3">5</td>
+                    <td id="td37" tabindex="-1" class="cellnormal" data-minisudoku="3">4</td>
+                    <td id="td38" tabindex="-1" class="cellnormal" data-minisudoku="3" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td39" tabindex="-1" class="cellnormal" data-minisudoku="4" style="border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td40" tabindex="-1" class="cellnormal" data-minisudoku="4">&nbsp;</td>
+                    <td id="td41" tabindex="-1" class="cellnormal" data-minisudoku="4" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td42" tabindex="-1" class="cellnormal" data-minisudoku="5" style="border-left: 2px solid blue;">7</td>
+                    <td id="td43" tabindex="-1" class="cellnormal" data-minisudoku="5">&nbsp;</td>
+                    <td id="td44" tabindex="-1" class="cellnormal" data-minisudoku="5">3</td>
+                </tr>
+                <tr>
+                    <td id="td45" tabindex="-1" class="cellnormal" data-minisudoku="3" style="border-bottom: 2px solid blue;">&nbsp;</td>
+                    <td id="td46" tabindex="-1" class="cellnormal" data-minisudoku="3" style="border-bottom: 2px solid blue;">&nbsp;</td>
+                    <td id="td47" tabindex="-1" class="cellnormal" data-minisudoku="3" style="border-bottom: 2px solid blue; border-right: 2px solid blue;">2</td>
+                    <td id="td48" tabindex="-1" class="cellnormal" data-minisudoku="4" style="border-bottom: 2px solid blue; border-left: 2px solid blue;">9</td>
+                    <td id="td49" tabindex="-1" class="cellnormal" data-minisudoku="4" style="border-bottom: 2px solid blue;">&nbsp;</td>
+                    <td id="td50" tabindex="-1" class="cellnormal" data-minisudoku="4" style="border-bottom: 2px solid blue; border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td51" tabindex="-1" class="cellnormal" data-minisudoku="5" style="border-bottom: 2px solid blue; border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td52" tabindex="-1" class="cellnormal" data-minisudoku="5" style="border-bottom: 2px solid blue;">&nbsp;</td>
+                    <td id="td53" tabindex="-1" class="cellnormal" data-minisudoku="5" style="border-bottom: 2px solid blue;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="td54" tabindex="-1" class="cellnormal" data-minisudoku="6" style="border-top: 2px solid blue;">&nbsp;</td>
+                    <td id="td55" tabindex="-1" class="cellnormal" data-minisudoku="6" style="border-top: 2px solid blue;">&nbsp;</td>
+                    <td id="td56" tabindex="-1" class="cellnormal" data-minisudoku="6" style="border-top: 2px solid blue; border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td57" tabindex="-1" class="cellnormal" data-minisudoku="7" style="border-top: 2px solid blue; border-left: 2px solid blue;">5</td>
+                    <td id="td58" tabindex="-1" class="cellnormal" data-minisudoku="7" style="border-top: 2px solid blue;">9</td>
+                    <td id="td59" tabindex="-1" class="cellnormal" data-minisudoku="7" style="border-top: 2px solid blue; border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td60" tabindex="-1" class="cellnormal" data-minisudoku="8" style="border-top: 2px solid blue; border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td61" tabindex="-1" class="cellnormal" data-minisudoku="8" style="border-top: 2px solid blue;">7</td>
+                    <td id="td62" tabindex="-1" class="cellnormal" data-minisudoku="8" style="border-top: 2px solid blue;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="td63" tabindex="-1" class="cellnormal" data-minisudoku="6">&nbsp;</td>
+                    <td id="td64" tabindex="-1" class="cellnormal" data-minisudoku="6">&nbsp;</td>
+                    <td id="td65" tabindex="-1" class="cellnormal" data-minisudoku="6" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td66" tabindex="-1" class="cellnormal" data-minisudoku="7" style="border-left: 2px solid blue;">6</td>
+                    <td id="td67" tabindex="-1" class="cellnormal" data-minisudoku="7">&nbsp;</td>
+                    <td id="td68" tabindex="-1" class="cellnormal" data-minisudoku="7" style="border-right: 2px solid blue;">2</td>
+                    <td id="td69" tabindex="-1" class="cellnormal" data-minisudoku="8" style="border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td70" tabindex="-1" class="cellnormal" data-minisudoku="8">&nbsp;</td>
+                    <td id="td71" tabindex="-1" class="cellnormal" data-minisudoku="8">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="td72" tabindex="-1" class="cellnormal" data-minisudoku="6">&nbsp;</td>
+                    <td id="td73" tabindex="-1" class="cellnormal" data-minisudoku="6">2</td>
+                    <td id="td74" tabindex="-1" class="cellnormal" data-minisudoku="6" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td75" tabindex="-1" class="cellnormal" data-minisudoku="7" style="border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td76" tabindex="-1" class="cellnormal" data-minisudoku="7">&nbsp;</td>
+                    <td id="td77" tabindex="-1" class="cellnormal" data-minisudoku="7" style="border-right: 2px solid blue;">&nbsp;</td>
+                    <td id="td78" tabindex="-1" class="cellnormal" data-minisudoku="8" style="border-left: 2px solid blue;">&nbsp;</td>
+                    <td id="td79" tabindex="-1" class="cellnormal" data-minisudoku="8">1</td>
+                    <td id="td80" tabindex="-1" class="cellnormal" data-minisudoku="8">8</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><button id="nuevoSudoku">Haz un sudoku nuevo</button></p>
+    <select name="dificultad" id="dificultad">
+        <option value="0.65">Nivel fácil</option>
+        <option value="0.50" selected>Nivel medio</option>
+        <option value="0.25">Nivel difícil</option>
+    </select>
+    <div class="numeros" id="numeros">
+        <table id="tableNumbers">
+            <tr>
+                <td id="1" class="digito">1</td>
+                <td id="2" class="digito">2</td>
+                <td id="3" class="digito">3</td>
+                <td id="4" class="digito">4</td>
+                <td id="5" class="digito">5</td>
+                <td id="6" class="digito">6</td>
+                <td id="7" class="digito">7</td>
+                <td id="8" class="digito">8</td>
+                <td id="9" class="digito">9</td>
+                <td id="0" >&nbsp;&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="js/sudoku.js"></script>
+</body>
+
+</html>
