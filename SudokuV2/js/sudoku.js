@@ -125,15 +125,26 @@ class Sudoku {
     }
 
     nuevo(mezclas = 10) {
+
         for (let i = 0; i < mezclas; i++) {
             this.intercambiaFila();
-            this.intercambiaColumna();
+            this.intercambiaColumna();     
         }
     }
 
     muestra(porcentaje=1) {
         for (let i = 0; i < 81; i++) {
-            document.getElementById('td' + i).innerText = Math.random()<porcentaje ? this.datos[i]:'';
+            if(Math.random()<porcentaje)
+            {
+                document.getElementById('td' + i).innerText = this.datos[i];
+                document.getElementById('td' + i).classList.add("noModify");
+            }
+            else
+            {
+                document.getElementById('td' + i).innerText = " ";
+                document.getElementById('td' + i).classList.remove("noModify");
+            }
+            
         }
     }
 
@@ -160,7 +171,7 @@ class Sudoku {
         const columna = Math.floor(id / 9)*9;
 
         for (let i = columna; i < columna+9; i++) {
-                document.getElementById("td" + i).classList.remove("filaSelected");      
+            document.getElementById("td" + i).classList.remove("filaSelected");      
         }
     }
 
@@ -215,9 +226,10 @@ class Sudoku {
 
     despintar(celdaUltimoFoco) {
         
-        if(celdaUltimoFoco != 1)
+        if(celdaUltimoFoco != -1)
         {
             const elemento = document.getElementById(celdaUltimoFoco);
+
             this.#despintarColumna(elemento);
             this.#despintarFila(elemento);
             this.#despintarMiniSudoku(elemento);
@@ -226,14 +238,16 @@ class Sudoku {
     }
 
     pintar(idCelda) {       
-        if(document.getElementById(idCelda).tagName == "TD")
-        {   
-            const elemento = document.getElementById(idCelda);
-            this.#pintarCelda(elemento);
-            this.#pintarColumna(elemento);
-            this.#pintarFila(elemento);
-            this.#pintarMiniSudoku(elemento);
-        }
+        const elemento = document.getElementById(idCelda);
+        this.#pintarCelda(elemento);
+        this.#pintarColumna(elemento);
+        this.#pintarFila(elemento);
+        this.#pintarMiniSudoku(elemento);
+    }
+
+    cambiarNumero (elemento, numero)
+    {
+        elemento.innerHTML = numero;
     }
 }
 
@@ -250,6 +264,8 @@ function nuevoSudoku(evento) {
     miSudoku.nuevo();
     miSudoku.muestra(probabilidad);
     miSudoku.despintar(celdaUltimoFoco);
+
+    document.getElementById("numeros").style.visibility = "hidden";
 }
 
 
@@ -266,9 +282,35 @@ function clickEnTabla(evento) {
         miSudoku.despintar(celdaUltimoFoco);
     }
     miSudoku.pintar(evento.target.id);
+
+    if(!evento.target.classList.contains("noModify"))
+    {
+        document.getElementById("numeros").style.visibility = "visible";
+    }
+    else
+    {
+        document.getElementById("numeros").style.visibility = "hidden";
+    }
+
     celdaUltimoFoco = evento.target.id;
+}
+
+function clickEnNumeros(evento)
+{
+    console.log(evento.target.id);
+
+    if (evento.target.id < 0 || evento.target.id > 9)
+    return;
+
+
+    let element = document.getElementsByClassName("gamehighlighttd")[0];
+    const numero = evento.target.id > 0 ? evento.target.id : " ";
+
+    miSudoku.cambiarNumero(element, numero);
 }
 
 document.getElementById('nuevoSudoku').addEventListener('click', nuevoSudoku);
 
 document.getElementById('playtable').addEventListener('click', clickEnTabla);
+
+document.getElementById('tableNumbers').addEventListener('click', clickEnNumeros);
