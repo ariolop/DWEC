@@ -16,15 +16,15 @@
 }
 
 .visible{
-    visibility: visible;
+    display: inline;
 }
 
 .hidden{
-    visibility: hidden;
+    display: none;
 }
 
 
-.numeros table, .numeros td, .numeros tr{
+.numeros td, .numeros tr{
     border: 1px solid black;
     border-collapse: collapse;
     padding: 10px;

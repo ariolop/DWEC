@@ -113,7 +113,7 @@ class Sudoku {
         const columna = [];
 
         for (let i = fila; i <= fila+(8*9); i+=9) {
-            columna.push(i);
+            columna.push(document.getElementById("td" + i));
         }
 
         return columna;
@@ -126,8 +126,10 @@ class Sudoku {
         const fila = [];
 
         for (let i = columna; i < columna+9; i++) {
-            fila.push(i);
+            fila.push(document.getElementById("td" + i));
         }
+
+        console.log(fila);
 
         return fila;
     }
@@ -135,7 +137,10 @@ class Sudoku {
     #obtenerMiniSudoku(celda) {
         let data = celda.dataset.minisudoku;
         let coleccion = document.querySelectorAll("[data-minisudoku='"+data+"']");
-        
+        coleccion.item(1).id
+
+        coleccion = Array.from(coleccion);
+
         return coleccion;
     }
 
@@ -175,7 +180,96 @@ class Sudoku {
     }
 
     estaResuelto() {
-        // debe devolver true o false
+        let sudokuCorrecto = true;
+
+        //Comprobar si el sudoku está totalmente relleno
+        for(let i = 0; i < 81 && sudokuCorrecto; i++)
+        {
+            if(document.getElementById("td" + i).innerHTML == " ")
+            {
+                sudokuCorrecto = false;
+            }
+        }
+
+        //Comprobar filas
+        if(sudokuCorrecto)
+        {
+            for (let idFila = 0; idFila <= 9*8 && sudokuCorrecto; idFila+=9) {
+                
+                let primeraCeldaFila = document.getElementById("td" + idFila);
+                let fila = this.#obtenerFila(primeraCeldaFila);
+
+                let valores = fila.map((item) => item.innerHTML);
+                let valoresSinRepetir = new Set(valores);           
+                sudokuCorrecto = valoresSinRepetir.size === 9 ? sudokuCorrecto : false;        
+            }
+        }
+
+        //Comprobar columnas
+        if(sudokuCorrecto)
+        {
+            for (let idColumna = 0; idColumna <= 9 && sudokuCorrecto; idColumna++) {
+                
+                let primeraCeldaColumna = document.getElementById("td" + idColumna);
+                let columna = this.#obtenerColumna(primeraCeldaColumna);
+
+                let valores = columna.map((item) => item.innerHTML);
+                let valoresSinRepetir = new Set(valores);           
+                sudokuCorrecto = valoresSinRepetir.size === 9 ? sudokuCorrecto : false;           
+            }
+        }
+
+        //Comprobar minisudokus 1,2,3
+        if(sudokuCorrecto)
+        {
+            for (let idMinisudoku = 0; idMinisudoku <= 9 && sudokuCorrecto; idMinisudoku+=3) {
+                
+                let primeraCeldaMinisudoku = document.getElementById("td" + idMinisudoku);
+                let miniSudoku = this.#obtenerMiniSudoku(primeraCeldaMinisudoku);
+
+                let valores = miniSudoku.map((item) => item.innerHTML);
+                let valoresSinRepetir = new Set(valores);           
+                sudokuCorrecto = valoresSinRepetir.size === 9 ? sudokuCorrecto : false;
+            }
+        }
+
+        //Comprobar minisudokus 4,5,6
+        if(sudokuCorrecto)
+        {
+            for (let idMinisudoku = 27; idMinisudoku <= 35 && sudokuCorrecto; idMinisudoku+=3) {
+                
+                let primeraCeldaMinisudoku = document.getElementById("td" + idMinisudoku);
+                let miniSudoku = this.#obtenerMiniSudoku(primeraCeldaMinisudoku);
+
+                let valores = miniSudoku.map((item) => item.innerHTML);
+                let valoresSinRepetir = new Set(valores);           
+                sudokuCorrecto = valoresSinRepetir.size === 9 ? sudokuCorrecto : false;          
+            }
+        }
+
+        //Comprobar minisudokus 7,8,9
+        if(sudokuCorrecto)
+        {
+            for (let idMinisudoku = 54; idMinisudoku <= 62 && sudokuCorrecto; idMinisudoku+=3) {
+                
+                let primeraCeldaMinisudoku = document.getElementById("td" + idMinisudoku);
+                let miniSudoku = this.#obtenerMiniSudoku(primeraCeldaMinisudoku);
+
+                let valores = miniSudoku.map((item) => item.innerHTML);
+                let valoresSinRepetir = new Set(valores);           
+                sudokuCorrecto = valoresSinRepetir.size === 9 ? sudokuCorrecto : false;
+            }
+        }
+
+
+        if(sudokuCorrecto)
+        {
+            alert("El sudoku es correcto. ENHORABUENA!!");
+        }
+        else
+        {
+            alert("El sudoku no es correcto. Continua o crea uno nuevo");
+        }
     }
 
     #despintarCelda(celdaUltimoFoco)
@@ -187,7 +281,7 @@ class Sudoku {
         const columna = this.#obtenerColumna(celdaUltimoFoco);
 
         for (let i = 0; i < columna.length; i++) {
-            document.getElementById("td" + columna[i]).classList.remove("columnaSelected");
+            columna[i].classList.remove("columnaSelected");
         }
 
     }
@@ -196,7 +290,7 @@ class Sudoku {
         const fila = this.#obtenerFila(celdaUltimoFoco);
 
         for (let i = 0; i < fila.length; i++) {
-            document.getElementById("td" + fila[i]).classList.remove("filaSelected");      
+            fila[i].classList.remove("filaSelected");      
         }
     }
 
@@ -221,7 +315,7 @@ class Sudoku {
         for (let i = 0; i < fila.length; i++) {
             if(fila[i] != celda.id)
             {
-                document.getElementById("td" + fila[i]).classList.add("filaSelected");
+                fila[i].classList.add("filaSelected");
             }         
         }
     }
@@ -232,7 +326,7 @@ class Sudoku {
         for (let i = 0; i < columna.length; i++) {
             if(columna[i] != 123123)
             {
-                document.getElementById("td" + columna[i]).classList.add("columnaSelected");
+                columna[i].classList.add("columnaSelected");
             }         
         }
     }
@@ -275,32 +369,34 @@ class Sudoku {
     comprobarNumeroPosible(celda, numero)
     {
         const fila = this.#obtenerFila(celda);
-        const columna = this.#obtenerFila(celda);
-        const miniSudoku = this.#obtenerFila(celda);
+        const columna = this.#obtenerColumna(celda);
+        const miniSudoku = this.#obtenerMiniSudoku(celda);
         const contenidoCelda = celda.innerHTML;
         
-        let esCorrecto = contenidoCelda == numero;
+        let esCorrecto = !(contenidoCelda == numero);
 
         for (let i = 0; i < fila.length && esCorrecto; i++) {
-            if(contenidoCelda !== document.getElementById("td"+fila[i]).innerHTML)
+            if(numero == fila[i].innerHTML)
             {
                 esCorrecto = false;
             }
         }
 
         for (let i = 0; i < columna.length && esCorrecto; i++) {
-            if(contenidoCelda !== document.getElementById("td"+columna[i]).innerHTML)
+            if(numero == columna[i].innerHTML)
             {
                 esCorrecto = false;
             }
         }
 
         for (let i = 0; i < miniSudoku.length && esCorrecto; i++) {
-            if(contenidoCelda !== document.getElementById("td"+miniSudoku[i]).innerHTML)
+            if(numero == miniSudoku[i].innerHTML)
             {
                 esCorrecto = false;
             }
-        }
+        }  
+
+        console.log(numero + " " + esCorrecto);
 
         return esCorrecto;
     }
@@ -332,11 +428,12 @@ function clickFueraTabla(evento) {
     if (evento.target.id.charAt(0) != 't' || evento.target.id.charAt(1) != 'd')
     {
         miSudoku.despintar(celdaUltimoFoco);
-        document.getElementById("numeros").style.visibility = "hidden";
-        const elementos = document.getElementsByClassName("digito");
-
-        for (let elemento of elementos) {
-            elemento.classList.remove("visible");
+        const filaNumeros = document.getElementsByClassName("digito");
+        
+        for (const iterator of filaNumeros) 
+        {
+            iterator.classList.add("hidden");
+            iterator.classList.remove("visible");
         }
     }
 }
@@ -350,6 +447,13 @@ function clickEnTabla(evento) {
     console.log("último foco en " + celdaUltimoFoco);
     if (celdaUltimoFoco != -1) {
         miSudoku.despintar(celdaUltimoFoco);
+        const filaNumeros = document.getElementsByClassName("digito");
+        
+        for (const iterator of filaNumeros) 
+        {
+            iterator.classList.remove("hidden");
+            iterator.classList.remove("visible");
+        }
     }
 
 
@@ -360,15 +464,18 @@ function clickEnTabla(evento) {
         document.getElementById("numeros").style.visibility = "visible";
 
         const filaNumeros = document.getElementsByClassName("digito");
+
+        console.log(filaNumeros);
         
         for (const iterator of filaNumeros) {
+            
             if(miSudoku.comprobarNumeroPosible(evento.target, iterator.innerHTML))
             {
-                iterator.classList.add = "visible";
+                iterator.classList.add("visible");
             }
             else
             {
-                iterator.classList.add = "hidden";
+                iterator.classList.add("hidden");
             }
         }
 
@@ -456,7 +563,14 @@ function cambiarCasillaSeleccionada(evento)
     }
 }
 
+function comprobarSudoku(evento)
+{
+    evento.preventDefault();
+    miSudoku.estaResuelto();
+}
+
 document.getElementById('nuevoSudoku').addEventListener('click', nuevoSudoku);
+document.getElementById('comprobar').addEventListener('click', comprobarSudoku);
 
 document.getElementById('playtable').addEventListener('keyup', cambiarCasillaSeleccionada);
 document.getElementById('playtable').addEventListener('click', clickEnTabla);
