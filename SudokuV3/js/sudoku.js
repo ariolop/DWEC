@@ -578,4 +578,3 @@ document.getElementById('playtable').addEventListener('click', clickEnTabla);
 document.getElementById('playarea').addEventListener('click', clickFueraTabla);
 
 document.getElementById('tableNumbers').addEventListener('click', clickEnNumeros);
-
