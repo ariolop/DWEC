@@ -272,14 +272,14 @@ class Sudoku {
         elemento.innerHTML = numero;
     }
 
-    comprobarNumeroColocado(celda)
+    comprobarNumeroPosible(celda, numero)
     {
         const fila = this.#obtenerFila(celda);
         const columna = this.#obtenerFila(celda);
         const miniSudoku = this.#obtenerFila(celda);
         const contenidoCelda = celda.innerHTML;
         
-        let esCorrecto = true;
+        let esCorrecto = contenidoCelda == numero;
 
         for (let i = 0; i < fila.length && esCorrecto; i++) {
             if(contenidoCelda !== document.getElementById("td"+fila[i]).innerHTML)
@@ -358,6 +358,21 @@ function clickEnTabla(evento) {
     if(!evento.target.classList.contains("noModify"))
     {
         document.getElementById("numeros").style.visibility = "visible";
+
+        const filaNumeros = document.getElementsByClassName("digito");
+        
+        for (const iterator of filaNumeros) {
+            if(miSudoku.comprobarNumeroPosible(evento.target, iterator.innerHTML))
+            {
+                iterator.classList.add = "visible";
+            }
+            else
+            {
+                iterator.classList.add = "hidden";
+            }
+        }
+
+
     }
     else
     {
