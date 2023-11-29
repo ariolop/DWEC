@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudoku</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/sudoku.css">
 </head>
 
@@ -126,7 +127,9 @@
             </tbody>
         </table>
     </div>
+    <p><button id="meRindo">Me rindo</button></p>
     <p><button id="comprobar">Comprobar</button></p>
+    <p><button id="otraPartida">Otra partida</button></p>
     <p><button id="nuevoSudoku">Haz un sudoku nuevo</button></p>
     <select name="dificultad" id="dificultad">
         <option value="1">Resuelto</option>
@@ -146,7 +149,7 @@
                 <td id="7" class="digito">7</td>
                 <td id="8" class="digito">8</td>
                 <td id="9" class="digito">9</td>
-                <td id="0" class="visible">&nbsp;</td>
+                <td id="0" class="visible"><span class="bi bi-trash"></span></td>
             </tr>
         </table>
     </div>

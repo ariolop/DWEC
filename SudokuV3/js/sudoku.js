@@ -25,6 +25,7 @@ class Sudoku {
         this.nuevo(mezclas);
     }
 
+    //Intercambia las filas del sudoku original de forma aleatoria
     intercambiaFila(i = 10) {
         switch (i) {
             case 0:
@@ -60,6 +61,7 @@ class Sudoku {
         }
     }
 
+    //Intercambia las filas que se le indiquen
     cambiaFilas(a, b) {
         let indiceA = a*9;
         let indiceB = b*9;
@@ -71,6 +73,7 @@ class Sudoku {
         }
     }
 
+    //Intercambia las columnas del sudoku original de forma aleatoria
     intercambiaColumna(i = 10) {
         switch (i) {
             case 0:
@@ -106,6 +109,19 @@ class Sudoku {
         }
     }
 
+    //Intercambia las columnas que se le indiquen
+    cambiaColumnas(a, b) {
+        let indiceA = a;
+        let indiceB = b;
+
+        for (let i = 0; i < 9; i++, indiceA+=9, indiceB+=9) {
+            let backup = this.datos[indiceA];
+            this.datos[indiceA] = this.datos[indiceB];
+            this.datos[indiceB] = backup;
+        }   
+    }
+
+    //Intercambia las columnas que se le indiquen
     #obtenerColumna(celda){
         const id = +(celda.id.slice("2"));
         const fila = id%9;
@@ -119,6 +135,7 @@ class Sudoku {
         return columna;
     }
 
+    //Obtiene la fila donde se encuentra la celda
     #obtenerFila(celda){
         const id = +(celda.id.slice("2"));
         const columna = Math.floor(id / 9)*9;
@@ -129,11 +146,10 @@ class Sudoku {
             fila.push(document.getElementById("td" + i));
         }
 
-        console.log(fila);
-
         return fila;
     }
 
+    //Obtiene el Mini Sudoku donde se encuentra la celda
     #obtenerMiniSudoku(celda) {
         let data = celda.dataset.minisudoku;
         let coleccion = document.querySelectorAll("[data-minisudoku='"+data+"']");
@@ -144,17 +160,7 @@ class Sudoku {
         return coleccion;
     }
 
-    cambiaColumnas(a, b) {
-        let indiceA = a;
-        let indiceB = b;
-
-        for (let i = 0; i < 9; i++, indiceA+=9, indiceB+=9) {
-            let backup = this.datos[indiceA];
-            this.datos[indiceA] = this.datos[indiceB];
-            this.datos[indiceB] = backup;
-        }   
-    }
-
+    //Generar nuevo sudoku
     nuevo(mezclas = 10) {
 
         for (let i = 0; i < mezclas; i++) {
@@ -163,6 +169,7 @@ class Sudoku {
         }
     }
 
+    //Mostrar el sudoku generado según un porcentaje, es decir, la dificultad
     muestra(porcentaje=1) {
         for (let i = 0; i < 81; i++) {
             if(Math.random()<porcentaje)
@@ -179,6 +186,7 @@ class Sudoku {
         }
     }
 
+    //Comprobar si el sudoku está resuelto
     estaResuelto() {
         let sudokuCorrecto = true;
 
@@ -272,11 +280,13 @@ class Sudoku {
         }
     }
 
+    //Despintar una celda cuando ya no está seleccionada
     #despintarCelda(celdaUltimoFoco)
     {
         celdaUltimoFoco.classList.remove("gamehighlighttd");
     }
 
+    //Despintar una columna cuando ya no está seleccionada
     #despintarColumna(celdaUltimoFoco) {
         const columna = this.#obtenerColumna(celdaUltimoFoco);
 
@@ -286,6 +296,7 @@ class Sudoku {
 
     }
 
+    //Despintar una fila cuando ya no está seleccionada
     #despintarFila(celdaUltimoFoco) {
         const fila = this.#obtenerFila(celdaUltimoFoco);
 
@@ -294,6 +305,7 @@ class Sudoku {
         }
     }
 
+    //Despintar un mini sudoku cuando ya no está seleccionada
     #despintarMiniSudoku(celdaUltimoFoco) {
         let coleccion = this.#obtenerMiniSudoku(celdaUltimoFoco)
 
@@ -303,11 +315,13 @@ class Sudoku {
         }
     }
 
+    //Pintar una celda cuando está seleccionada
     #pintarCelda(celda)
     {
         celda.classList.add("gamehighlighttd");
     }
 
+    //Pintar una fila cuando está seleccionada
     #pintarFila(celda) {
         
         const fila = this.#obtenerFila(celda);
@@ -396,8 +410,6 @@ class Sudoku {
             }
         }  
 
-        console.log(numero + " " + esCorrecto);
-
         return esCorrecto;
     }
 }
@@ -409,10 +421,23 @@ let celdaUltimoFoco = -1;
 let probabilidad = document.getElementById("dificultad").value;
 miSudoku.muestra(probabilidad);
 
+/* Genera un nuevo sudoku y se muestra dependiendo de la probabilidad */
 function nuevoSudoku(evento) {
+    document.getElementById("comprobar").removeAttribute("disabled");
     let probabilidad = document.getElementById("dificultad").value;
     evento.preventDefault();
     miSudoku.nuevo();
+    miSudoku.muestra(probabilidad);
+    miSudoku.despintar(celdaUltimoFoco);
+
+    document.getElementById("numeros").style.visibility = "hidden";
+}
+
+/* Muestra otros numeros del mismo sudoku con la probabilidad indicada (no genera uno nuevo) */
+function otraPartida(evento) {
+    document.getElementById("comprobar").removeAttribute("disabled");
+    let probabilidad = document.getElementById("dificultad").value;
+    evento.preventDefault();
     miSudoku.muestra(probabilidad);
     miSudoku.despintar(celdaUltimoFoco);
 
@@ -464,8 +489,6 @@ function clickEnTabla(evento) {
         document.getElementById("numeros").style.visibility = "visible";
 
         const filaNumeros = document.getElementsByClassName("digito");
-
-        console.log(filaNumeros);
         
         for (const iterator of filaNumeros) {
             
@@ -491,8 +514,6 @@ function clickEnTabla(evento) {
 
 function clickEnNumeros(evento)
 {
-    console.log(evento.target.id);
-
     if (evento.target.id < 0 || evento.target.id > 9)
         return;
 
@@ -569,8 +590,17 @@ function comprobarSudoku(evento)
     miSudoku.estaResuelto();
 }
 
+function rendirse(evento)
+{
+    evento.preventDefault();
+    miSudoku.muestra(1);
+    document.getElementById("comprobar").setAttribute("disabled","disabled");
+}
+
 document.getElementById('nuevoSudoku').addEventListener('click', nuevoSudoku);
 document.getElementById('comprobar').addEventListener('click', comprobarSudoku);
+document.getElementById('meRindo').addEventListener('click', rendirse);
+document.getElementById('otraPartida').addEventListener('click', otraPartida);
 
 document.getElementById('playtable').addEventListener('keyup', cambiarCasillaSeleccionada);
 document.getElementById('playtable').addEventListener('click', clickEnTabla);
