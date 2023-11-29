@@ -334,6 +334,7 @@ class Sudoku {
         }
     }
 
+    //Pintar una columna cuando está seleccionada
     #pintarColumna(celda) {
         const columna = this.#obtenerColumna(celda);
 
@@ -345,6 +346,7 @@ class Sudoku {
         }
     }
 
+    //Pintar un mini sudoku cuando está seleccionada
     #pintarMiniSudoku (celda) {
         let coleccion = this.#obtenerMiniSudoku(celda);
 
@@ -354,6 +356,7 @@ class Sudoku {
         };
     }
 
+    //Despintar (columna, fila, minisudoku, celda) cuando ya no estén seleccionadas
     despintar(idCeldaUltimoFoco) {
         
         if(idCeldaUltimoFoco != -1)
@@ -367,6 +370,7 @@ class Sudoku {
         }
     }
 
+    //Pinta (columna, fila, minisudoku, celda) cuando estén seleccionadas
     pintar(idCelda) {       
         const elemento = document.getElementById(idCelda);
         this.#pintarCelda(elemento);
@@ -375,11 +379,13 @@ class Sudoku {
         this.#pintarMiniSudoku(elemento);
     }
 
-    cambiarNumero (elemento, numero)
+    //Modifica el número de una celda que se le pase
+    cambiarNumero (celda, numero)
     {
-        elemento.innerHTML = numero;
+        celda.innerHTML = numero;
     }
 
+    //Comprueba si el número que se le pase se puede colocar en la celda que se le pase
     comprobarNumeroPosible(celda, numero)
     {
         const fila = this.#obtenerFila(celda);
@@ -408,9 +414,24 @@ class Sudoku {
             {
                 esCorrecto = false;
             }
-        }  
+        } 
+        
+        console.log(esCorrecto);
+        console.log("-------------------------");
+        esCorrecto = (numero == " ") ? true : esCorrecto;
+        console.log(esCorrecto);
+        console.log("..........................");
+
+        console.log(numero);
 
         return esCorrecto;
+    }
+
+    
+    comprobarSudoku(evento)
+    {
+        evento.preventDefault();
+        miSudoku.estaResuelto();
     }
 }
 
@@ -433,7 +454,7 @@ function nuevoSudoku(evento) {
     document.getElementById("numeros").style.visibility = "hidden";
 }
 
-/* Muestra otros numeros del mismo sudoku con la probabilidad indicada (no genera uno nuevo) */
+//Muestra otros numeros del mismo sudoku con la probabilidad indicada (no genera uno nuevo)
 function otraPartida(evento) {
     document.getElementById("comprobar").removeAttribute("disabled");
     let probabilidad = document.getElementById("dificultad").value;
@@ -444,11 +465,7 @@ function otraPartida(evento) {
     document.getElementById("numeros").style.visibility = "hidden";
 }
 
-
-// class "minisudokuSelected"
-// class "filaSelected"
-// class "columnaSelected"
-
+//Si hacemos clic fuera de la tabla, despinta la celda que estaba seleccionada y esconde la tabla de numeros
 function clickFueraTabla(evento) {
     if (evento.target.id.charAt(0) != 't' || evento.target.id.charAt(1) != 'd')
     {
@@ -463,6 +480,8 @@ function clickFueraTabla(evento) {
     }
 }
 
+/* Si hacemos clic dentro de la tabla, despinta la celda que estaba seleccionada, 
+   pinta la celda en la que se hace clic y muestra los números posibles para esa celda */
 function clickEnTabla(evento) {
     if (evento.target.id.charAt(0) != 't' || evento.target.id.charAt(1) != 'd')
         return;
@@ -486,23 +505,7 @@ function clickEnTabla(evento) {
 
     if(!evento.target.classList.contains("noModify"))
     {
-        document.getElementById("numeros").style.visibility = "visible";
-
-        const filaNumeros = document.getElementsByClassName("digito");
-        
-        for (const iterator of filaNumeros) {
-            
-            if(miSudoku.comprobarNumeroPosible(evento.target, iterator.innerHTML))
-            {
-                iterator.classList.add("visible");
-            }
-            else
-            {
-                iterator.classList.add("hidden");
-            }
-        }
-
-
+        mostrarTablaNumeros(evento);        
     }
     else
     {
@@ -512,6 +515,26 @@ function clickEnTabla(evento) {
     celdaUltimoFoco = evento.target.id;
 }
 
+function mostrarTablaNumeros(evento)
+{
+    document.getElementById("numeros").style.visibility = "visible";
+
+    const filaNumeros = document.getElementsByClassName("digito");
+    
+    for (const iterator of filaNumeros) {
+        
+        if(miSudoku.comprobarNumeroPosible(evento.target, iterator.innerHTML))
+        {
+            iterator.classList.add("visible");
+        }
+        else
+        {
+            iterator.classList.add("hidden");
+        }
+    }
+}
+
+// Coloca el número en el que se ha hecho clic dentro de la celda seleccionada
 function clickEnNumeros(evento)
 {
     if (evento.target.id < 0 || evento.target.id > 9)
@@ -519,11 +542,12 @@ function clickEnNumeros(evento)
 
 
     let element = document.getElementsByClassName("gamehighlighttd")[0];
-    const numero = evento.target.id > 0 ? evento.target.id : " ";
+    const numero = evento.target.id > 0 ? evento.target.innerHTML : " ";
 
     miSudoku.cambiarNumero(element, numero);
 }
 
+// Obtiene el número correspondiente a la tecla pulsada
 function obtieneNumeroPulsado(evento)
 {
     let numero = undefined;
@@ -574,31 +598,26 @@ function obtieneNumeroPulsado(evento)
     return numero;
 }
 
-
+// Cambia el número de una celda seleccionada en el caso de que no tenga la clase "NoModify" o que la tecla pulsada no sea un número
 function cambiarCasillaSeleccionada(evento)
 {
     const numero = obtieneNumeroPulsado(evento);
-    if(numero != undefined && !evento.target.classList.contains("noModify"))
+    if(numero != undefined && !evento.target.classList.contains("noModify") && miSudoku.comprobarNumeroPosible(evento.target,numero))
     {
         miSudoku.cambiarNumero(document.getElementById(evento.target.id), numero);
     }
 }
 
-function comprobarSudoku(evento)
-{
-    evento.preventDefault();
-    miSudoku.estaResuelto();
-}
-
+// Muestra el sudoku resuelto y pone el valor "comprobar" a deshabilitado
 function rendirse(evento)
 {
-    evento.preventDefault();
     miSudoku.muestra(1);
     document.getElementById("comprobar").setAttribute("disabled","disabled");
 }
 
+// Asignamos los eventos correspondientes a los botones
 document.getElementById('nuevoSudoku').addEventListener('click', nuevoSudoku);
-document.getElementById('comprobar').addEventListener('click', comprobarSudoku);
+document.getElementById('comprobar').addEventListener('click', miSudoku.comprobarSudoku);
 document.getElementById('meRindo').addEventListener('click', rendirse);
 document.getElementById('otraPartida').addEventListener('click', otraPartida);
 
