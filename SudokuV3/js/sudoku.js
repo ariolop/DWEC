@@ -25,6 +25,7 @@ class Sudoku {
         this.nuevo(mezclas);
     }
 
+    //Intercambia las filas del sudoku original de forma aleatoria
     intercambiaFila(i = 10) {
         switch (i) {
             case 0:
@@ -60,6 +61,7 @@ class Sudoku {
         }
     }
 
+    //Intercambia las filas que se le indiquen
     cambiaFilas(a, b) {
         let indiceA = a*9;
         let indiceB = b*9;
@@ -71,6 +73,7 @@ class Sudoku {
         }
     }
 
+    //Intercambia las columnas del sudoku original de forma aleatoria
     intercambiaColumna(i = 10) {
         switch (i) {
             case 0:
@@ -106,6 +109,19 @@ class Sudoku {
         }
     }
 
+    //Intercambia las columnas que se le indiquen
+    cambiaColumnas(a, b) {
+        let indiceA = a;
+        let indiceB = b;
+
+        for (let i = 0; i < 9; i++, indiceA+=9, indiceB+=9) {
+            let backup = this.datos[indiceA];
+            this.datos[indiceA] = this.datos[indiceB];
+            this.datos[indiceB] = backup;
+        }   
+    }
+
+    //Intercambia las columnas que se le indiquen
     #obtenerColumna(celda){
         const id = +(celda.id.slice("2"));
         const fila = id%9;
@@ -119,6 +135,7 @@ class Sudoku {
         return columna;
     }
 
+    //Obtiene la fila donde se encuentra la celda
     #obtenerFila(celda){
         const id = +(celda.id.slice("2"));
         const columna = Math.floor(id / 9)*9;
@@ -129,11 +146,10 @@ class Sudoku {
             fila.push(document.getElementById("td" + i));
         }
 
-        console.log(fila);
-
         return fila;
     }
 
+    //Obtiene el Mini Sudoku donde se encuentra la celda
     #obtenerMiniSudoku(celda) {
         let data = celda.dataset.minisudoku;
         let coleccion = document.querySelectorAll("[data-minisudoku='"+data+"']");
@@ -144,17 +160,7 @@ class Sudoku {
         return coleccion;
     }
 
-    cambiaColumnas(a, b) {
-        let indiceA = a;
-        let indiceB = b;
-
-        for (let i = 0; i < 9; i++, indiceA+=9, indiceB+=9) {
-            let backup = this.datos[indiceA];
-            this.datos[indiceA] = this.datos[indiceB];
-            this.datos[indiceB] = backup;
-        }   
-    }
-
+    //Generar nuevo sudoku
     nuevo(mezclas = 10) {
 
         for (let i = 0; i < mezclas; i++) {
@@ -163,6 +169,7 @@ class Sudoku {
         }
     }
 
+    //Mostrar el sudoku generado según un porcentaje, es decir, la dificultad
     muestra(porcentaje=1) {
         for (let i = 0; i < 81; i++) {
             if(Math.random()<porcentaje)
@@ -179,6 +186,7 @@ class Sudoku {
         }
     }
 
+    //Comprobar si el sudoku está resuelto
     estaResuelto() {
         let sudokuCorrecto = true;
 
@@ -272,11 +280,13 @@ class Sudoku {
         }
     }
 
+    //Despintar una celda cuando ya no está seleccionada
     #despintarCelda(celdaUltimoFoco)
     {
         celdaUltimoFoco.classList.remove("gamehighlighttd");
     }
 
+    //Despintar una columna cuando ya no está seleccionada
     #despintarColumna(celdaUltimoFoco) {
         const columna = this.#obtenerColumna(celdaUltimoFoco);
 
@@ -286,6 +296,7 @@ class Sudoku {
 
     }
 
+    //Despintar una fila cuando ya no está seleccionada
     #despintarFila(celdaUltimoFoco) {
         const fila = this.#obtenerFila(celdaUltimoFoco);
 
@@ -294,6 +305,7 @@ class Sudoku {
         }
     }
 
+    //Despintar un mini sudoku cuando ya no está seleccionada
     #despintarMiniSudoku(celdaUltimoFoco) {
         let coleccion = this.#obtenerMiniSudoku(celdaUltimoFoco)
 
@@ -303,11 +315,13 @@ class Sudoku {
         }
     }
 
+    //Pintar una celda cuando está seleccionada
     #pintarCelda(celda)
     {
         celda.classList.add("gamehighlighttd");
     }
 
+    //Pintar una fila cuando está seleccionada
     #pintarFila(celda) {
         
         const fila = this.#obtenerFila(celda);
@@ -320,6 +334,7 @@ class Sudoku {
         }
     }
 
+    //Pintar una columna cuando está seleccionada
     #pintarColumna(celda) {
         const columna = this.#obtenerColumna(celda);
 
@@ -331,6 +346,7 @@ class Sudoku {
         }
     }
 
+    //Pintar un mini sudoku cuando está seleccionada
     #pintarMiniSudoku (celda) {
         let coleccion = this.#obtenerMiniSudoku(celda);
 
@@ -340,6 +356,7 @@ class Sudoku {
         };
     }
 
+    //Despintar (columna, fila, minisudoku, celda) cuando ya no estén seleccionadas
     despintar(idCeldaUltimoFoco) {
         
         if(idCeldaUltimoFoco != -1)
@@ -353,6 +370,7 @@ class Sudoku {
         }
     }
 
+    //Pinta (columna, fila, minisudoku, celda) cuando estén seleccionadas
     pintar(idCelda) {       
         const elemento = document.getElementById(idCelda);
         this.#pintarCelda(elemento);
@@ -361,11 +379,13 @@ class Sudoku {
         this.#pintarMiniSudoku(elemento);
     }
 
-    cambiarNumero (elemento, numero)
+    //Modifica el número de una celda que se le pase
+    cambiarNumero (celda, numero)
     {
-        elemento.innerHTML = numero;
+        celda.innerHTML = numero;
     }
 
+    //Comprueba si el número que se le pase se puede colocar en la celda que se le pase
     comprobarNumeroPosible(celda, numero)
     {
         const fila = this.#obtenerFila(celda);
@@ -394,11 +414,24 @@ class Sudoku {
             {
                 esCorrecto = false;
             }
-        }  
+        } 
+        
+        console.log(esCorrecto);
+        console.log("-------------------------");
+        esCorrecto = (numero == " ") ? true : esCorrecto;
+        console.log(esCorrecto);
+        console.log("..........................");
 
-        console.log(numero + " " + esCorrecto);
+        console.log(numero);
 
         return esCorrecto;
+    }
+
+    
+    comprobarSudoku(evento)
+    {
+        evento.preventDefault();
+        miSudoku.estaResuelto();
     }
 }
 
@@ -409,7 +442,9 @@ let celdaUltimoFoco = -1;
 let probabilidad = document.getElementById("dificultad").value;
 miSudoku.muestra(probabilidad);
 
+/* Genera un nuevo sudoku y se muestra dependiendo de la probabilidad */
 function nuevoSudoku(evento) {
+    document.getElementById("comprobar").removeAttribute("disabled");
     let probabilidad = document.getElementById("dificultad").value;
     evento.preventDefault();
     miSudoku.nuevo();
@@ -419,11 +454,18 @@ function nuevoSudoku(evento) {
     document.getElementById("numeros").style.visibility = "hidden";
 }
 
+//Muestra otros numeros del mismo sudoku con la probabilidad indicada (no genera uno nuevo)
+function otraPartida(evento) {
+    document.getElementById("comprobar").removeAttribute("disabled");
+    let probabilidad = document.getElementById("dificultad").value;
+    evento.preventDefault();
+    miSudoku.muestra(probabilidad);
+    miSudoku.despintar(celdaUltimoFoco);
 
-// class "minisudokuSelected"
-// class "filaSelected"
-// class "columnaSelected"
+    document.getElementById("numeros").style.visibility = "hidden";
+}
 
+//Si hacemos clic fuera de la tabla, despinta la celda que estaba seleccionada y esconde la tabla de numeros
 function clickFueraTabla(evento) {
     if (evento.target.id.charAt(0) != 't' || evento.target.id.charAt(1) != 'd')
     {
@@ -438,6 +480,8 @@ function clickFueraTabla(evento) {
     }
 }
 
+/* Si hacemos clic dentro de la tabla, despinta la celda que estaba seleccionada, 
+   pinta la celda en la que se hace clic y muestra los números posibles para esa celda */
 function clickEnTabla(evento) {
     if (evento.target.id.charAt(0) != 't' || evento.target.id.charAt(1) != 'd')
         return;
@@ -461,25 +505,7 @@ function clickEnTabla(evento) {
 
     if(!evento.target.classList.contains("noModify"))
     {
-        document.getElementById("numeros").style.visibility = "visible";
-
-        const filaNumeros = document.getElementsByClassName("digito");
-
-        console.log(filaNumeros);
-        
-        for (const iterator of filaNumeros) {
-            
-            if(miSudoku.comprobarNumeroPosible(evento.target, iterator.innerHTML))
-            {
-                iterator.classList.add("visible");
-            }
-            else
-            {
-                iterator.classList.add("hidden");
-            }
-        }
-
-
+        mostrarTablaNumeros(evento);        
     }
     else
     {
@@ -489,20 +515,39 @@ function clickEnTabla(evento) {
     celdaUltimoFoco = evento.target.id;
 }
 
+function mostrarTablaNumeros(evento)
+{
+    document.getElementById("numeros").style.visibility = "visible";
+
+    const filaNumeros = document.getElementsByClassName("digito");
+    
+    for (const iterator of filaNumeros) {
+        
+        if(miSudoku.comprobarNumeroPosible(evento.target, iterator.innerHTML))
+        {
+            iterator.classList.add("visible");
+        }
+        else
+        {
+            iterator.classList.add("hidden");
+        }
+    }
+}
+
+// Coloca el número en el que se ha hecho clic dentro de la celda seleccionada
 function clickEnNumeros(evento)
 {
-    console.log(evento.target.id);
-
     if (evento.target.id < 0 || evento.target.id > 9)
         return;
 
 
     let element = document.getElementsByClassName("gamehighlighttd")[0];
-    const numero = evento.target.id > 0 ? evento.target.id : " ";
+    const numero = evento.target.id > 0 ? evento.target.innerHTML : " ";
 
     miSudoku.cambiarNumero(element, numero);
 }
 
+// Obtiene el número correspondiente a la tecla pulsada
 function obtieneNumeroPulsado(evento)
 {
     let numero = undefined;
@@ -553,24 +598,28 @@ function obtieneNumeroPulsado(evento)
     return numero;
 }
 
-
+// Cambia el número de una celda seleccionada en el caso de que no tenga la clase "NoModify" o que la tecla pulsada no sea un número
 function cambiarCasillaSeleccionada(evento)
 {
     const numero = obtieneNumeroPulsado(evento);
-    if(numero != undefined && !evento.target.classList.contains("noModify"))
+    if(numero != undefined && !evento.target.classList.contains("noModify") && miSudoku.comprobarNumeroPosible(evento.target,numero))
     {
         miSudoku.cambiarNumero(document.getElementById(evento.target.id), numero);
     }
 }
 
-function comprobarSudoku(evento)
+// Muestra el sudoku resuelto y pone el valor "comprobar" a deshabilitado
+function rendirse(evento)
 {
-    evento.preventDefault();
-    miSudoku.estaResuelto();
+    miSudoku.muestra(1);
+    document.getElementById("comprobar").setAttribute("disabled","disabled");
 }
 
+// Asignamos los eventos correspondientes a los botones
 document.getElementById('nuevoSudoku').addEventListener('click', nuevoSudoku);
-document.getElementById('comprobar').addEventListener('click', comprobarSudoku);
+document.getElementById('comprobar').addEventListener('click', miSudoku.comprobarSudoku);
+document.getElementById('meRindo').addEventListener('click', rendirse);
+document.getElementById('otraPartida').addEventListener('click', otraPartida);
 
 document.getElementById('playtable').addEventListener('keyup', cambiarCasillaSeleccionada);
 document.getElementById('playtable').addEventListener('click', clickEnTabla);
