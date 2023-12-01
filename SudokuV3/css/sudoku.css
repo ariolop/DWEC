@@ -23,15 +23,12 @@
     display: none;
 }
 
-
-.numeros td, .numeros tr{
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding: 10px;
-}
-
 .noModify{
     color: red;
+}
+
+.alturaNumeros{
+    height: 60px;
 }
 
 
