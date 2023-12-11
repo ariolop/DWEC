@@ -11,25 +11,31 @@
 </head>
 
 <body>
-    <div class="topgridmsg hidden-xs" id="topgridmsg">¡Buena suerte!</div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-5 p-1 text-center topgridmsg hidden-xs" id="topgridmsg">¡Buena suerte!</div>
+        </div>
+    </div>
     
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-2 justify-content-center">
-                <button id="nuevoSudoku">Haz un sudoku nuevo</button>
-                <div class="">
-                    <select name="dificultad" id="dificultad">
-                        <option value="1">Resuelto</option>
-                        <option value="0.65">Nivel fácil</option>
-                        <option value="0.50" selected>Nivel medio</option>
-                        <option value="0.25">Nivel difícil</option>
-                    </select>
+        <div class="row mt-3">
+            <div class="col-3 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="my-0 fs-6">Selecciona la dificultad:</p>
+                    <div class="my-2">
+                        <select name="dificultad" id="dificultad">
+                            <option value="1">Resuelto</option>
+                            <option value="0.65">Nivel fácil</option>
+                            <option value="0.50" selected>Nivel medio</option>
+                            <option value="0.25">Nivel difícil</option>
+                        </select>
+                    </div>
+                    <button class="rounded-4 border border-2 border-dark btn-blue fs-6" id="nuevoSudoku">Haz un sudoku nuevo</button>
                 </div>
             </div>
-            <div id="playarea" dir="ltr" class="col-10 nouserselect">
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-10 p-0">
+            <div id="playarea" dir="ltr" class="col-6 nouserselect">
+                <div class="row justify-content-center">
+                    <div class="col-7 p-0">
                         <table class="mx-0" dir="ltr" id="playtable" cellspacing="0" cellpadding="0" border="0" align="center">
                             <colgroup>
                                 <col class="sudokucell45">
@@ -147,25 +153,26 @@
                     </div>
                 </div>
             </div>
+            <div class="col-3"></div>
         </div>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-4">
         <div class="row alturaNumeros">
             <div class="col-3"></div>
             <div class="col-6 numeros" id="numeros">
                 <table id="tableNumbers">
                     <tr id="filaNumeros">
-                        <td id="1" class="border border-dark p-2 digito">1</td>
-                        <td id="2" class="border border-dark p-2 digito">2</td>
-                        <td id="3" class="border border-dark p-2 digito">3</td>
-                        <td id="4" class="border border-dark p-2 digito">4</td>
-                        <td id="5" class="border border-dark p-2 digito">5</td>
-                        <td id="6" class="border border-dark p-2 digito">6</td>
-                        <td id="7" class="border border-dark p-2 digito">7</td>
-                        <td id="8" class="border border-dark p-2 digito">8</td>
-                        <td id="9" class="border border-dark p-2 digito">9</td>
-                        <td id="0" class="border border-dark p-2 visible"><span class="bi bi-trash"></span></td>
+                        <td id="1" class="p-2 digito hidden">1</td>
+                        <td id="2" class="p-2 digito hidden">2</td>
+                        <td id="3" class="p-2 digito hidden">3</td>
+                        <td id="4" class="p-2 digito hidden">4</td>
+                        <td id="5" class="p-2 digito hidden">5</td>
+                        <td id="6" class="p-2 digito hidden">6</td>
+                        <td id="7" class="p-2 digito hidden">7</td>
+                        <td id="8" class="p-2 digito hidden">8</td>
+                        <td id="9" class="p-2 digito hidden">9</td>
+                        <td id="0" class="p-2 digito"><span class="bi bi-trash"></span></td>
                     </tr>
                 </table>
             </div>
@@ -179,10 +186,10 @@
             <div class="col-4 justify-content-center">
                 <div class="row justify-content-evenly">
                     <div class="col-5">
-                        <button class="w-100" id="meRindo">Me rindo</button>
+                        <button class="w-100 rounded-4 border border-2 border-dark btn-blue fs-6" id="meRindo">Me rindo</button>
                     </div>
                     <div class="col-5">
-                        <button class="w-100" id="comprobar">Comprobar</button>
+                        <button class="w-100 rounded-4 border border-2 border-dark btn-blue fs-6" id="comprobar">Comprobar</button>
                     </div>
                 </div>
             </div>
@@ -195,7 +202,7 @@
             <div class="col-4"></div>
             <div class="col-4">
                 <div class="row justify-content-center">
-                    <button class="col-6" id="otraPartida">Otra partida</button>
+                    <button class="col-6 rounded-4 border border-2 border-dark btn-blue fs-6" id="otraPartida">Otra partida</button>
                 </div>
             </div>
             <div class="col-4"></div>

@@ -451,6 +451,14 @@ function nuevoSudoku(evento) {
     miSudoku.muestra(probabilidad);
     miSudoku.despintar(celdaUltimoFoco);
 
+    const filaNumeros = document.getElementsByClassName("digito");
+        
+    for (const iterator of filaNumeros) 
+    {
+        iterator.classList.remove("hidden");
+        iterator.classList.remove("visible");
+    }
+
     document.getElementById("numeros").style.visibility = "hidden";
 }
 
@@ -461,6 +469,14 @@ function otraPartida(evento) {
     evento.preventDefault();
     miSudoku.muestra(probabilidad);
     miSudoku.despintar(celdaUltimoFoco);
+
+    const filaNumeros = document.getElementsByClassName("digito");
+        
+    for (const iterator of filaNumeros) 
+    {
+        iterator.classList.remove("hidden");
+        iterator.classList.remove("visible");
+    }
 
     document.getElementById("numeros").style.visibility = "hidden";
 }
@@ -491,13 +507,14 @@ function clickEnTabla(evento) {
     console.log("último foco en " + celdaUltimoFoco);
     if (celdaUltimoFoco != -1) {
         miSudoku.despintar(celdaUltimoFoco);
-        const filaNumeros = document.getElementsByClassName("digito");
+    }
+
+    const filaNumeros = document.getElementsByClassName("digito");
         
-        for (const iterator of filaNumeros) 
-        {
-            iterator.classList.remove("hidden");
-            iterator.classList.remove("visible");
-        }
+    for (const iterator of filaNumeros) 
+    {
+        iterator.classList.remove("hidden");
+        iterator.classList.remove("visible");
     }
 
 
@@ -523,7 +540,7 @@ function mostrarTablaNumeros(evento)
     
     for (const iterator of filaNumeros) {
         
-        if(miSudoku.comprobarNumeroPosible(evento.target, iterator.innerHTML))
+        if(miSudoku.comprobarNumeroPosible(evento.target, iterator.id))
         {
             iterator.classList.add("visible");
         }
@@ -613,6 +630,14 @@ function rendirse(evento)
 {
     miSudoku.muestra(1);
     document.getElementById("comprobar").setAttribute("disabled","disabled");
+
+    const filaNumeros = document.getElementsByClassName("digito");
+        
+    for (const iterator of filaNumeros) 
+    {
+        iterator.classList.add("hidden");
+        iterator.classList.remove("visible");
+    }
 }
 
 // Asignamos los eventos correspondientes a los botones

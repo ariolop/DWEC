@@ -1,5 +1,9 @@
 /* Clases extras */
 
+#playtable {
+    border: 2px solid blue;
+}
+
 .filaSelected, .minisudokuSelected, .columnaSelected{
     background-color: rgb(252, 252, 199);
 }
@@ -13,6 +17,11 @@
 
 #tableNumbers{
     cursor: pointer;
+}
+
+#tableNumbers td{
+    background-color: white;
+    border: 1px solid blue;
 }
 
 .visible{
@@ -72,6 +81,7 @@ h1 {
     vertical-align: middle;
     cursor: pointer;
     border: 1px solid blue;
+    background-color: white;
 }
 
 .cellnormal:focus {
@@ -1448,7 +1458,6 @@ body {
     padding: 0;
     position: relative;
     top: 0;
-    background-color: #fff;
     font-family: sans-serif;
     font-style: normal;
     font-size: 16px;
@@ -1606,7 +1615,7 @@ body {
     line-height: 1.42857143;
     width: 100%;
     height: 100%!important;
-    background-color: #fff
+    background-color: rgb(176, 208, 238);
 }
 
 html {
@@ -1931,6 +1940,10 @@ a:hover {
     border: 1px solid #365899
 }
 
+.btn-blue:disabled {
+    background: #7c889e;
+}
+
 .btn-sky {
     background: #1b95e0;
     border: 1px solid #1b95e0;
@@ -2134,43 +2147,10 @@ h4 {
     background: #e2e2e2
 }
 
-#data .gray-box {
-    background: #f0f0f0;
-    border-radius: 3px;
-    margin-bottom: 3px;
-    padding: 5px 10px 5px 20px
-}
-
-#data .table thead {
-    margin-top: 4px
-}
-
-#data .table tbody td {
-    padding-left: 15px
-}
-
-#data .table {
-    background: #f0f0f0;
-    font-size: 16px;
-    margin-bottom: 4px
-}
-
 .bg-gry .win {
     padding: 10px 10px;
     font-size: 16px;
     height: 42px
-}
-
-.table>tbody>tr>td,
-.table>tbody>tr>th,
-.table>tfoot>tr>td,
-.table>tfoot>tr>th,
-.table>thead>tr>td,
-.table>thead>tr>th {
-    padding: 8px;
-    line-height: 1.42857143;
-    vertical-align: top;
-    border-top: 4px solid #fff
 }
 
 #quote {
@@ -2336,25 +2316,6 @@ h4 {
     height: 17px;
     cursor: pointer;
     padding-bottom: 2px
-}
-
-.helpimg {
-    max-width: 453px;
-    height: auto;
-    width: 100%;
-    border: 0
-}
-
-.helpimg2 {
-    max-width: 394px;
-    height: auto;
-    width: 100%;
-    border: 0
-}
-
-.helpslidetable {
-    border: 0;
-    width: 760px
 }
 
 .helpslidelefttd {
@@ -2564,46 +2525,6 @@ a.toplink:hover {
     direction: ltr
 }
 
-.paginationstyle {
-    font-size: 15px
-}
-
-.paginationstyle a {
-    text-decoration: none;
-    color: #666
-}
-
-.paginationstyle a.selected,
-.paginationstyle a:hover {
-    color: #000
-}
-
-.paginationstyle a.disabled,
-.paginationstyle a.disabled:hover {
-    color: #ccc;
-    cursor: default
-}
-
-.paginationstyle a.imglinks {
-    border: 0;
-    padding: 0
-}
-
-.paginationstyle a.imglinks img {
-    vertical-align: bottom;
-    border: 0
-}
-
-.paginationstyle a.imglinks a:hover {
-    background: 0 0
-}
-
-.paginationstyle .flatview a.selected,
-.paginationstyle .flatview a:hover {
-    color: #000;
-    background-color: #ff0
-}
-
 a.indexplaysinglelink:link {
     color: #666;
     font-weight: 400;
@@ -2713,17 +2634,6 @@ a.indexplaysinglelink:hover {
     width: 50%;
     text-align: center;
     margin: 0 auto 0 auto
-}
-
-.sudoku-fieldset {
-    display: block;
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-top: .35em;
-    padding-bottom: .625em;
-    padding-left: .75em;
-    padding-right: .75em;
-    border: 2px groove (internal value)
 }
 
 @media screen and (max-width: 430px) {
