@@ -339,7 +339,7 @@ class Sudoku {
         const columna = this.#obtenerColumna(celda);
 
         for (let i = 0; i < columna.length; i++) {
-            if(columna[i] != 123123)
+            if(columna[i] != celda.id)
             {
                 columna[i].classList.add("columnaSelected");
             }         
