@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego palabras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div>
+            <p class="parrafo">Tienes</p> <span id="tiempo">10</span> <p class="parrafo"> segundos</p><br>
+            <p class="parrafo">La letra a usar es: </p><span id="letra"></span>
+        </div>
+
+        <div>
+            <button id="empezarPartida">Empezar</button>
+            <button id="nuevaPartida">Nueva letra</button>
+        </div>
+
+        <div class="formulario">
+            <form action="" id="form">
+                <input id="introducirPalabras" type="text" placeholder="Escribe aquí las palabras" disabled="true">
+                <button id="enviarPalabra" type="submit" disabled="true">Enviar</button>
+            </form>
+        </div>
+
+        <div class="resultado">
+            <p class="parrafo"><strong>Has escrito</strong> </p><span id="cantPalabras">&nbsp;</span><p class="parrafo"> <strong>palabras</strong></p><br>
+            <p class="parrafo"><strong>La lista de palabras es:</strong> </p><span id="listaPalabras"></span>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
