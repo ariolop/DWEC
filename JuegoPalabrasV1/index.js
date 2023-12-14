@@ -1,3 +1,5 @@
+"use strict"
+
 /* Objecto "tiempo" */
 let tiempo = {
 

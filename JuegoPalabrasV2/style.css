@@ -1,31 +1,26 @@
 .container{
-    margin: 50px auto;
-    display: flex;
-    align-items: center;
-    flex-flow: column;
-    height: 400px;
-    width: 400px;
-    background-color: lightgoldenrodyellow;
-    padding: 10px;
+    background-color: lightblue;
 }
-
-.container div{
-    margin-bottom: 20px;
-} 
 
 .resultado{
     display: none;
-    text-align: center;
-    background-color: lightblue;
-    height: 300px;
-    width: 100%;
-    padding-top: 20px;
-}
-
-.parrafo{
-    display: inline;
 }
 
 #cantPalabras, #listaPalabras{
     color: red;
+}
+
+.alert{
+    height: 20px;
+    padding: 0px;
+    font-size: 12px;
+
+}
+
+#alertaCorrecta{
+    display: none;
+}
+
+#alertaIncorrecta{
+    display: none;
 }
