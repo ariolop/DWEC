@@ -86,7 +86,7 @@ function generarLetra()
 
     document.getElementById("letra").innerHTML = letraAleatoria;
 
-    puntosPorPalabra = puntosPorLetraInicial();
+    puntosPorPalabra = puntosPorLetraInicial(letraAleatoria);
 
     return letraAleatoria;
 }
@@ -94,15 +94,15 @@ function generarLetra()
 /* Dependiendo de la letra, la palabra introducida tendrá unos puntos u otros */
 function puntosPorLetraInicial(letra) {
     switch (letra) {
-        case 'A', 'C', 'D', 'E':
+        case "a": case "c": case "d": case "e":
             return 1;
-        case 'M', 'P', 'R', 'S', 'T':
+        case "m": case "p": case "r": case "s": case "t":
             return 2;
-        case 'B', 'F', 'G', 'H', 'I', 'V':
+        case "b": case "f": case "g": case "h": case "i": case "v":
             return 3;
-        case 'J', 'L', 'N', 'O', 'Z':
+        case "j": case "l": case "n": case "o": case "z":
             return 4;
-        case 'K', 'Ñ', 'Q', 'U', 'W', 'X', 'Y':
+        case "k": case "ñ": case "q": case "u": case "w": case "x": case "y":
             return 5;
     }
 }
@@ -196,18 +196,30 @@ function validarPalabra(palabra)
 /* Calcular puntos de la palabra */
 function calcularPuntos(palabra) {
     puntos += puntosPorPalabra;
+    console.log(puntos)
 
-    puntos += (palabra.length < 18) ?  puntosPorLongitudPalabra.get(palabra.length) : 5;
+    puntos += (palabra.length < 18) ? puntosPorLongitudPalabra.get(palabra.length) : 5;
+    console.log(puntos)
 
     puntos += puntosAdicionales(palabra);
+    console.log(puntos)
+
 }
 
 /* Calcular puntos adicionales */
 function puntosAdicionales(palabra)
 {
-    const puntosAdicionales = 0;
+    let puntosAdicionales = 0;
+    const letrasAdicionales = ['k', 'ñ', 'q', 'w', 'x', 'y'];
 
-    
+    for (let i = 0; i < palabra.length; i++) {
+        if(letrasAdicionales.includes(palabra.at(i)))
+        {
+            puntosAdicionales++;
+        }
+    }
+
+    console.log(puntosAdicionales)
 
     return puntosAdicionales;
 }
