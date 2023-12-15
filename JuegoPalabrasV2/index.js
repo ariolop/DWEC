@@ -246,12 +246,19 @@ function obtenerNombreUsuario(event) {
     event.preventDefault();
 
     nombreUsuario = document.getElementById("introducirNombre").value;
+    document.getElementById("textoUsuario").innerHTML = nombreUsuario;
 
     document.getElementById("contenedorJuego").classList.remove("d-none");
     document.getElementById("contenedorJuego").classList.add("d-block");
 
     document.getElementById("contenedorBienvenido").classList.add("d-none");
     document.getElementById("contenedorBienvenido").classList.remove("d-block");
+
+    document.getElementById("contenedorPuntuacion").classList.remove("d-none");
+    document.getElementById("contenedorPuntuacion").classList.add("d-block");
+
+
+    
 
     puntosUsuario = localStorage.getItem(nombreUsuario) ?? [];
 
@@ -262,8 +269,23 @@ function obtenerNombreUsuario(event) {
     }
 }
 
+/* Cierra la "sesion" del usuario, es decir, vuelve al menú para volver a introducir el nombre */
+function cerrarSesion(event) {
+    document.getElementById("contenedorJuego").classList.remove("d-block");
+    document.getElementById("contenedorJuego").classList.add("d-none");
+
+    document.getElementById("contenedorBienvenido").classList.add("d-block");
+    document.getElementById("contenedorBienvenido").classList.remove("d-none");
+
+    document.getElementById("contenedorPuntuacion").classList.remove("d-block");
+    document.getElementById("contenedorPuntuacion").classList.add("d-none");
+
+    document.getElementById("introducirNombre").value = "";
+}
+
 /* Agregar eventos */
 document.getElementById("empezarPartida").addEventListener("click", empezarPartida);
 document.getElementById("formIntroducirPalabra").addEventListener("submit", palabraIntroducida);
 document.getElementById("nuevaPartida").addEventListener("click", () => {letraAleatoria = generarLetra()});
 document.getElementById("formObtenerNombre").addEventListener("submit", obtenerNombreUsuario);
+document.getElementById("cerrarSesion").addEventListener("click", cerrarSesion);

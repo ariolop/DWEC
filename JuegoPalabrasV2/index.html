@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,15 @@
     <!-- Contenedor del juego  -->
     <div class="container mt-5 p-4 d-none" id="contenedorJuego">
         <div class="row">
+            <div class="col-12 ">
+                <button type="button" id="cerrarSesion" class="btn btn-primary btn-sm">Cerrar sesión</button>
+                
+                <div class="p-1 d-inline bg-warning">
+                    <p class="d-inline">Usuario: </p><span id="textoUsuario"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-12 text-center">
                 <p class="d-inline">Tienes</p> <span id="tiempo">10</span> <p class="d-inline"> segundos</p>
             </div>
@@ -21,10 +30,10 @@
         </div>
 
         <div class="row mt-2 justify-content-center">
-            <div class="col-2 text-center">
+            <div class="col-3 text-center">
                 <button class="w-75" id="empezarPartida">Empezar</button>
             </div>
-            <div class="col-2 text-center">
+            <div class="col-3 text-center">
                 <button class="w-75" id="nuevaPartida">Nueva letra</button>
             </div>
         </div>
@@ -76,6 +85,18 @@
                     <input id="introducirNombre" class="form-text" name="nombreUsuario" type="text" placeholder="Introduce tu nombre" required>
                     <button type="submit">Jugar</button>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor dónde se muestra la puntuación del usuario y las partidas jugadas -->
+    <div class="container mt-4 p-5 d-none" id="contenedorPuntuacion">
+        <div class="row justify-content-center">
+            <div class="col-5 text-center">
+                <p>La puntuación promedio es: </p><span id="puntosPromedio"></span>
+            </div>
+            <div class="col-5 text-center">
+                <p>Partidas jugadas: </p><span id="partidasJugadas"></span>
             </div>
         </div>
     </div>
