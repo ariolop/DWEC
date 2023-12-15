@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div class="container mt-5 p-4">
+    <!-- Contenedor del juego  -->
+    <div class="container mt-5 p-4 d-none" id="contenedorJuego">
         <div class="row">
             <div class="col-12 text-center">
                 <p class="d-inline">Tienes</p> <span id="tiempo">10</span> <p class="d-inline"> segundos</p>
@@ -31,7 +31,7 @@
 
         <div class="row mt-4 formulario justify-content-center">
             <div class="col-7 text-center">
-                <form action="" id="form">
+                <form action="" id="formIntroducirPalabra">
                     <input id="introducirPalabras" type="text" placeholder="Escribe aquí las palabras" disabled="true">
                     <button id="enviarPalabra" type="submit" disabled="true">Enviar</button>
                 </form>
@@ -61,7 +61,22 @@
                 <p class="d-inline"><strong>Puntos: </strong></p>
                 <span id="totalPuntos"></span>
             </div>
+        </div>
+    </div>
 
+    <!-- Contenedor del formulario para introducir nombre -->
+    <div class="container mt-5 p-4 d-block" id="contenedorBienvenido">
+        <div class="row justify-content-center">
+            <div class="col-7 text-center mb-3">
+                <h2>Bienvenido al juego de las palabras</h2>
+            </div>
+            <div class="col-7 text-center">
+                <form action="" id="formObtenerNombre">
+                    <label for="nombreUsuario">Nombre de usuario</label><br>
+                    <input id="introducirNombre" class="form-text" name="nombreUsuario" type="text" placeholder="Introduce tu nombre" required>
+                    <button type="submit">Jugar</button>
+                </form>
+            </div>
         </div>
     </div>
 

@@ -1,9 +1,6 @@
 /* Importamos el diccionario */
 import {diccionario} from "https://cdn.jsdelivr.net/gh/fran-dawbaza/spanish-dictionary/diccionario.js";
 
-/* Constantes de ERROR */
-const ERROR_ININIO_LETRA = 101;
-
 /* Elimina los diacríticos de un texto excepto si es una "ñ" (ES6) */
 function eliminarDiacriticosEs(texto) {
     return texto
@@ -15,6 +12,30 @@ function eliminarDiacriticosEs(texto) {
 const diccionarioSinTildes = diccionario.map(eliminarDiacriticosEs);
 
 const diccionarioSet = new Set(diccionarioSinTildes);
+
+/* Array con las palabras introducidas*/
+const listaPalabras = [];
+
+/* Variables utilizadas para guardar los puntos totales y los puntos por palabra correcta */
+let puntos = 0;
+let puntosPorPalabra = 0;
+
+/* Funciones que se ejecutan cuando carga la página (primera letra aleatoria) */
+const letras = ['a','b','c','d','e','f','g','h','i','j','k','l', 'ñ','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+let letraAleatoria = generarLetra();
+
+/* Mapa con [longitud,puntos] para saber los puntos correspondientes por longitud de la palabra */
+const puntosPorLongitudPalabra = new Map([
+    [8,1],      [6,2],      [5,3],      [4,4],      [1,5],
+    [9,1],      [7,2],      [15,3],     [16,4],     [2,5],
+    [10,1],     [13,2],                 [17,4],     [3,5],
+    [11,1],     [14,2],                             [18,5],
+    [12,1]
+]);
+
+/* Variable con el nombre del usuarop para guardarlo en caché */
+let nombreUsuario = "";
+let puntosUsuario = undefined;
 
 
 /* Objecto "tiempo" */
@@ -42,6 +63,14 @@ let tiempo = {
         document.getElementById("alertaIncorrecta").style.display = "none";
 
         document.getElementById("totalPuntos").innerHTML = puntos;
+
+        console.log(puntosUsuario);
+
+        puntosUsuario.push(puntos);
+
+        console.log(puntosUsuario);
+
+        localStorage.setItem(nombreUsuario,puntosUsuario);
     },
 
     reiniciarCronometro: function()
@@ -72,7 +101,6 @@ let tiempo = {
 };
 
 /* Generar letra aleatoria */
-const letras = ['a','b','c','d','e','f','g','h','i','j','k','l', 'ñ','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 function generarLetra()
 {
@@ -91,7 +119,7 @@ function generarLetra()
     return letraAleatoria;
 }
 
-/* Dependiendo de la letra, la palabra introducida tendrá unos puntos u otros */
+/* Dependiendo de la letra, la palabra introducida que sea correcta, tendrá unos puntos u otros */
 function puntosPorLetraInicial(letra) {
     switch (letra) {
         case "a": case "c": case "d": case "e":
@@ -107,18 +135,6 @@ function puntosPorLetraInicial(letra) {
     }
 }
 
-/* Array con las palabras introducidas */
-const listaPalabras = [];
-let puntos = 0;
-let puntosPorPalabra = 0;
-const puntosPorLongitudPalabra = new Map([
-    [8,1],      [6,2],      [5,3],      [4,4],      [1,5],
-    [9,1],      [7,2],      [15,3],     [16,4],     [2,5],
-    [10,1],     [13,2],                 [17,4],     [3,5],
-    [11,1],     [14,2],                             [18,5],
-    [12,1]
-]);
-
 /* Empezar partida */
 function empezarPartida(event) {
     document.getElementById("introducirPalabras").disabled = false;
@@ -126,13 +142,14 @@ function empezarPartida(event) {
     document.getElementById("nuevaPartida").disabled = true;
     document.getElementById("empezarPartida").disabled = true;
     listaPalabras.splice(0,listaPalabras.length);
+    puntos = 0;
 
     tiempo.iniciarCronometro(9, 0);
     document.getElementById("introducirPalabras").focus();
     document.getElementsByClassName("resultado").item(0).style.display = "none";
 }
 
-/* Si introduce una palabra correcta, reiniciamos tiempo y mostramos mensaje "correcto"; sino solo mostramos mensaje "incorrecto" */
+/* Si introduce una palabra correcta, reiniciamos tiempo y mostramos mensaje "correcto"; sino solo mostramos mensaje incorrecto personalizado */
 function palabraIntroducida(event)
 {
     event.preventDefault();
@@ -140,13 +157,16 @@ function palabraIntroducida(event)
     document.getElementById("alertaCorrecta").style.display = "none";
     document.getElementById("alertaIncorrecta").style.display = "none";
 
-    const palabra = String(document.getElementById("introducirPalabras").value).toLowerCase();
+    //Eliminamos diacríticos y ponemos la palabra en minúscula para que esté igual que en el diccionario.
+    //PROBLEMA --> Riñón y Riñon son palabras diferentes pero acepta las dos (ya que guarda "riñón" y no "riñon")
+    const palabraOriginal = document.getElementById("introducirPalabras").value;
+    const palabraModificada = eliminarDiacriticosEs(palabraOriginal.toLowerCase());
 
-    if(validarPalabra(palabra))
+    if(validarPalabra(palabraModificada))
     {
         tiempo.reiniciarCronometro();
-        listaPalabras.push(palabra);
-        calcularPuntos(palabra);
+        listaPalabras.push(palabraOriginal);
+        calcularPuntos(palabraModificada);
     }
 
 
@@ -154,7 +174,7 @@ function palabraIntroducida(event)
     document.getElementById("introducirPalabras").focus();
 }
 
-/* ¿Es válida la palabra? */
+/* ¿Es válida la palabra? Muestra mensaje y Devuelve valor boolean */
 function validarPalabra(palabra)
 {
     let palabraCorrecta;
@@ -196,14 +216,13 @@ function validarPalabra(palabra)
 /* Calcular puntos de la palabra */
 function calcularPuntos(palabra) {
     puntos += puntosPorPalabra;
-    console.log(puntos)
+    console.log(puntos);
 
     puntos += (palabra.length < 18) ? puntosPorLongitudPalabra.get(palabra.length) : 5;
-    console.log(puntos)
+    console.log(puntos);
 
     puntos += puntosAdicionales(palabra);
-    console.log(puntos)
-
+    console.log(puntos);
 }
 
 /* Calcular puntos adicionales */
@@ -219,16 +238,32 @@ function puntosAdicionales(palabra)
         }
     }
 
-    console.log(puntosAdicionales)
-
     return puntosAdicionales;
 }
 
+/* Obtener nombre del usuario y mostrar juego */
+function obtenerNombreUsuario(event) {
+    event.preventDefault();
+
+    nombreUsuario = document.getElementById("introducirNombre").value;
+
+    document.getElementById("contenedorJuego").classList.remove("d-none");
+    document.getElementById("contenedorJuego").classList.add("d-block");
+
+    document.getElementById("contenedorBienvenido").classList.add("d-none");
+    document.getElementById("contenedorBienvenido").classList.remove("d-block");
+
+    puntosUsuario = localStorage.getItem(nombreUsuario) ?? [];
+
+    //Comprobamos si no es un array, ya que "getItem()" devuelve una cadena.
+    if( ! Array.isArray(puntosUsuario))
+    {
+        puntosUsuario = puntosUsuario.split(",");
+    }
+}
 
 /* Agregar eventos */
 document.getElementById("empezarPartida").addEventListener("click", empezarPartida);
-document.getElementById("form").addEventListener("submit", palabraIntroducida);
+document.getElementById("formIntroducirPalabra").addEventListener("submit", palabraIntroducida);
 document.getElementById("nuevaPartida").addEventListener("click", () => {letraAleatoria = generarLetra()});
-
-/* Funciones que se ejecutan cuando carga la página */
-let letraAleatoria = generarLetra();
+document.getElementById("formObtenerNombre").addEventListener("submit", obtenerNombreUsuario);
