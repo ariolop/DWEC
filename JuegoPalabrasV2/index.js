@@ -14,7 +14,8 @@ const diccionarioSinTildes = diccionario.map(eliminarDiacriticosEs);
 const diccionarioSet = new Set(diccionarioSinTildes);
 
 /* Array con las palabras introducidas*/
-const listaPalabras = [];
+const listaPalabrasSinTiltes = [];
+const listaPalabrasOriginal = [];
 
 /* Variables utilizadas para guardar los puntos totales y los puntos por palabra correcta */
 let puntos = 0;
@@ -54,8 +55,8 @@ let tiempo = {
         document.getElementById("empezarPartida").setAttribute("disabled",true);
         document.getElementById("nuevaPartida").removeAttribute("disabled");
 
-        document.getElementById("cantPalabras").innerHTML = listaPalabras.length;
-        document.getElementById("listaPalabras").innerHTML = listaPalabras.toString();
+        document.getElementById("cantPalabras").innerHTML = listaPalabrasOriginal.length;
+        document.getElementById("listaPalabras").innerHTML = listaPalabrasOriginal.toString();
 
         document.getElementById("filaResultado").classList.replace("d-none","d-flex");
         
@@ -64,7 +65,7 @@ let tiempo = {
 
         document.getElementById("totalPuntos").innerHTML = puntos;
 
-        document.getElementById("puntosPromedioPartida").innerHTML = puntuacionPartidaPromedio(puntos,listaPalabras.length);
+        document.getElementById("puntosPromedioPartida").innerHTML = puntuacionPartidaPromedio(puntos,listaPalabrasOriginal.length);
 
         puntosUsuario.push(puntos);
 
@@ -141,7 +142,8 @@ function empezarPartida(event) {
     document.getElementById("enviarPalabra").disabled = false;
     document.getElementById("nuevaPartida").disabled = true;
     document.getElementById("empezarPartida").disabled = true;
-    listaPalabras.splice(0,listaPalabras.length);
+    listaPalabrasOriginal.splice(0,listaPalabrasOriginal.length);
+    listaPalabrasSinTiltes.splice(0,listaPalabrasSinTiltes.length);
     puntos = 0;
 
     tiempo.iniciarCronometro(9, 0);
@@ -164,7 +166,8 @@ function palabraIntroducida(event)
     if(validarPalabra(palabraModificada))
     {
         tiempo.reiniciarCronometro();
-        listaPalabras.push(palabraOriginal);
+        listaPalabrasOriginal.push(palabraOriginal);
+        listaPalabrasSinTiltes.push(palabraModificada);
         calcularPuntos(palabraModificada);
     }
 
@@ -186,7 +189,7 @@ function validarPalabra(palabra)
         document.getElementById("alertaIncorrecta").innerHTML = "La palabra no empieza por la letra indicada";
         document.getElementById("alertaIncorrecta").style.display = "block";
     }
-    else if( listaPalabras.includes(palabra) )
+    else if( listaPalabrasSinTiltes.includes(palabra) )
     {
         //Mostrar mensaje: "La palabra ya ha sido introducida"
         palabraCorrecta = false;
