@@ -260,6 +260,8 @@ function obtenerNombreUsuario(event) {
     }
 
     actualizarResumenPuntuacion(puntosUsuario);
+
+    localStorage.setItem("ultimaSesion", nombreUsuario);
 }
 
 /* Cierra la "sesion" del usuario, es decir, vuelve al menú para volver a introducir el nombre */
@@ -271,8 +273,6 @@ function cerrarSesion(event) {
     document.getElementById("contenedorPuntuacion").classList.replace("d-block","d-none")
 
     document.getElementById("filaResultado").classList.replace("d-flex","d-none");
-
-    document.getElementById("introducirNombre").value = "";
 }
 
 /* Calcular la puntuación promedio de la partida recién acabada */
@@ -305,3 +305,11 @@ document.getElementById("formIntroducirPalabra").addEventListener("submit", pala
 document.getElementById("nuevaPartida").addEventListener("click", () => {letraAleatoria = generarLetra()});
 document.getElementById("formObtenerNombre").addEventListener("submit", obtenerNombreUsuario);
 document.getElementById("cerrarSesion").addEventListener("click", cerrarSesion);
+
+/* Si se ha jugado anteriormente, rellenamos el formulario con el último usuario */
+console.log(localStorage.getItem("ultimaSesion"));
+
+if(localStorage.getItem("ultimaSesion"))
+{
+    document.getElementById("introducirNombre").value = localStorage.getItem("ultimaSesion");
+}
