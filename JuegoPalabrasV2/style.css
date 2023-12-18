@@ -2,10 +2,6 @@
     background-color: lightblue;
 }
 
-.resultado{
-    display: none;
-}
-
 #cantPalabras, #listaPalabras{
     color: red;
 }

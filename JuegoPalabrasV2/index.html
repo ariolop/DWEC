@@ -12,10 +12,11 @@
     <!-- Contenedor del juego  -->
     <div class="container mt-5 p-4 d-none" id="contenedorJuego">
         <div class="row">
-            <div class="col-12 ">
-                <button type="button" id="cerrarSesion" class="btn btn-primary btn-sm">Cerrar sesión</button>
-                
-                <div class="p-1 d-inline bg-warning">
+            <div class="col-2 text-center">
+                <button type="button" id="cerrarSesion" class="btn btn-primary btn-sm h-100">Cerrar sesión</button>
+            </div>
+            <div class="col-2 text-center">
+                <div class="bg-warning rounded h-100 py-1">
                     <p class="d-inline">Usuario: </p><span id="textoUsuario"></span>
                 </div>
             </div>
@@ -25,7 +26,7 @@
                 <p class="d-inline">Tienes</p> <span id="tiempo">10</span> <p class="d-inline"> segundos</p>
             </div>
             <div class="col-12 text-center">
-                <p class="d-inline">La letra a usar es: </p><span id="letra"></span>
+                <p class="d-inline">La letra a usar es: </p><span id="letra" class="fs-5"></span>
             </div>
         </div>
 
@@ -58,7 +59,7 @@
             </div>
         </div>
 
-        <div class="row mt-4 mx-5 bg-info justify-content-center resultado">
+        <div id="filaResultado" class="row mt-4 mx-5 bg-info justify-content-center d-none">
             <div class="col-8 text-center">
                 <p class="d-inline"><strong>Has escrito</strong> </p><span id="cantPalabras">&nbsp;</span><p class="d-inline"> <strong>palabras</strong></p>
             </div>
@@ -69,6 +70,10 @@
             <div class="col-8 text-center mt-2">
                 <p class="d-inline"><strong>Puntos: </strong></p>
                 <span id="totalPuntos"></span>
+            </div>
+            <div class="col-8 text-center mt-2">
+                <p class="d-inline"><strong>Puntos promedio: </strong></p>
+                <span id="puntosPromedioPartida"></span>
             </div>
         </div>
     </div>
@@ -91,12 +96,12 @@
 
     <!-- Contenedor dónde se muestra la puntuación del usuario y las partidas jugadas -->
     <div class="container mt-4 p-5 d-none" id="contenedorPuntuacion">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center fw-bold">
             <div class="col-5 text-center">
-                <p>La puntuación promedio es: </p><span id="puntosPromedio"></span>
+                <p class="d-inline">La puntuación promedio es: </p><span id="puntosPromedioTotal"></span>
             </div>
             <div class="col-5 text-center">
-                <p>Partidas jugadas: </p><span id="partidasJugadas"></span>
+                <p class="d-inline">Partidas jugadas: </p><span id="partidasJugadas"></span>
             </div>
         </div>
     </div>

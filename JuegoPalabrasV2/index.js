@@ -57,20 +57,20 @@ let tiempo = {
         document.getElementById("cantPalabras").innerHTML = listaPalabras.length;
         document.getElementById("listaPalabras").innerHTML = listaPalabras.toString();
 
-        document.getElementsByClassName("resultado").item(0).style.display = "flex";
+        document.getElementById("filaResultado").classList.replace("d-none","d-flex");
         
         document.getElementById("alertaCorrecta").style.display = "none";
         document.getElementById("alertaIncorrecta").style.display = "none";
 
         document.getElementById("totalPuntos").innerHTML = puntos;
 
-        console.log(puntosUsuario);
+        document.getElementById("puntosPromedioPartida").innerHTML = puntuacionPartidaPromedio(puntos,listaPalabras.length);
 
         puntosUsuario.push(puntos);
 
-        console.log(puntosUsuario);
-
         localStorage.setItem(nombreUsuario,puntosUsuario);
+
+        actualizarResumenPuntuacion(puntosUsuario);
     },
 
     reiniciarCronometro: function()
@@ -107,7 +107,7 @@ function generarLetra()
     document.getElementById("empezarPartida").disabled = false;
     document.getElementById("nuevaPartida").removeAttribute("disabled");
     document.getElementById("tiempo").innerHTML = 10;
-    document.getElementsByClassName("resultado").item(0).style.display = "none";
+    document.getElementById("filaResultado").classList.replace("d-flex","d-none");
 
     const posAlea = Math.floor((Math.random())*(letras.length));
     const letraAleatoria = letras[posAlea];
@@ -146,7 +146,6 @@ function empezarPartida(event) {
 
     tiempo.iniciarCronometro(9, 0);
     document.getElementById("introducirPalabras").focus();
-    document.getElementsByClassName("resultado").item(0).style.display = "none";
 }
 
 /* Si introduce una palabra correcta, reiniciamos tiempo y mostramos mensaje "correcto"; sino solo mostramos mensaje incorrecto personalizado */
@@ -216,13 +215,10 @@ function validarPalabra(palabra)
 /* Calcular puntos de la palabra */
 function calcularPuntos(palabra) {
     puntos += puntosPorPalabra;
-    console.log(puntos);
 
     puntos += (palabra.length < 18) ? puntosPorLongitudPalabra.get(palabra.length) : 5;
-    console.log(puntos);
 
     puntos += puntosAdicionales(palabra);
-    console.log(puntos);
 }
 
 /* Calcular puntos adicionales */
@@ -248,39 +244,56 @@ function obtenerNombreUsuario(event) {
     nombreUsuario = document.getElementById("introducirNombre").value;
     document.getElementById("textoUsuario").innerHTML = nombreUsuario;
 
-    document.getElementById("contenedorJuego").classList.remove("d-none");
-    document.getElementById("contenedorJuego").classList.add("d-block");
-
-    document.getElementById("contenedorBienvenido").classList.add("d-none");
-    document.getElementById("contenedorBienvenido").classList.remove("d-block");
-
-    document.getElementById("contenedorPuntuacion").classList.remove("d-none");
-    document.getElementById("contenedorPuntuacion").classList.add("d-block");
-
-
-    
+    document.getElementById("contenedorJuego").classList.replace("d-none","d-block")
+    document.getElementById("contenedorBienvenido").classList.replace("d-block","d-none")
+    document.getElementById("contenedorPuntuacion").classList.replace("d-none","d-block")
 
     puntosUsuario = localStorage.getItem(nombreUsuario) ?? [];
 
-    //Comprobamos si no es un array, ya que "getItem()" devuelve una cadena.
+    //Comprobamos si no es un array, ya que "getItem()" devuelve una cadena. En ese caso, el usuario ha jugado partidas anteriormente.
     if( ! Array.isArray(puntosUsuario))
     {
         puntosUsuario = puntosUsuario.split(",");
     }
+
+    actualizarResumenPuntuacion(puntosUsuario);
 }
 
 /* Cierra la "sesion" del usuario, es decir, vuelve al menú para volver a introducir el nombre */
 function cerrarSesion(event) {
-    document.getElementById("contenedorJuego").classList.remove("d-block");
-    document.getElementById("contenedorJuego").classList.add("d-none");
+    document.getElementById("contenedorJuego").classList.replace("d-block","d-none")
 
-    document.getElementById("contenedorBienvenido").classList.add("d-block");
-    document.getElementById("contenedorBienvenido").classList.remove("d-none");
+    document.getElementById("contenedorBienvenido").classList.replace("d-none","d-block")
 
-    document.getElementById("contenedorPuntuacion").classList.remove("d-block");
-    document.getElementById("contenedorPuntuacion").classList.add("d-none");
+    document.getElementById("contenedorPuntuacion").classList.replace("d-block","d-none")
+
+    document.getElementById("filaResultado").classList.replace("d-flex","d-none");
 
     document.getElementById("introducirNombre").value = "";
+}
+
+/* Calcular la puntuación promedio de la partida recién acabada */
+function puntuacionPartidaPromedio(puntosTotales, cantidadPalabras) {
+    return ((puntosTotales / cantidadPalabras) || 0).toFixed(2);
+}
+
+/* Calcular la puntuación promedio del total de partidas */
+function puntuacionTotalPromedio(arrayPuntos) {
+    let sumaTotal = 0;
+
+    for (let i = 0; i < arrayPuntos.length; i++) {
+        
+        sumaTotal += +(arrayPuntos[i]);
+    }
+
+    return ((sumaTotal/arrayPuntos.length) || 0).toFixed(2);
+}
+
+/* Actualizar resumen de puntuacion total del usuario */
+function actualizarResumenPuntuacion(arrayPuntos) {
+
+    document.getElementById("puntosPromedioTotal").innerHTML = puntuacionTotalPromedio(arrayPuntos);
+    document.getElementById("partidasJugadas").innerHTML = arrayPuntos.length;
 }
 
 /* Agregar eventos */
