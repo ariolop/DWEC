@@ -107,4 +107,4 @@ const pedidos = [
 //     'Category 2': 2,
 //     'Category 3': 1
 //   }
-  //Pista: usa map para obtener los nombres de la categoria y luego reduce para contar cada categoria.
+//Pista: usa map para obtener los nombres de la categoria y luego reduce para contar cada categoria.
