@@ -1,0 +1,35 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-flow: column;
+}
+
+    .form {
+        border: 1px solid black;
+        padding: 10px 0px;
+    }
+
+        .form div {
+            margin: 20px;
+        }
+
+            .form input {
+                padding: 5px;
+            }
+
+    a {
+        color: blue;
+    }
+
+    .contenido {
+        width: 50%;
+    }
