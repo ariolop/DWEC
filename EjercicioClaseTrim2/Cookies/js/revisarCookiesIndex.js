@@ -1,17 +1,7 @@
 "use script";
 
 import {indexEspanol, indexIngles} from "./componentes.js";
-
-function getCookie(name) {
-    let matches = document.cookie.match(new RegExp(
-        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-    ));
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-}
-
-function existeCookie(cookie) {
-    return cookie ? true : false;
-}
+import {existeCookie, getCookie} from "./funciones.js";
 
 //Los nombres de las cookies son "idioma" y "tema"
 if(!existeCookie(getCookie("idioma")))
