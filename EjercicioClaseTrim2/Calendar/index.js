@@ -8,21 +8,51 @@ function createCalendar(elem, year, month) {
 
     /* Genero fila con cabecera de la semana */
     const cabecera = document.createElement("th");
-    const diasDeLaSemana = ["MO","TU","WE","TH","FR","SA","SU"]
+    const diasDeLaSemana = ["SU","MO","TU","WE","TH","FR","SA"];
 
-    for (const diaSemana of diasDeLaSemana) {
-        
+    for (let i = 1; i < diasDeLaSemana.length; i++) {
+        const celda = document.createElement("td");
+        celda.textContent = diasDeLaSemana[i];
+        cabecera.append(celda);
     }
+
+        /* Domingo */
+    const celda = document.createElement("td");
+    celda.textContent = diasDeLaSemana[0];
+    cabecera.append(celda);
+
+    tabla.append(cabecera);
     
     /* Colocar los días en el día de la semana */
+    debugger;
     while(fecha.getMonth()+1 === month)
     {
-        console.log(fecha.getDate());
+        console.log(fecha.getDate() + " " + (fecha.getDay()) + " " + diasDeLaSemana[fecha.getDay()]);
 
+        const fila = document.createElement("tr");
 
+        for (let i = 1; i != 0; i++) {
+            
+            const celda = document.createElement("td");
 
+            if(i === fecha.getDate())
+            {
+                celda.textContent = fecha.getDate();
+                fecha.setDate(fecha.getDate()+1);
+            }
+            else
+            {
+                celda.textContent = "";
+            }
 
-        fecha.setDate(fecha.getDate()+1);
+            fila.append(celda);
+
+            i = i === 6 ? i = -1 : i;
+
+            console.log(i);
+        }
+
+        tabla.append(fila);
     }
 
     /* Colocar la tabla al contenedor */
