@@ -6,14 +6,18 @@ fetch('./assets/productos.json')
 });
 
 function muestraProductos(p){
-    const filas = p.map(p=>`      <tr>
+    const filas = p.map((p, indice)=>`      <tr class="${indice>7?'ocultoPaginacion':''}">
     <th scope="row">${p.title}</th>
     <td>${p.price}</td>
     <td><img  width="75px" src="${p.thumbnail}"/></td>
     <td>
     <i data-id-producto="${p.id}" class="bi bi-eye" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productoModal"></i></td>
   </tr>`).join('');
-    const tabla = `    <table id="mis-productos" class="table">
+  const paginacion = obtenPaginacion();  
+  
+  const tabla = `    
+    ${paginacion}
+    <table id="mis-productos" class="table">
     <thead>
       <tr>
         <th scope="col">Nombre</th>
@@ -33,6 +37,25 @@ function muestraProductos(p){
     miDiv.addEventListener('click', (e)=>{
         muestraProducto(e,p);
     });
+}
+
+function obtenPaginacion(pagina=1)
+{
+    return `
+    <nav>
+        <ul class="pagination justify-content-end">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&lt;</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+            <a class="page-link" href="#">&gt;</a>
+            </li>
+        </ul>
+    </nav>
+`
 }
 
 function muestraProducto(evento,productos){
@@ -63,11 +86,41 @@ function filtraProductosCon(texto) {
     for (const fila of tabla.tBodies[0].rows) {
         if(!fila.textContent.toLowerCase().includes(textoEnMinuscula))
         {
-            fila.classList.add("filtrado");
+            fila.classList.add("filtradoTexto");
         }
         else
         {
-            fila.classList.remove("filtrado");
+            fila.classList.remove("filtradoTexto");
+        }
+    }
+
+    filtraProductosPorPagina();
+}
+
+function filtraProductosPorPagina(pagina=1) {
+    const tabla = document.getElementById("mis-productos");
+
+    if(!tabla) return; //Por si se ejecuta antes de que se genere la tabla
+
+    const maxProductosPorPagina = 8;
+
+    const filasSinFiltradoTexto = Array.from(tabla.tBodies[0].rows)
+                                       .filter( fila => !fila.classList.contains("filtradoTexto") );
+
+    const nfilas = filasSinFiltradoTexto.length;
+    const nPaginas = Math.ceil(nfilas / maxProductosPorPagina);
+
+    const primerProductoAMostrar = (pagina-1) * maxProductosPorPagina;
+    const ultimoProductoAMostrar = (pagina * maxProductosPorPagina) - 1;
+
+    for (let i = 0; i < nfilas; i++) {
+        if(i >= primerProductoAMostrar && i <= ultimoProductoAMostrar)
+        {
+            filasSinFiltradoTexto[i].classList.remove("ocultoPaginacion");
+        }
+        else
+        {
+            filasSinFiltradoTexto[i].classList.add("ocultoPaginacion");
         }
     }
 }

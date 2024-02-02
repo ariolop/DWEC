@@ -1,3 +1,7 @@
-.filtrado {
+.filtradoTexto { /* Busqueda por texto */
+    display: none;
+}
+
+.ocultoPaginacion { /* Paginación */
     display: none;
 }
