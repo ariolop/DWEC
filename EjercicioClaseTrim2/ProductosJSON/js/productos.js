@@ -1,3 +1,5 @@
+const maxProductosPorPagina = 8;
+
 fetch('./assets/productos.json')
 .then(res=>res.json())
 .then(datos=>{
@@ -13,12 +15,12 @@ function muestraProductos(p){
     <td>
     <i data-id-producto="${p.id}" class="bi bi-eye" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productoModal"></i></td>
   </tr>`).join('');
-  const paginacion = obtenPaginacion();  
+    const paginas = Math.ceil(p.length / maxProductosPorPagina);
+    obtenPaginacion(1, paginas);  
   
   const tabla = `    
-    ${paginacion}
     <table id="mis-productos" class="table">
-    <thead>
+    <thead>´ñ
       <tr>
         <th scope="col">Nombre</th>
         <th scope="col">Precio</th>
@@ -39,10 +41,12 @@ function muestraProductos(p){
     });
 }
 
-function obtenPaginacion(pagina=1)
+function obtenPaginacion(pagina=1, paginas)
 {
-    return `
-    <nav>
+    const navPaginacion = document.getElementById("navPaginacion");
+
+    const outerHTML = `
+    <nav id="navPaginacion">
         <ul class="pagination justify-content-end">
             <li class="page-item disabled">
                 <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&lt;</a>
@@ -55,7 +59,7 @@ function obtenPaginacion(pagina=1)
             </li>
         </ul>
     </nav>
-`
+    `;
 }
 
 function muestraProducto(evento,productos){
@@ -102,8 +106,6 @@ function filtraProductosPorPagina(pagina=1) {
 
     if(!tabla) return; //Por si se ejecuta antes de que se genere la tabla
 
-    const maxProductosPorPagina = 8;
-
     const filasSinFiltradoTexto = Array.from(tabla.tBodies[0].rows)
                                        .filter( fila => !fila.classList.contains("filtradoTexto") );
 
@@ -123,6 +125,8 @@ function filtraProductosPorPagina(pagina=1) {
             filasSinFiltradoTexto[i].classList.add("ocultoPaginacion");
         }
     }
+
+    obtenPaginacion(paginaActual, nPaginas)
 }
 
 document.getElementById("filtraProducto").addEventListener("input", (e) => filtraProductosCon(e.target.value));
