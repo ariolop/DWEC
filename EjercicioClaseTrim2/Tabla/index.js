@@ -1,4 +1,4 @@
-"use script";
+"use strict";
 
 const ordenarNombre = (f1, f2) => 
     f1.cells[0].textContent.localeCompare(f2.cells[0].textContent);

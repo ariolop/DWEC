@@ -1,4 +1,4 @@
-"use script";
+"use strict";
 
 import {informacionEspanol, informacionIngles} from "./componentes.js";
 import {existeCookie, getCookie} from "./funciones.js";

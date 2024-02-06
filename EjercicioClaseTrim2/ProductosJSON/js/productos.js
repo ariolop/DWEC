@@ -24,7 +24,7 @@ const filtraProductosPorPagina = (pagina=1)=>{
   
   for (let i=0;i< filasSinFiltradoTexto.length; i++){
       if (i>=primerProductoAMostrar && i<=ultimoProductoAMostrar) {
-          filasSinFiltradoTexto[i].classList.remove('ocultoPaginacion');
+        filasSinFiltradoTexto[i].classList.remove('ocultoPaginacion');
       }
       else {
         filasSinFiltradoTexto[i].classList.add('ocultoPaginacion');
@@ -61,7 +61,7 @@ function muestraProductos(p){
 
     const miDiv = document.getElementById('contenidoPrincipal');
     miDiv.innerHTML = tabla;
-    miDiv.addEventListener('click', (e)=>{
+    miDiv.addEventListener('click', (e) => {
         muestraProducto(e,p);
     });
     preparaOrdenacion('mis-productos');
@@ -69,42 +69,44 @@ function muestraProductos(p){
 
 
 function obtenPaginacion(pagina, paginas){
-  const navPaginacion = document.getElementById('navPaginacion');
+    const navPaginacion = document.getElementById('navPaginacion');
 
-  let lis = '';
-  for (let i=1; i<=paginas;i++){
+    let lis = '';
+    for (let i=1; i<=paginas;i++) {
+        lis += `
+            <li data-pagina="${i}" class="page-item ${i===pagina?'active':''}">
+                <a class="page-link" href="#" >${i}</a>
+            </li>`;
+    }
 
-    lis += `<li data-pagina="${i}" class="page-item ${i===pagina?'active':''}">
-      <a class="page-link" href="#" >${i}</a>
-    </li>`;
-  }
-  const outerHTML =  `<nav id="navPaginacion" aria-label="Page navigation">
-  <ul class="pagination justify-content-end">
-    <li class="page-item ${pagina===1?'disabled':''}">
-      <a class="page-link" onclick="console.dir(globalThis)">&lt;</a>
-    </li>
-    ${lis}
-    <li class="page-item ${pagina===paginas?'disabled':''}">
-      <a class="page-link" onclick="console.dir(globalThis)" href="#">&gt;</a>
-    </li>
-  </ul>
-</nav>`;
+    const outerHTML =  `
+    <nav id="navPaginacion" aria-label="Page navigation">
+    <ul class="pagination justify-content-end">
+        <li class="page-item ${pagina===1?'disabled':''}">
+            <a class="page-link" onclick="console.dir(globalThis)">&lt;</a>
+        </li>
+        ${lis}
+        <li class="page-item ${pagina===paginas?'disabled':''}">
+            <a class="page-link" onclick="console.dir(globalThis)" href="#">&gt;</a>
+        </li>
+    </ul>
+    </nav>`;
 
-  console.log('obtenPaginacion: pagina ' + pagina + ', paginas ' + paginas)
-  if (navPaginacion){
-    navPaginacion.outerHTML = outerHTML;
-    // en la línea anterior navPaginacion sale del DOM
-    navPaginacion = document.getElementById('navPaginacion');
-    navPaginacion.addEventListener('click', e=>{
-      if (e.target.tagName === 'LI'){
-        if (e.target.dataset.pagina)
-          filtraProductosPorPagina(e.target.dataset.pagina);
-      }
-    })
-  }
-  else {
-    return outerHTML;
-  }
+    console.log('obtenPaginacion: pagina ' + pagina + ', paginas ' + paginas)
+    if (navPaginacion) {
+        navPaginacion.outerHTML = outerHTML;
+        // en la línea anterior navPaginacion sale del DOM
+        navPaginacion = document.getElementById('navPaginacion');
+        navPaginacion.addEventListener('click', (e) => {
+            if (e.target.tagName === 'LI') {
+                if (e.target.dataset.pagina)
+                    filtraProductosPorPagina(e.target.dataset.pagina);
+            }
+        })
+    }
+    else {
+        return outerHTML;
+    }
   
 }
 
@@ -113,7 +115,7 @@ function muestraProducto(evento,productos){
     if (evento.target.tagName==='I') {
         //console.log('Has hecho click en el icono del producto:' +
         //    evento.target.dataset.idProducto);
-        const producto = productos.find(p=>p.id===+evento.target.dataset.idProducto)
+        const producto = productos.find(p => p.id === +evento.target.dataset.idProducto)
         console.dir(producto);
         const tituloModal = document.getElementById('productoModalLabel');
         const bodyModal = document.getElementById('productoBody');
@@ -121,23 +123,24 @@ function muestraProducto(evento,productos){
         console.dir(producto);
         bodyModal.textContent = producto.brand + ' ' + producto.description;
     }
-    else {
-       // console.log('No has hecho click en un <i ...>');
-    }
+    // else {
+    //     console.log('No has hecho click en un <i ...>');
+    // }
 }
 
 function filtraProductosCon(texto){
-  const tabla = document.getElementById('mis-productos');
-  const textoEnMinuscula = texto.toLowerCase();
-  if (!tabla) return;
-  //console.log('ahí va');
-  for (let fila of tabla.tBodies[0].rows){
-    if (fila.textContent.toLowerCase().includes(textoEnMinuscula))
-        fila.classList.remove('filtradoTexto');
-    else
-        fila.classList.add('filtradoTexto');
-  }
-  filtraProductosPorPagina(1);
+    const tabla = document.getElementById('mis-productos');
+    const textoEnMinuscula = texto.toLowerCase();
+    if (!tabla) return;
+    //console.log('ahí va');
+    for (let fila of tabla.tBodies[0].rows){
+        if (fila.textContent.toLowerCase().includes(textoEnMinuscula))
+            fila.classList.remove('filtradoTexto');
+        else
+            fila.classList.add('filtradoTexto');
+    }
+
+    filtraProductosPorPagina(1);
 }
 
 

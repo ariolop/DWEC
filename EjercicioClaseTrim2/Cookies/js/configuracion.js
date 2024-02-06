@@ -1,4 +1,4 @@
-"use script";
+"use strict";
 
 function setCookie(name, value) {
     document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);

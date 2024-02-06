@@ -1,4 +1,4 @@
-"use script";
+"use strict";
 
 function createCalendar(elem, year, month) {
     

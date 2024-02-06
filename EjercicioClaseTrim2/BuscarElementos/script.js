@@ -1,4 +1,4 @@
-"use scrict";
+"use strict";
 
 console.log(document.getElementById("age-table"));
 console.log(document.getElementById("age-table").getElementsByTagName("label"));
