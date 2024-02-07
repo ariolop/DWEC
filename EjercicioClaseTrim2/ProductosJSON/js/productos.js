@@ -3,15 +3,13 @@ import {preparaOrdenacion} from './ordenaTabla.js';
 
 const maxProductosPorPagina = 5;
 
-muestraProductos(productos);
-
 //console.log('globalThis: ', globalThis)
 
 const filtraProductosPorPagina = (pagina=1)=>{
   const tabla = document.getElementById('mis-productos');
   if (!tabla) return;  
 
-  console.log('filtraProductosPorPagina: pagina '+pagina)
+  console.log('filtraProductosPorPagina: pagina ' + pagina)
   const filasSinFiltradoTexto =  Array
                                 .from(tabla.tBodies[0].rows)
                                 .filter(f=>!f.classList.contains('filtradoTexto'));
@@ -24,15 +22,17 @@ const filtraProductosPorPagina = (pagina=1)=>{
   
   for (let i=0;i< filasSinFiltradoTexto.length; i++){
       if (i>=primerProductoAMostrar && i<=ultimoProductoAMostrar) {
-        filasSinFiltradoTexto[i].classList.remove('ocultoPaginacion');
+            filasSinFiltradoTexto[i].classList.remove('ocultoPaginacion');
       }
       else {
-        filasSinFiltradoTexto[i].classList.add('ocultoPaginacion');
+            filasSinFiltradoTexto[i].classList.add('ocultoPaginacion');
       }
   }
+
   obtenPaginacion(pagina,paginas)
 };
 
+muestraProductos(productos);
 
 function muestraProductos(p){
     const filas = p.map((p,indice)=>`      <tr class="${indice>maxProductosPorPagina-1?'ocultoPaginacion':''}">
@@ -64,6 +64,14 @@ function muestraProductos(p){
     miDiv.addEventListener('click', (e) => {
         muestraProducto(e,p);
     });
+    miDiv.addEventListener('click', (e) => {
+        if(e.target.tagName !== "A") return;
+        if(!e.target.closest("#navPaginacion")) return;
+        if(!e.target.parentElement.dataset.pagina) return;
+
+        filtraProductosPorPagina(+e.target.parentElement.dataset.pagina);
+    });
+
     preparaOrdenacion('mis-productos');
 }
 
@@ -82,12 +90,12 @@ function obtenPaginacion(pagina, paginas){
     const outerHTML =  `
     <nav id="navPaginacion" aria-label="Page navigation">
     <ul class="pagination justify-content-end">
-        <li class="page-item ${pagina===1?'disabled':''}">
-            <a class="page-link" onclick="console.dir(globalThis)">&lt;</a>
+        <li data-pagina="${pagina-1}" class="page-item ${pagina===1?'disabled':''}">
+            <a class="page-link">&lt;</a>
         </li>
         ${lis}
-        <li class="page-item ${pagina===paginas?'disabled':''}">
-            <a class="page-link" onclick="console.dir(globalThis)" href="#">&gt;</a>
+        <li data-pagina="${pagina+1}" class="page-item ${pagina===paginas?'disabled':''}">
+            <a class="page-link"" href="#">&gt;</a>
         </li>
     </ul>
     </nav>`;
@@ -96,13 +104,6 @@ function obtenPaginacion(pagina, paginas){
     if (navPaginacion) {
         navPaginacion.outerHTML = outerHTML;
         // en la línea anterior navPaginacion sale del DOM
-        navPaginacion = document.getElementById('navPaginacion');
-        navPaginacion.addEventListener('click', (e) => {
-            if (e.target.tagName === 'LI') {
-                if (e.target.dataset.pagina)
-                    filtraProductosPorPagina(e.target.dataset.pagina);
-            }
-        })
     }
     else {
         return outerHTML;
@@ -111,10 +112,7 @@ function obtenPaginacion(pagina, paginas){
 }
 
 function muestraProducto(evento,productos){
-    //console.dir(evento);
     if (evento.target.tagName==='I') {
-        //console.log('Has hecho click en el icono del producto:' +
-        //    evento.target.dataset.idProducto);
         const producto = productos.find(p => p.id === +evento.target.dataset.idProducto)
         console.dir(producto);
         const tituloModal = document.getElementById('productoModalLabel');
@@ -123,9 +121,6 @@ function muestraProducto(evento,productos){
         console.dir(producto);
         bodyModal.textContent = producto.brand + ' ' + producto.description;
     }
-    // else {
-    //     console.log('No has hecho click en un <i ...>');
-    // }
 }
 
 function filtraProductosCon(texto){
