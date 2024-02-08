@@ -1,54 +1,38 @@
-let reloj = undefined;
-let tiempo = undefined;
-let segundos = undefined;
-let minutos = undefined;
-let horas = undefined;
-
+let reloj;
 
 function clockStart() {
     
-    tiempo = new Date(Date.now());
-    segundos = tiempo.getSeconds();
-    minutos = tiempo.getMinutes();
-    horas = tiempo.getHours();
-    document.getElementById("segundos").innerText = segundos;
-    document.getElementById("minutos").innerText = minutos;
-    document.getElementById("horas").innerText = horas;
+    let tiempo = new Date(Date.now());
+    let tablaTiempo = [];
+    tablaTiempo.push(tiempo.getSeconds(),tiempo.getMinutes(),tiempo.getHours());
+
+    document.getElementById("segundos").innerText = tablaTiempo[0].toLocaleString();
+    document.getElementById("minutos").innerText = tablaTiempo[1];
+    document.getElementById("horas").innerText = tablaTiempo[2];
     
-    reloj = setInterval((segundos, minutos, horas) => {
+    reloj = setInterval((tablaTiempo) => {
 
-        console.log(segundos);
-        console.log(minutos);
-        console.log(horas);
+        tablaTiempo[0]++;
 
-        segundos++;
-
-        if(segundos === 60)
+        if(tablaTiempo[0] === 60)
         {
-            segundos = 0;
-            minutos++;
+            tablaTiempo[0] = 0;
+            tablaTiempo[1]++;
         }
-        else if(minutos === 60)
+        else if(tablaTiempo[1] === 60)
         {
-            minutos = 0;
-            horas++;
+            tablaTiempo[1] = 0;
+            tablaTiempo[2]++;
         }
-        else if(horas === 24)
+        else if(tablaTiempo[2] === 24)
         {
-            horas = 0;
+            tablaTiempo[2] = 0;
         }
+        document.getElementById("segundos").innerText = tablaTiempo[0];
+        document.getElementById("minutos").innerText = tablaTiempo[1];
+        document.getElementById("horas").innerText = tablaTiempo[2];
 
-        console.log(segundos);
-        console.log(minutos);
-        console.log(horas);
-
-        console.log("-----------------------------------");
-
-        document.getElementById("segundos").innerText = segundos;
-        document.getElementById("minutos").innerText = minutos;
-        document.getElementById("horas").innerText = horas;
-
-    }, 1000, segundos, minutos, horas);
+    }, 1000, tablaTiempo);
 }
 
 function clockStop() {
