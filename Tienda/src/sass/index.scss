@@ -1,107 +1,28 @@
+@use './header.scss' as header;
+
 * {
     margin: 0px;
     padding: 0px;
+    font-family: Ubuntu;
 }
 
-.cabecera {
-    height: 10vh;
-    text-align: center;
-}
-
-    .cabecera img {
-        height: 100%;
-    }
+@include header.header();
 
 .container {
     min-height: 90vh;
-    /* background-color: lightblue; */
+    background-color: lightblue;
     display: flex;
+
+    .bannerPrincipal {
+        height: 400px;
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
-
-    .menu {
-        width: 17vw;
-        min-height: 90vh;
-        /* background-color: lightgreen; */
-    }
-
-        .iconos {
-            display: flex;
-            flex-flow: row;
-            flex-wrap: nowrap;
-            justify-content: space-evenly;
-            padding: 10px;
-        }
-
-            .icono {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 50px;
-                height: 50px;
-                border-radius: 100%;
-                text-align: center;
-                background-color: #0053BA;
-                color: white;
-                cursor: pointer;
-                transition: background-color 0.3s linear;
-            }
-
-                .icono a {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    color: white;
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 100%;
-                    text-decoration: none;
-                }
-
-            .icono:hover {
-                background-color: #0173ff;
-            }
-
-        .titulo {
-            display: flex;
-            flex-flow: row;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-            background-color: #0053BA;
-            color: white;
-        }
-
-            .tituloCategoria {
-                background-color: #74affc;
-                padding-right: 15px;
-            }
-
-            .titulo i {
-                text-align: right;
-            }
-        
-        .categoria {
-            padding: 5px;
-            padding-left: 15px;
-            border: 1px solid lightgray;
-        }
-
-            .minicategoria {
-                background-color: #cde3ff;
-            }
-
-                .minicategoria h5 {
-                    font-size: 15px;
-                    padding: 5px;
-                    padding-left: 30px;
-                    border: 1px solid lightgray;
-                }
-
-    .principal {
-        width: 83vw;
-        min-height: 90vh;
-        /* background-color: green; */
-    }
 
 .footer {
     height: 200px;
