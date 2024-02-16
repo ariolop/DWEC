@@ -1,0 +1,46 @@
+{
+    "funkos": [
+        {   "id": "1", 
+            "nombre": "MICKEY MOUSE (FACET) - DISNEY100", 
+            "imagenFunko": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-WEB-Copy.png?v=1693996407", 
+            "imagenCaja": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-1-FW-WEB.png?v=1694015009", 
+            "precio": "13" 
+        },
+
+        {   "id": "2", 
+            "nombre": "MICKEY MOUSE (FACET) - DISNEY100", 
+            "imagenFunko": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-WEB-Copy.png?v=1693996407", 
+            "imagenCaja": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-1-FW-WEB.png?v=1694015009", 
+            "precio": "11"
+        },
+
+        {   "id": "3", 
+            "nombre": "MICKEY MOUSE (FACET) - DISNEY100", 
+            "imagenFunko": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-WEB-Copy.png?v=1693996407", 
+            "imagenCaja": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-1-FW-WEB.png?v=1694015009",
+            "categorias": ["Disney","Mickey Mouse & Friends"],
+            "precio": "13" 
+        },
+
+        {   "id": "4", 
+            "nombre": "MICKEY MOUSE (FACET) - DISNEY100", 
+            "imagenFunko": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-WEB-Copy.png?v=1693996407", 
+            "imagenCaja": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-1-FW-WEB.png?v=1694015009", 
+            "precio": "13" 
+        },
+
+        {   "id": "5", 
+            "nombre": "MICKEY MOUSE (FACET) - DISNEY100", 
+            "imagenFunko": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-WEB-Copy.png?v=1693996407", 
+            "imagenCaja": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-1-FW-WEB.png?v=1694015009", 
+            "precio": "13" 
+        },
+
+        {   "id": "6", 
+            "nombre": "MICKEY MOUSE (FACET) - DISNEY100", 
+            "imagenFunko": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-WEB-Copy.png?v=1693996407", 
+            "imagenCaja": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-1-FW-WEB.png?v=1694015009", 
+            "precio": "13" 
+        }
+    ]
+}

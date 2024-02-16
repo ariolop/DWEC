@@ -1,0 +1,83 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Ubuntu;
+}
+
+.contenedor {
+    position: relative;
+    width: 100vw;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #EEE;
+    padding: 20px 0px;
+}
+
+.carta {
+    width: 180px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+
+.carta .nombre {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.carta .precio {
+    padding: 10px;
+}
+
+.carta .imagenes {
+    height: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+    .carta .imagenes img {
+        position: absolute;
+        height: 100%;
+    }
+
+    .funko {
+        opacity: 1;
+        transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateY(0px) scale(1);
+        filter: blur(0px);
+    }
+
+    .caja {
+        opacity: 0;
+        transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateY(15px) scale(1);
+        filter: blur(12px);
+    }
+
+    .imagenes:hover .caja {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+    
+    .imagenes:hover .funko {
+        opacity: 0;
+        transform: translateY(15px) scale(1);
+        filter: blur(12px);
+    }
+
+
+.carta .añadirCarrito {
+    width: 100%;
+    border-radius: 10px;
+    border: 0px;
+    padding: 5px;
+}
+
+
+
