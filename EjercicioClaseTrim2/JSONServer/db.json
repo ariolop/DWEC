@@ -1,45 +1,56 @@
 {
     "funkos": [
         {   "id": "1", 
-            "nombre": "MICKEY MOUSE (FACET) - DISNEY100", 
-            "imagenFunko": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-WEB-Copy.png?v=1693996407", 
-            "imagenCaja": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-1-FW-WEB.png?v=1694015009", 
-            "precio": "13" 
+            "nombre": "POP! BRUNO MADRIGAL WITH PROPHECY (GLOW)", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwa8818e75/images/funko/upload/74457_Encanto_BrunoProphecy_POP_GLAM.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwd7319ced/images/funko/upload/74457_Encanto_BrunoProphecy_POP_GLAM_1_BL-WEB.png?sw=800&sh=800",
+            "categorias": ["Disney","Encanto"],
+            "precio": "15" 
         },
 
         {   "id": "2", 
-            "nombre": "MICKEY MOUSE (FACET) - DISNEY100", 
-            "imagenFunko": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-WEB-Copy.png?v=1693996407", 
-            "imagenCaja": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-1-FW-WEB.png?v=1694015009", 
-            "precio": "11"
+            "nombre": "POP! MIRABEL (GLOW)", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwc81563fb/images/funko/70118-1.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw3e36f349/images/funko/70118-2.png?sw=800&sh=800",
+            "categorias": ["Disney","Encanto"], 
+            "precio": "12"
         },
 
         {   "id": "3", 
-            "nombre": "MICKEY MOUSE (FACET) - DISNEY100", 
-            "imagenFunko": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-WEB-Copy.png?v=1693996407", 
-            "imagenCaja": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-1-FW-WEB.png?v=1694015009",
-            "categorias": ["Disney","Mickey Mouse & Friends"],
-            "precio": "13" 
+            "nombre": "POP! ANTONIO MADRIGAL", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwd436a2e6/images/funko/57603-1.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw11cd751d/images/funko/57603-2.png?sw=800&sh=800",
+            "categorias": ["Disney","Encanto"],
+            "precio": "12" 
         },
 
         {   "id": "4", 
-            "nombre": "MICKEY MOUSE (FACET) - DISNEY100", 
-            "imagenFunko": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-WEB-Copy.png?v=1693996407", 
-            "imagenCaja": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-1-FW-WEB.png?v=1694015009", 
-            "precio": "13" 
+            "nombre": "POP! LUISA MADRIGAL", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw4858fe4e/images/funko/57601-1.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw7bd5d390/images/funko/57601-2.png?sw=800&sh=800", 
+            "categorias": ["Disney","Encanto"],
+            "precio": "12" 
         },
 
         {   "id": "5", 
-            "nombre": "MICKEY MOUSE (FACET) - DISNEY100", 
-            "imagenFunko": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-WEB-Copy.png?v=1693996407", 
-            "imagenCaja": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-1-FW-WEB.png?v=1694015009", 
-            "precio": "13" 
+            "nombre": "POP! ABUELA ALMA MADRIGAL", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwae17d539/images/funko/57605-1.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwd79c2bef/images/funko/57605-2.png?sw=800&sh=800", 
+            "categorias": ["Disney","Encanto"],
+            "precio": "12" 
         },
 
         {   "id": "6", 
-            "nombre": "MICKEY MOUSE (FACET) - DISNEY100", 
-            "imagenFunko": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-WEB-Copy.png?v=1693996407", 
-            "imagenCaja": "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/70481_D100_MickeyFacet_POPDisney_GLAM-1-FW-WEB.png?v=1694015009", 
+            "nombre": "POP! ISABELA WITH CACTUS", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwbf0df859/images/funko/upload/76777a_Encanto_IsabelaWithCactus_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwa3137230/images/funko/upload/76777a_Encanto_IsabelaWithCactus_GLAM-1-Funko-WEB.png?sw=800&sh=800", 
+            "precio": "13" 
+        },
+        
+        {   "id": "6", 
+            "nombre": "POP! ISABELA WITH CACTUS", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwbf0df859/images/funko/upload/76777a_Encanto_IsabelaWithCactus_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwa3137230/images/funko/upload/76777a_Encanto_IsabelaWithCactus_GLAM-1-Funko-WEB.png?sw=800&sh=800", 
             "precio": "13" 
         }
     ]

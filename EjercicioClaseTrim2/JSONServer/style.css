@@ -5,13 +5,15 @@
 }
 
 .contenedor {
+    width: 80%;
+    margin: auto;
     position: relative;
-    width: 100vw;
-    height: 300px;
-    display: flex;
-    justify-content: space-around;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 16px;
     background-color: #EEE;
-    padding: 20px 0px;
 }
 
 .carta {
