@@ -1,0 +1,28 @@
+/* PUESTOS EN EL JSON */
+
+Disney ->
+    - Encanto: 7 - Funko
+    - Bambi: 3 - Funko Europe
+    - Peter pan: 7 - Funko Europe
+    - Donald duck: 5 - Funko
+    - Frozen: 4 - Pop-Busters
+    - La bella y la bestia: 7 - Pop-Busters
+    - La bella y la bestia: 1 - Funko
+
+Anime ->
+    - Dragon ball Z: 13 - Funko
+    - Dragon ball Super: 2 - Funko Europe
+    - Dragon ball Super: 4 - Funko
+    - Dragon ball Super: x - Pop-Busters
+
+    - Black Clover: 13 - Funko
+    - Black Clover: 1 - Funko Europe (https://funkoeurope.com/products/black-asta-glow-black-clover)
+
+Cantantes ->
+    - Michael Jackson: 4 - Funko Europe
+    - Michael Jackson: 1 - Pop-Busters
+    - Mariah Carey: 2 - Pop-Busters
+    - Mariah Carey: 2 - Funko
+    - Freedie Mercury: 1 - Funko
+    - Freddie Mercury: 2 - Pop-Busters
+/* POR PONER EN EL JSON */

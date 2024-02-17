@@ -1,57 +1,1124 @@
 {
     "funkos": [
-        {   "id": "1", 
-            "nombre": "POP! BRUNO MADRIGAL WITH PROPHECY (GLOW)", 
+        {   
+            "id": "1", 
+            "nombre": "BRUNO MADRIGAL WITH PROPHECY (GLOW)", 
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwa8818e75/images/funko/upload/74457_Encanto_BrunoProphecy_POP_GLAM.png?sw=800&sh=800", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwd7319ced/images/funko/upload/74457_Encanto_BrunoProphecy_POP_GLAM_1_BL-WEB.png?sw=800&sh=800",
-            "categorias": ["Disney","Encanto"],
-            "precio": "15" 
+            "categorias": [
+                "Disney",
+                "Encanto",
+                "Bruno"
+            ],
+            "precio": 15 
         },
 
-        {   "id": "2", 
-            "nombre": "POP! MIRABEL (GLOW)", 
+        {   
+            "id": "2", 
+            "nombre": "MIRABEL (GLOW)", 
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwc81563fb/images/funko/70118-1.png?sw=800&sh=800", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw3e36f349/images/funko/70118-2.png?sw=800&sh=800",
-            "categorias": ["Disney","Encanto"], 
-            "precio": "12"
+            "categorias": [
+                "Disney",
+                "Encanto",
+                "Mirabel"
+            ], 
+            "precio": 12
         },
 
-        {   "id": "3", 
-            "nombre": "POP! ANTONIO MADRIGAL", 
+        {   
+            "id": "3", 
+            "nombre": "ANTONIO MADRIGAL", 
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwd436a2e6/images/funko/57603-1.png?sw=800&sh=800", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw11cd751d/images/funko/57603-2.png?sw=800&sh=800",
-            "categorias": ["Disney","Encanto"],
-            "precio": "12" 
+            "categorias": [
+                "Disney",
+                "Encanto",
+                "Antonio"
+            ],
+            "precio": 12 
         },
 
-        {   "id": "4", 
-            "nombre": "POP! LUISA MADRIGAL", 
+        {   
+            "id": "4", 
+            "nombre": "LUISA MADRIGAL", 
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw4858fe4e/images/funko/57601-1.png?sw=800&sh=800", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw7bd5d390/images/funko/57601-2.png?sw=800&sh=800", 
-            "categorias": ["Disney","Encanto"],
-            "precio": "12" 
+            "categorias": [
+                "Disney",
+                "Encanto",
+                "Luisa"
+            ],
+            "precio": 12 
         },
 
-        {   "id": "5", 
-            "nombre": "POP! ABUELA ALMA MADRIGAL", 
+        {   
+            "id": "5", 
+            "nombre": "ABUELA ALMA MADRIGAL", 
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwae17d539/images/funko/57605-1.png?sw=800&sh=800", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwd79c2bef/images/funko/57605-2.png?sw=800&sh=800", 
-            "categorias": ["Disney","Encanto"],
-            "precio": "12" 
+            "categorias": [
+                "Disney",
+                "Encanto",
+                "Alma"
+            ],
+            "precio": 12 
         },
 
-        {   "id": "6", 
-            "nombre": "POP! ISABELA WITH CACTUS", 
+        {   
+            "id": "6", 
+            "nombre": "ISABELA WITH CACTUS", 
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwbf0df859/images/funko/upload/76777a_Encanto_IsabelaWithCactus_GLAM-WEB.png?sw=800&sh=800", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwa3137230/images/funko/upload/76777a_Encanto_IsabelaWithCactus_GLAM-1-Funko-WEB.png?sw=800&sh=800", 
-            "precio": "13" 
+            "categorias": [
+                "Disney",
+                "Encanto",
+                "Isabela"
+            ],
+            "precio": 15 
+        },
+
+        {   
+            "id": "7", 
+            "nombre": "MIRABEL MADRIGAL", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw1b50072d/images/funko/57599-1.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwebbc96a1/images/funko/57599-2.png?sw=800&sh=800", 
+            "categorias": [
+                "Disney",
+                "Encanto",
+                "Mirabel"
+            ],
+            "precio": 13 
+        },
+
+        {   
+            "id": "8", 
+            "nombre": "BAMBI", 
+            "imagenFunko": "https://funkoeurope.com/cdn/shop/files/65664_Disney_Bambi_Pop_Figure_GLAM-3-WEB_700x.png", 
+            "imagenCaja": "https://funkoeurope.com/cdn/shop/files/65664_Disney_Bambi_Pop_BoxView_GLAM-1-WEB_700x.png",
+            "categorias": [
+                "Disney",
+                "Bambi"
+            ], 
+            "precio": 16
+        },
+
+        {   
+            "id": "9", 
+            "nombre": "THUMPER - BAMBI", 
+            "imagenFunko": "https://funkoeurope.com/cdn/shop/files/65666_Disney_Thumper_Pop_Figure_GLAM-3-WEB_700x.png", 
+            "imagenCaja": "https://funkoeurope.com/cdn/shop/files/65666_Disney_Thumper_Pop_BoxView_GLAM-1-WEB_700x.png", 
+            "categorias": [
+                "Disney",
+                "Bambi",
+                "Thumper"
+            ], 
+            "precio": 16
+        },
+
+        {   
+            "id": "10", 
+            "nombre": "FLOWER - BAMBI", 
+            "imagenFunko": "https://funkoeurope.com/cdn/shop/files/65665_Disney_Flower_Pop_Figure_GLAM-3-WEB_700x.png", 
+            "imagenCaja": "https://funkoeurope.com/cdn/shop/files/65665_Disney_Flower_Pop_BoxView_GLAM-1-WEB_700x.png", 
+            "categorias": [
+                "Disney",
+                "Bambi",
+                "Flower"
+            ], 
+            "precio": 16 
+        },
+
+        {   
+            "id": "11", 
+            "nombre": "TINKER BELL - PETER PAN", 
+            "imagenFunko": "https://funkoeurope.com/cdn/shop/files/70699_PeterPan70th_TinkOnMirror_POP_GLAM-WEB_700x.png", 
+            "imagenCaja": "https://funkoeurope.com/cdn/shop/files/70699_Disney_PeterPan70yr_Tinkerbell_POPdisney_GLAM-1-WEB_700x.png", 
+            "categorias": [
+                "Disney",
+                "Peter pan",
+                "Tinker bell"
+            ], 
+            "precio": 16 
+        },
+
+        {   
+            "id": "12", 
+            "nombre": "PETER PAN WITH FLUTE - PETER PAN", 
+            "imagenFunko": "https://funkoeurope.com/cdn/shop/files/70697_PeterPan70th_PeterWithFlute_POP_GLAM-WEB_700x.png", 
+            "imagenCaja": "https://funkoeurope.com/cdn/shop/files/70697_Disney_PeterPan70yr_PeterPan_POPdisney_GLAM-1-WEB_700x.png", 
+            "categorias": [
+                "Disney",
+                "Peter pan"
+            ], 
+            "precio": 16 
+        },
+
+        {   
+            "id": "13", 
+            "nombre": "SIRENITA - PETER PAN", 
+            "imagenFunko": "https://funkoeurope.com/cdn/shop/files/70696_PeterPan_Mermaid_POP_GLAM-WEB_700x.png", 
+            "imagenCaja": "https://funkoeurope.com/cdn/shop/files/70696_Disney_PeterPan70yr_Mermaid_POPdisney_GLAM-1-WEB_700x.png", 
+            "categorias": [
+                "Disney",
+                "Peter pan"
+            ], 
+            "precio": 16 
+        },
+
+        {   
+            "id": "14", 
+            "nombre": "TINKER BELL IN LANTERN - PETER PAN", 
+            "imagenFunko": "https://funkoeurope.com/cdn/shop/files/70846_PeterPan_TinkonLantern_POP_GLAM-1-WEB_1_700x.png", 
+            "imagenCaja": "https://funkoeurope.com/cdn/shop/files/70846_PeterPan_TinkonLantern_POP_GLAM-1-WEB_700x.png", 
+            "categorias": [
+                "Disney",
+                "Peter pan",
+                "Tinker bell"
+            ], 
+            "precio": 35 
+        },
+
+        {   
+            "id": "15", 
+            "nombre": "CAPTAIN HOOK - PETER PAN", 
+            "imagenFunko": "https://funkoeurope.com/cdn/shop/files/70695_PeterPan70th_Hook_POP_GLAM-WEB_700x.png", 
+            "imagenCaja": "https://funkoeurope.com/cdn/shop/files/70695_Disney_PeterPan70yr_CaptainHook_POPdisney_GLAM-1-WEB_700x.png", 
+            "categorias": [
+                "Disney",
+                "Peter pan",
+                "Captain hook"
+            ], 
+            "precio": 16 
+        },
+
+        {   
+            "id": "16", 
+            "nombre": "DAPPER DONALD DUCK", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwfb10676b/images/funko/upload/75724_Disney_DD90th_DonaldDuckDapper_POP_GLAM-Web.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwa94301f3/images/funko/upload/75724_POP_Disney_Donald90th_DapperDonaldDuck_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Disney",
+                "Donald duck"
+            ], 
+            "precio": 12 
+        },
+
+        {   
+            "id": "17", 
+            "nombre": "ANGRY DONALD DUCK", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw1839aa43/images/funko/upload/75723_Disney_DD90th_DonaldDuckAngry_POP_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwebbb2c8b/images/funko/upload/75723_POP_Disney_Donald90th_AngryDonaldDuck_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Disney",
+                "Donald duck"
+            ], 
+            "precio": 12
+        },
+
+        {   
+            "id": "18", 
+            "nombre": "1938 DONALD DUCK", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw3d8b30c7/images/funko/upload/75722_Disney_DD90th_DonaldDuck1938_POP_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw3db56ddc/images/funko/upload/75722_POP_Disney_Donald90th_DonaldDuck1938_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Disney",
+                "Donald duck"
+            ], 
+            "precio": 12 
+        },
+
+        {   
+            "id": "19", 
+            "nombre": "DONALD DUCK", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwe80cf979/images/funko/59621-1.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw25df66ee/images/funko/59621-2.png?sw=800&sh=800", 
+            "categorias": [
+                "Disney",
+                "Donald duck"
+            ], 
+            "precio": 12 
+        },
+
+        {   
+            "id": "20", 
+            "nombre": "DONALD DUCK WITH HEART EYES", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw48765fb7/images/funko/upload/75725_Disney_DD90th_DonaldDuckHeartEyes_POP_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw8dcffe2d/images/funko/upload/75725_POP_Disney_Donald90th_DonaldDuckwHeartEyes_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Disney",
+                "Donald duck"
+            ], 
+            "precio": 12 
+        },
+
+        {   
+            "id": "21", 
+            "nombre": "JIECE", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwfdb1c4cd/images/funko/upload/48671a_POPAnimation_DBZ_Jiece_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw86206a4d/images/funko/upload/48671a_POPAnimation_DBZ_Jiece_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Jiece"
+            ], 
+            "precio": 12 
+        },
+
+        {   
+            "id": "22", 
+            "nombre": "GINYU", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw1aae08ba/images/funko/upload/48669a_POPAnimation_DBZ_Ginyu_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwe401832a/images/funko/upload/48669a_POPAnimation_DBZ_Ginyu_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Ginyu"
+            ], 
+            "precio": 12 
+        },
+
+
+        {   
+            "id": "23", 
+            "nombre": "GULDO", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw6b2e4080/images/funko/upload/48667a_POPAnimation_DBZ_Guldo_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw9cfafe8b/images/funko/upload/48667a_POPAnimation_DBZ_Guldo_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Guldo"
+            ], 
+            "precio": 12 
+        },
+
+        {   
+            "id": "24", 
+            "nombre": "BURTER", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwc4dc781b/images/funko/upload/48670a_POPAnimation_DBZ_Burter_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw67124f72/images/funko/upload/48670_DBZ_S10_Burter_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Burter"
+            ], 
+            "precio": 12 
+        },
+
+        {   
+            "id": "25", 
+            "nombre": "RECOOME", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw97162f33/images/funko/upload/48668a_POPAnimation_DBZ_Recoome_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw2d664831/images/funko/upload/48668a_POPAnimation_DBZ_Recoome_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Recoome"
+            ], 
+            "precio": 12 
+        },
+
+        {   
+            "id": "26", 
+            "nombre": "DENDE", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwc70a8b42/images/funko/upload/69187a_POPAnimation_DBZ_Dende_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw016ba692/images/funko/upload/69187a_POPAnimation_DBZ_Dende_FYE_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Dende"
+            ], 
+            "precio": 15 
+        },
+
+        {   
+            "id": "27", 
+            "nombre": "GOKU WITH WINGS", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwcc04d541/images/funko/upload/71177_POPAnimation_DBZ_Goku_wWings_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw8ccd92fd/images/funko/upload/71177_POPAnimation_DBZ_Goku_wWings_IE_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Goku"
+            ], 
+            "precio": 15 
+        },
+
+        {   
+            "id": "28", 
+            "nombre": "SUPER BUU WITH GHOST", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwe1621079/images/funko/upload/71556_POPAnimation_DBZ_Buu_wGhost_wCH_GLAM-WEB%20-%20Copy.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw87995499/images/funko/upload/71556_POPAnimation_DBZ_Buu_wGhost_wCH_CH_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Buu"
+            ], 
+            "precio": 15 
+        },
+
+        {   
+            "id": "29", 
+            "nombre": "DR. GERO", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw3d915c3b/images/funko/48664-1.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwae68bedb/images/funko/48664-2.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Dr. Gero"
+            ], 
+            "precio": 12
+        },
+
+        {   
+            "id": "30", 
+            "nombre": "GOKU (ULTRA INSTINCT WITH KAMEHAMEHA)", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw265cab15/images/funko/58450-1.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw14a9d4cc/images/funko/58450-2.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Goku"
+            ], 
+            "precio": 15
+        },
+
+        {   
+            "id": "31", 
+            "nombre": "SUPER SAIYAN GOKU", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw24649f76/images/funko/48600-1.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw4f3f4338/images/funko/48600-2.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Goku"
+            ], 
+            "precio": 12
+        },
+
+        {   
+            "id": "32", 
+            "nombre": "FRIEZA (4TH FORM)", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw63a11e29/images/funko/48601-1.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw63e027c3/images/funko/48601-2.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Frieza"
+            ], 
+            "precio": 12
+        },
+
+        {   
+            "id": "33", 
+            "nombre": "SUPER SAIYAN ROSÉ GOKU BLACK (GLOW)", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwda598d78/images/funko/upload/76944_POPAnimation_DBS_Goku(Rose-BLK)(GW)_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwc99775d3/images/funko/upload/76944_POPAnimation_DBS_Goku(Rose-BLK)(GW)_GLAM-1-HT-WEB1.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Super",
+                "Goku Black"
+            ], 
+            "precio": 15
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "JIREN", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw75d5c8e8/images/funko/58016-1.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw9355330b/images/funko/58016-2.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Super",
+                "Jiren"
+            ], 
+            "precio": 12
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "SHIN", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw10fcd30d/images/funko/58018-1.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwb5437d7a/images/funko/58018-2.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Super",
+                "Shin"
+            ], 
+            "precio": 12
+        },
+
+        {   
+            "id": "-",  
+            "nombre": "FUSED ZAMASU (GLOW)", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw7cf07c5c/images/funko/upload/74395_DBS_Zamasu_POP_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw77d201d0/images/funko/upload/74395_DBS_Zamasu_FW_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Dragon Ball Super",
+                "Zamasu"
+            ], 
+            "precio": 15
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "SUPER SAIYAN TRUNKS WITH SWORD - DRAGON BALL SUPER", 
+            "imagenFunko": "https://funkoeurope.com/cdn/shop/products/58019_DragonBall_TrunksSpiritSword_POP_GLAM-WEB_700x.png?v=1671192147", 
+            "imagenCaja": "https://funkoeurope.com/cdn/shop/products/58019_DragonBall_TrunksSpiritSword_POP_GLAM-1-WEB_700x.png?v=1671192147", 
+            "categorias": [
+                "Dragon Ball Super",
+                "Trunks"
+            ], 
+            "precio": 16
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "KALE - DRAGON BALL SUPER", 
+            "imagenFunko": "https://funkoeurope.com/cdn/shop/products/58017_DragonBall_Kale_POP_GLAM-WEB_700x.png?v=1671191884", 
+            "imagenCaja": "https://funkoeurope.com/cdn/shop/products/58017_DragonBall_Kale_POP_GLAM-1-WEB_700x.png?v=1671191885", 
+            "categorias": [
+                "Dragon Ball Super",
+                "Kale"
+            ], 
+            "precio": 16
+        },
+
+        {   
+            "id": "-",  
+            "nombre": "PRINCESS ANNA", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/5/6/56348_Disney_UltimatePrincess_Anna_POP_Renders_GLAM_WEB__1__10d9.png?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/5/6/56348_Disney_UltimatePrincess_Anna_POP_Renders_GLAM_1_WEB__1__cef2.png?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Disney",
+                "Frozen",
+                "Anna"
+            ], 
+            "precio": 16.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "FROZEN ELSA", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/5/6/56350_Disney_UltimatePrincess_Elsa_POP_Renders_GLAM_WEB_d00f.png?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/5/6/56350_Disney_UltimatePrincess_Elsa_POP_Renders_GLAM_1_WEB_6de5.png?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Disney",
+                "Frozen",
+                "Elsa"
+            ], 
+            "precio": 17.95
+        },
+
+        {  
+            "id": "-", 
+            "nombre": "ELSA", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/6/7/67973_Disney_Elsa_POP_GLAM_WEB_615c.png?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/6/7/67973_Disney_Elsa_POP_GLAM_1_WEB_deac.png?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Disney",
+                "Frozen",
+                "Elsa" 
+            ], 
+            "precio": 17.95
+        },
+
+        {  
+            "id": "-", 
+            "nombre": "FUEGOLEON", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw5c9faf13/images/funko/upload/72116_BlackClover_S3_Fuegoleon_POP_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw1ebcb6cd/images/funko/upload/72116_BlackClover_S3_Fuegoleon_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Anime",
+                "Black Clover",
+                "Fuegoleon"
+            ], 
+            "precio": 12
+        },
+
+        {  
+            "id": "-", 
+            "nombre": "ASTA WITH NERO", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw4393222a/images/funko/upload/72115_BlackClover_S3_AstaWithNero_POP_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwa418eb02/images/funko/upload/72115_BlackClover_S3_AstaWithNero_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Anime",
+                "Black Clover",
+                "Asta"
+            ], 
+            "precio": 12
+        },
+
+        {  
+            "id": "-", 
+            "nombre": "KLAUS WITH GRIMOIRE", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw5757c6d2/images/funko/upload/72118_BlackClover_S3_Klaus_POP_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwc02daef9/images/funko/upload/72118_BlackClover_S3_Klaus_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Anime",
+                "Black Clover",
+                "Klaus"
+            ], 
+            "precio": 12
         },
         
-        {   "id": "6", 
-            "nombre": "POP! ISABELA WITH CACTUS", 
-            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwbf0df859/images/funko/upload/76777a_Encanto_IsabelaWithCactus_GLAM-WEB.png?sw=800&sh=800", 
-            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwa3137230/images/funko/upload/76777a_Encanto_IsabelaWithCactus_GLAM-1-Funko-WEB.png?sw=800&sh=800", 
-            "precio": "13" 
+        {  
+            "id": "-",  
+            "nombre": "JULIUS CASTING MAGIC SPELL", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwb301b534/images/funko/upload/72117_BlackClover_S3_Julius_POP_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwd1fb8fc0/images/funko/upload/72117_BlackClover_S3_Julius_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Anime",
+                "Black Clover",
+                "Julius"
+            ], 
+            "precio": 12
+        },
+
+        {  
+            "id": "-", 
+            "nombre": "MIMOSA WITH GRIMOIRE", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwac9ff6ff/images/funko/upload/72119_BlackClover_S3_Mimosa_POP_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw135ec0cd/images/funko/upload/72119_BlackClover_S3_Mimosa_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Anime",
+                "Black Clover",
+                "Mimosa"
+            ], 
+            "precio": 12
+        },
+
+        {  
+            "id": "-", 
+            "nombre": "MARS WITH GRIMOIRE", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw779289c3/images/funko/upload/71289_BlackClover_S2_MarsWithBook_POP_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw31fc709d/images/funko/upload/71289_BlackClover_S2_MarsWithBook_POP_GSE_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Anime",
+                "Black Clover",
+                "Mars"
+            ], 
+            "precio": 15
+        },
+        
+        
+        {  
+            "id": "-", 
+            "nombre": "BLACK ASTA", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw632c86af/images/funko/upload/70568_BlackClover_S2_Asta_POP_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw5bd11b4f/images/funko/upload/70568_BlackClover_S2_Asta_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Anime",
+                "Black Clover",
+                "Asta"
+            ], 
+            "precio": 12
+        },
+
+        {  
+            "id": "-", 
+            "nombre": "YUNO", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwb46190e1/images/funko/60698-1.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw984de3f4/images/funko/60698-3.png?sw=800&sh=800", 
+            "categorias": [
+                "Anime",
+                "Black Clover",
+                "Yuno"
+            ], 
+            "precio": 12
+        },
+
+        {  
+            "id": "-", 
+            "nombre": "YAMI", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwa53bd8d1/images/funko/upload/70570_BlackClover_S2_Yami_POP_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw8c20abc0/images/funko/upload/70570_BlackClover_S2_Yami_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Anime",
+                "Black Clover",
+                "Yami"
+            ], 
+            "precio": 12
+        },
+
+        {  
+            "id": "-", 
+            "nombre": "NOELLE WITH VALKYRIE ARMOR", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw811a6edc/images/funko/upload/70569_BlackClover_S2_Noelle_POP_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwe3b89bb7/images/funko/upload/70569_BlackClover_S2_Noelle_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Anime",
+                "Black Clover",
+                "Noelle"
+            ], 
+            "precio": 12
+        },
+
+        {  
+            "id": "-", 
+            "nombre": "YUNO WITH SPIRIT OF ZEPHYR", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwd3249193/images/funko/upload/70571_BlackClover_S2_Yuno_POP_GLAM-WEB.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwd43f9f6d/images/funko/upload/70571_BlackClover_S2_Yuno_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Anime",
+                "Black Clover",
+                "Yuno"
+            ], 
+            "precio": 12
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "NOELLE", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw6870e0ec/images/funko/59240-1.png?sw=800&sh=800", 
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwc2dffd19/images/funko/59240-3.png?sw=800&sh=800", 
+            "categorias": [
+                "Anime",
+                "Black Clover",
+                "Noelle"
+            ], 
+            "precio": 12
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "DRAGON BALL Z VEGITO", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/i/m/img_205895_0c0b4623ef74f9efcd77a1b106137fa2_1_f027.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/i/m/img_248154_790703d452ca208e67fb69246554b9f7_1_9899.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Vegito"
+            ], 
+            "precio": 15.95
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "SUPER SAYAN ROSÉ GOKU BLACK", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/5/8/58015_DragonBall_GokuBlackScythe_POP_GLAM_WEB_9475.png?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/5/8/58015_DragonBall_GokuBlackScythe_POP_GLAM_1_WEB_b3d3.png?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Dragon Ball Super",
+                "Goku Black"
+            ], 
+            "precio": 15.95
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "SUPER SAIYAN CAULIFLA", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/6/c/6c35038eb125b37b63e062d7cbc11eb74f257cd7_5a1e.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/8/7/87ff62fee3a1e3eaff137d9c87e460936084e26e_e1ae.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Dragon Ball Super",
+                "Caulifla"
+            ], 
+            "precio": 14.95
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "DRAGON BALL VEGETA", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/4/c/4c66b05263d52d18c5abafa6a5f226f030e63603_a3dd.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/f/u/funko_pop_dragon_ball_z_814_vegeta_03_0355.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Dragon Ball Super",
+                "Vegeta"
+            ], 
+            "precio": 18.95
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "DRAGON BALL Z DODORIA", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/i/m/img_329930_438e1aa4e9057e4929f18e7f633f0739_1_de83.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/i/m/img_329911_ebb2a85640e2ccbc3fae11c18e67df77_1_5d70.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Dodorian"
+            ], 
+            "precio": 23.95
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "DRAGON BALL Z CELL FIRST FORM", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/i/m/img_321974_55b7232b0714cb469638b53344eab4c5_1_77f3.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/i/m/img_321975_fb2f0228c8a5014288647cf535fe8178_1_f50b.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Cell"
+            ], 
+            "precio": 21.95
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "GOKU ULTRA INSTINCT FORM", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/8/a/8acc765a993e111b07e42b98071ac036eb142b80_9c69.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/6/0/607754cfebd669142dec96ca402ad5e3f1dcab46_3d7c.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Dragon Ball Super",
+                "Goku"
+            ], 
+            "precio": 19.95
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "DRAGON BALL SUPER FUTURE MAI", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/3/d/3d85818325e1fc330f4409e07923feacb9376e98_a158.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/f/u/funko_pop_dragonball_z_817_future_mai_03_2e4b.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Dragon Ball Super",
+                "Mai"
+            ], 
+            "precio": 15.95
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "DRAGON BALL Z MECHA FREEZA", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/F/u/Funko_POP_MechaFrieza_705_3_7384.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/1/b/1b3fcfa6032a5ce270fdd477206532aa410c32d6_eec4.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Frieza"
+            ], 
+            "precio": 16.25
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "DRAGON BALL Z SS GOHAN", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/c/e/ce24a7bd13c9ed74988d84802101311d4d9fa5be_ddf3.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/f/u/funko_pop_dragon_ball_z_858_super_saiyan_gohan_03_22f9.png?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Gohan"
+            ], 
+            "precio": 15.95
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "EVIL BUU", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/c/2/c210e0ac9440053baa25df000873ab4ad8c8ceaa_e9be.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/f/u/funko_pop_dragon_ball_z_864_majin_buu_evil_01_76ec.jpeg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Buu"
+            ], 
+            "precio": 15.95
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "PRINCIPE VEGETA", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/4/0/40c79f2383fc90715e5a1278b1d88aa2c49cad7d_c12f.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/6/7/67cc48fbe9ad3f295ac18cce18baa10ef8eaabb8_ed69.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Vegeta"
+            ], 
+            "precio": 18.95
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "ANDROID 16", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/5/b/5b49c5cc3cd2a9a1c0bf32ec3a5fad81e3a3fb0e_d952.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/0/d/0d5fd39368141cadb20c8bf1cebf284b12870500_a756.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Android 16"
+            ], 
+            "precio": 18.95
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "SHENRON DRAGON 25CM", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/f/u/funko_pop_dragon_ball_859_shenron_03_58a5.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/f/u/funko_pop_dragon_ball_859_shenron_01_4248.jpeg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Dragon Ball Z",
+                "Shenron"
+            ], 
+            "precio": 48.95
+        },
+
+        {  
+            "id": "-",  
+            "nombre": "BLACK ASTA", 
+            "imagenFunko": "https://funkoeurope.com/cdn/shop/files/74522_BlackClover_S3_DemonAstaGW_POP_GLAM-WEB-Copy_700x.png?v=1703159063", 
+            "imagenCaja": "https://funkoeurope.com/cdn/shop/files/74522_BlackClover_S3_DemonAstaGW_POP_GLAM-1-IE-WEB_700x.png?v=1703159063", 
+            "categorias": [
+                "Anime",
+                "Black Clover",
+                "Asta"
+            ], 
+            "precio": 18
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "WENDY", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/7/0/70698_PeterPan70th_Wendy_POP_GLAM_WEB_56d1.png?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/7/0/70698_Disney_PeterPan70yr_WendyFlying_POPdisney_GLAM_1_WEB_c0ef.png?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Disney",
+                "Peter pan",
+                "Wendy"
+            ], 
+            "precio": 15.95 
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "PETER PAN - TINKER BELL ON SPOOL", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/5/8/58794_Disney_TinkerBell_DeluxePOP_GLAM_1_WEB_5f9f.png?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/5/8/58794_Disney_TinkerBell_DeluxePOP_IE_GLAM_1_1_WEB__Copy__7869.png?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Disney",
+                "Peter pan",
+                "Tinker bell"
+            ], 
+            "precio": 49.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "LA BELLA Y LA BESTIA", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/a/c/acb36e9b7162586aa22a68a486bce6063e8b4c6c_cb08.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/8/4/84c8c9c2c176b7d894c2197fdfc862c7df4648f5_0e37.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Disney",
+                "La bella y la bestia"
+            ], 
+            "precio": 99.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "COGSWORTH", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/6/6/66d0758b8d473659f241400e0bd73057edf115bf_52dd.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/a/7/a721bbbb58ce56da02ade06aaab4c1d5eb7802a8_b099.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Disney",
+                "La bella y la bestia",
+                "Cogsworth"
+            ], 
+            "precio": 17.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "BELLE", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/1/f/1fd093d657b6406097bda0dac58418665870f0be_201e.jpg?width=1080&height=1080&store=es&image-type=image",
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/3/9/39f2bd0c6f155c439f2aebee175ca0e66ec92cff_7156.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Disney",
+                "La bella y la bestia",
+                "Belle"
+            ], 
+            "precio": 17.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "THE BEAST", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/a/9/a9476e1ac840d16f447fa1098826434c8ef36614_44ca.jpg?width=1080&height=1080&store=es&image-type=image",
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/7/1/717103ed552e57d9a9b020c48e547c60357466da_6b05.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Disney",
+                "La bella y la bestia",
+                "The beast"
+            ], 
+            "precio": 17.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "GASTON", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/e/b/eb7c3a574880054f722bccd3f5ad06e8adfbca9e_09fa.jpg?width=1080&height=1080&store=es&image-type=image",
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/0/4/047b64f56b897e74dbd3c1d29283bc3074c7ef8d_b68b.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Disney",
+                "La bella y la bestia",
+                "Gaston"
+            ], 
+            "precio": 16.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "LUMIERE", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/5/f/5ff7be826f0b5be8bda279984df78bed0d3beecf_6a4b.jpg?width=1080&height=1080&store=es&image-type=image",
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/5/2/5244a4fa6cb9553789a9808653f29aba982d78da_3d6e.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Disney",
+                "La bella y la bestia",
+                "Lumiere"
+            ], 
+            "precio": 17.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "WINTER BELLE", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/f/4/f4d012f59b1c4c7827e040194d25758b2188cb6b_930c.jpg?width=1080&height=1080&store=es&image-type=image",
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/2/f/2f80d5a5e31e84fe91b19af1bcf0330a1babb06e_af41.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Disney",
+                "La bella y la bestia",
+                "Belle"
+            ], 
+            "precio": 19.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "BELLE", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwac2d737f/images/funko/56349-1.png?sw=800&sh=800",
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwba24ff4d/images/funko/56349-2.png?sw=800&sh=800", 
+            "categorias": [
+                "Disney",
+                "La bella y la bestia",
+                "Belle"
+            ], 
+            "precio": 12
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "MICHAEL JACKSON (DIRTY DIANA)", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwa737a742/images/funko/upload/75386_MichaelJacksonDirtyDiana_GLAM-WEB.png?sw=800&sh=800",
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwc1e035e0/images/funko/upload/75386_MichaelJacksonDirtyDiana_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Cantantes",
+                "Michael Jackson"
+            ], 
+            "precio": 12
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "MICHAEL JACKSON (HISTORY WORLD TOUR)", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw2c1469f6/images/funko/upload/77430_MichaelJacksonArmor_GLAM-WEB.png?sw=800&sh=800",
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw5105cc88/images/funko/upload/77430_MichaelJacksonArmor_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Cantantes",
+                "Michael Jackson"
+            ], 
+            "precio": 12
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "MICHAEL JACKSON (SUPERBOWL)", 
+            "imagenFunko": "https://funkoeurope.com/cdn/shop/files/67403_MJackson_POPRocks_GLAM_700x.png?v=1707735135",
+            "imagenCaja": "https://funkoeurope.com/cdn/shop/files/67403_MJackson_POPRocks_GLAM-1-1-WEB_700x.png?v=1707735135", 
+            "categorias": [
+                "Cantantes",
+                "Michael Jackson"
+            ], 
+            "precio": 16
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "MICHAEL JACKSON (1984 GRAMMYS)", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwf6358cb0/images/funko/upload/68891_MJ_1984GrammysDGLT_POP_GLAM-WEB.png?sw=800&sh=800",
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwf3df562f/images/funko/upload/68891_MJ_1984GrammysDGLT_POP_GLAM-1-FW-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Cantantes",
+                "Michael Jackson"
+            ], 
+            "precio": 15
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "MICHAEL JACKSON (THRILLER ALBUM)", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/6/4/64039_MJThriller_POP_Album_GLAM_WEB_2de9.png?width=1080&height=1080&store=es&image-type=image",
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/6/4/64039_MJThriller_POP_Album_GLAM_1_WEB_6e54.png?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Cantantes",
+                "Michael Jackson"
+            ], 
+            "precio": 39.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "MARIAH CAREY (THE EMANCIPATION OF MIMI)", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw5a3b55a7/images/funko/upload/75274_MariahCarey_EmancipationOfMimi_POP_GLAM-WEB.png?sw=800&sh=800",
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwd395d4db/images/funko/upload/75274_MariahCarey_EmancipationOfMimi_POP_GLAM_1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Cantantes",
+                "Mariah Carey"
+            ], 
+            "precio": 12.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "ALBUMS MARIAH CAREY - RAINBOW", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwb9105a17/images/funko/upload/72562_MariahCarey_Rainbow_POPAlbum_GLAM-WEB.png?sw=800&sh=800",
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw8d4ff529/images/funko/upload/72562_MariahCarey_Rainbow_POPAlbum_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Cantantes",
+                "Mariah Carey"
+            ], 
+            "precio": 25.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "MARIAH CAREY- FELIZ NAVIDAD", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/u/n/unnamed__13__b1f6.png?width=1080&height=1080&store=es&image-type=image",
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/u/n/unnamed__12__a83f.png?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Cantantes",
+                "Mariah Carey"
+            ], 
+            "precio": 25.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "MARIAH CAREY", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/6/4/64057a_MariahCarey_Fantasy_POP_GLAM_1_WEB_7638.jpg?width=1080&height=1080&store=es&image-type=image",
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/6/4/64057a_MariahCarey_Fantasy_POP_GLAM_1_1_WEB_fe16.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Cantantes",
+                "Mariah Carey"
+            ], 
+            "precio": 15.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "FREDDIE MERCURY (I WAS BORN TO LOVE YOU)", 
+            "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw38ba4379/images/funko/upload/75375_POPRocks_Queen_Freddy_Mercury_IWasBornToLoveYou-1-WEB.png?sw=800&sh=800",
+            "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw57500fe6/images/funko/upload/75375_POPROCKS_Queen_FreddyMercury_POP_GLAM-1-WEB.png?sw=800&sh=800", 
+            "categorias": [
+                "Cantantes",
+                "Freddie Mercury"
+            ], 
+            "precio": 12
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "FREDDIE MERCURY", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/i/m/img_321441_ed48090d19f75171340eca9eb7055985_1_9f1d.jpg?width=1080&height=1080&store=es&image-type=image",
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/i/m/img_321440_30caccd30ce972ef40e28a0a34cb43f7_1_177a.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Cantantes",
+                "Freddie Mercury"
+            ], 
+            "precio": 38.95
+        },
+
+        {   
+            "id": "-", 
+            "nombre": "FREDDIE MERCURY RADIO GAGA", 
+            "imagenFunko": "https://media.pop-busters.com/media/catalog/product/5/8/58c09834a6161f89f8f182cd7d3b4e790c761fd4_6a0c.jpg?width=1080&height=1080&store=es&image-type=image",
+            "imagenCaja": "https://media.pop-busters.com/media/catalog/product/f/4/f4c786d7068778268d0abe460e44361f31b32489_c7c9.jpg?width=1080&height=1080&store=es&image-type=image", 
+            "categorias": [
+                "Cantantes",
+                "Freddie Mercury"
+            ], 
+            "precio": 16.95
         }
+
+
     ]
 }

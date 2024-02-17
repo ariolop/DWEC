@@ -1,5 +1,3 @@
-
-
 fetch("http://localhost:3000/funkos")
     .then(resultado => resultado.json())
     .then(funkosDisney => {
