@@ -6,7 +6,7 @@ const colocaUsuarios = usuarios => {
     {
         const tabla = document.getElementById("usuarios");
 
-        const filas = usuarios.map( u => `<tr> 
+        const filas = usuarios.map( u => `<tr data-id-usuario="${u.id}"> 
                                             <td>${u.name}</td> 
                                             <td>${u.email}</td> 
                                         </tr>` )
