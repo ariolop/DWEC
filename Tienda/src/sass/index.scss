@@ -12,9 +12,10 @@
     min-height: 90vh;
     background-color: lightblue;
     display: flex;
+    flex-flow: column;
 
     .bannerPrincipal {
-        height: 500px;
+        height: 400px;
         width: 100%;
 
         img {
@@ -22,9 +23,99 @@
             height: 100%;
         }
     }
+
+    .cartas {
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+        position: relative;
+        height: fit-content;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
+        padding: 16px;
+
+        .carta {
+            height: 300px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 5px;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-evenly;
+
+            .nombre {
+                font-weight: bold;
+                padding: 10px;
+            }
+
+            .precio {
+                padding: 10px;
+            }
+
+            .imagenes {
+                height: 150px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+
+                img {
+                    position: absolute;
+                    height: 100%;
+                    max-width: 100%;
+                }
+
+                .funko {
+                    opacity: 1;
+                    transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
+                    transform: translateY(0px) scale(1);
+                    filter: blur(0px);
+                }
+            
+                .caja {
+                    opacity: 0;
+                    transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
+                    transform: translateY(15px) scale(1);
+                    filter: blur(12px);
+                }
+            }
+        
+            .imagenes:hover .caja {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+            
+            .imagenes:hover .funko {
+                opacity: 0;
+                transform: translateY(15px) scale(1);
+                filter: blur(12px);
+            }
+
+            .añadirCarrito {
+                width: 100%;
+                border-radius: 10px;
+                border: 0px;
+                padding: 5px;
+            }
+        }
+    }
 }
 
 .footer {
     height: 200px;
     background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 0px;
+
+    .col {
+        width: 25%;
+        background-color: gray;
+        padding: 10px;
+
+        h2 {
+            text-align: center;
+        }
+    }
 }
