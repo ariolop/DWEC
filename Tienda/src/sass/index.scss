@@ -1,4 +1,5 @@
 @use './header.scss' as header;
+@use './footer.scss' as footer;
 
 * {
     margin: 0px;
@@ -7,6 +8,7 @@
 }
 
 @include header.header();
+@include footer.footer();
 
 .container {
     min-height: 90vh;
@@ -102,20 +104,3 @@
     }
 }
 
-.footer {
-    height: 200px;
-    background-color: black;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 20px 0px;
-
-    .col {
-        width: 25%;
-        background-color: gray;
-        padding: 10px;
-
-        h2 {
-            text-align: center;
-        }
-    }
-}

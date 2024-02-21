@@ -206,21 +206,37 @@
   background-color: darkgray;
 }
 
-.container {
-  min-height: 90vh;
-  background-color: lightblue;
+main {
   display: flex;
-  flex-flow: column;
 }
-.container .bannerPrincipal {
-  height: 400px;
-  width: 100%;
+main .filtrosOrdenacion {
+  width: 25%;
+  background-color: lightblue;
+  padding: 20px;
 }
-.container .bannerPrincipal img {
-  width: 100%;
-  height: 100%;
+main .filtrosOrdenacion .filtros {
+  margin-top: 20px;
 }
-.container .cartas {
+main .filtrosOrdenacion .filtros > div {
+  margin-top: 10px;
+}
+main .filtrosOrdenacion .filtros .formCategorias input {
+  display: inline;
+  margin-top: 5px;
+}
+main .container {
+  width: 75%;
+  background-color: lightgreen;
+  padding: 20px;
+}
+main .container .informacion {
+  display: flex;
+  justify-content: space-between;
+}
+main .container .productos {
+  margin-top: 20px;
+}
+main .container .productos .cartas {
   width: 100%;
   max-width: 1000px;
   margin: auto;
@@ -229,9 +245,8 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
-  padding: 16px;
 }
-.container .cartas .carta {
+main .container .productos .cartas .carta {
   height: 300px;
   background-color: white;
   border-radius: 10px;
@@ -240,51 +255,51 @@
   flex-flow: column;
   justify-content: space-evenly;
 }
-.container .cartas .carta .nombre {
+main .container .productos .cartas .carta .nombre {
   font-weight: bold;
   padding: 10px;
 }
-.container .cartas .carta .precio {
+main .container .productos .cartas .carta .precio {
   padding: 10px;
 }
-.container .cartas .carta .imagenes {
+main .container .productos .cartas .carta .imagenes {
   height: 150px;
   position: relative;
   display: flex;
   justify-content: center;
 }
-.container .cartas .carta .imagenes img {
+main .container .productos .cartas .carta .imagenes img {
   position: absolute;
   height: 100%;
   max-width: 100%;
 }
-.container .cartas .carta .imagenes .funko {
+main .container .productos .cartas .carta .imagenes .funko {
   opacity: 1;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(0px) scale(1);
   filter: blur(0px);
 }
-.container .cartas .carta .imagenes .caja {
+main .container .productos .cartas .carta .imagenes .caja {
   opacity: 0;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(15px) scale(1);
   filter: blur(12px);
 }
-.container .cartas .carta .imagenes:hover .caja {
+main .container .productos .cartas .carta .imagenes:hover .caja {
   opacity: 1;
   transform: translateY(0) scale(1);
   filter: blur(0);
 }
-.container .cartas .carta .imagenes:hover .funko {
+main .container .productos .cartas .carta .imagenes:hover .funko {
   opacity: 0;
   transform: translateY(15px) scale(1);
   filter: blur(12px);
 }
-.container .cartas .carta .añadirCarrito {
+main .container .productos .cartas .carta .añadirCarrito {
   width: 100%;
   border-radius: 10px;
   border: 0px;
   padding: 5px;
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=productos.css.map */

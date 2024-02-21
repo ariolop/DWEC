@@ -1,0 +1,128 @@
+@use './header.scss' as header;
+@use './footer.scss' as footer;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Ubuntu;
+}
+
+@include header.header();
+@include footer.footer();
+
+main {
+    display: flex;
+
+    .filtrosOrdenacion {
+        width: 25%;
+        background-color: lightblue;
+        padding: 20px;
+
+        .filtros {
+            margin-top: 20px;
+
+            &>div {
+                margin-top: 10px;
+            }
+
+            .formCategorias {
+
+                input {
+                    display: inline;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+
+    .container {
+        width: 75%;
+        background-color: lightgreen;
+        padding: 20px;
+
+        .informacion {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .productos {
+            margin-top: 20px;
+
+            .cartas {
+                width: 100%;
+                max-width: 1000px;
+                margin: auto;
+                position: relative;
+                height: fit-content;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 16px;
+        
+                .carta {
+                    height: 300px;
+                    background-color: white;
+                    border-radius: 10px;
+                    padding: 5px;
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: space-evenly;
+        
+                    .nombre {
+                        font-weight: bold;
+                        padding: 10px;
+                    }
+        
+                    .precio {
+                        padding: 10px;
+                    }
+        
+                    .imagenes {
+                        height: 150px;
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+        
+                        img {
+                            position: absolute;
+                            height: 100%;
+                            max-width: 100%;
+                        }
+        
+                        .funko {
+                            opacity: 1;
+                            transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
+                            transform: translateY(0px) scale(1);
+                            filter: blur(0px);
+                        }
+                    
+                        .caja {
+                            opacity: 0;
+                            transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
+                            transform: translateY(15px) scale(1);
+                            filter: blur(12px);
+                        }
+                    }
+                
+                    .imagenes:hover .caja {
+                        opacity: 1;
+                        transform: translateY(0) scale(1);
+                        filter: blur(0);
+                    }
+                    
+                    .imagenes:hover .funko {
+                        opacity: 0;
+                        transform: translateY(15px) scale(1);
+                        filter: blur(12px);
+                    }
+        
+                    .añadirCarrito {
+                        width: 100%;
+                        border-radius: 10px;
+                        border: 0px;
+                        padding: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

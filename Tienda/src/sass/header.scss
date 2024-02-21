@@ -28,11 +28,18 @@
                 align-items: center;
                 min-width: 300px;
                 max-width: 20%;
-        
-                img {
+
+                a {
                     height: 100%;
                     width: 100%;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
                 }
+        
+                
             }
     
             .buscador {
@@ -72,10 +79,7 @@
                         cursor: pointer;
                         background-color: darkgray;
                     }
-                }
-    
-                
-                
+                }                
             }
     
             .iconos {
@@ -118,17 +122,18 @@
                         background-color: rgb(51, 51, 51);
                         list-style: none;
                         width: 200px;
+                        z-index: 10;
 
                         /* items del menu desplegable */
 
                         li {
                             display: inline;
-                            padding: 5px 10px;
 
                             /* enlaces de los items del menu desplegable */
                             a {
                                 font-size: 16px;
-                                padding: 5px 10px;
+                                padding: 8px 10px;
+                                display: block;
                             }
                         }
                         

@@ -1,24 +1,12 @@
+import * as Categorias from './categorias.js';
 
 
+Categorias.cargarCategoriasMenu();
+
+/* Mostrar cartas aleatorias primera fila */
 fetch("http://localhost:3000/funkos")
     .then(resultado => resultado.json())
-    .then(funkos => { /* Construir menú desplegable "categorias" */
-        const categorias = funkos.map( f => f.categorias[0]).filter((c,i,array) => i === array.indexOf(c));
-
-        let listaDesplegable = "";
-
-        categorias.forEach(c => {
-            listaDesplegable += `
-            <li>
-                <a>${c}</a>
-            </li>`
-        });
-        
-        document.getElementById("listaCategorias").innerHTML = listaDesplegable;
-
-        return funkos;
-    })
-    .then(funkos => { /* Mostrar cartas aleatorias primera fila */
+    .then(funkos => { 
         
         let fragmento = "";
 

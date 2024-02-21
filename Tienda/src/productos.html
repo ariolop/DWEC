@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alfunk</title>
-    <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/productos.css">
     <script src="https://kit.fontawesome.com/63a49e22be.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 </head>
 <body>
-    <!-- #0053BA color logo -->
     <header class="header">
         <div class="miniCabecera">
             <p>Envío gratis a España en todos los pedidos de más de 40€</p>
@@ -52,14 +50,65 @@
         </nav>
     </header>
 
-    <div class="container">
-        <div class="bannerPrincipal">
-            <img src="image/banners/banner_funkos_disney.jpg" alt="">
-        </div>
-        <div id="cartas" class="cartas">
+    <main>
+        <div class="filtrosOrdenacion">
+            <div class="filtros">
+                <h2>Filtros</h2>
 
+                <div class="filtroCategoria">
+                    <h4>Filtro categoria</h4>
+
+                    <form action="#" id="filtroCategorias" class="formCategorias">
+                        
+                    </form>
+                </div>
+
+                <div class="filtroSubcategoria">
+                    <h4>Filtro subcategoria</h4>
+
+                    <form action="#" id="filtroSubcategoria">
+                        <p>Selecciona una categoria</p>
+                    </form>
+                </div>
+
+                <div class="rangoPrecio">
+                    <h4>Rango precio</h4>
+
+                    <form action="" id="rangoPrecio">
+                        <input type="range">
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="container">
+            <h2>Productos</h2>
+
+            <div class="informacion">
+                <div class="cantidadProductos">
+                    <p>Mostrando <span id="productoInicial">1</span>-<span id="productosPorPagina">x</span> de <span id="productosTotales">xxx</span> productos</p>
+                </div>
+                <div class="ordenacion">
+                    <div class="ordenacion">       
+                        <form action="#">
+                            <select name="ordenaPor" id="orden">
+                                <option value="">Ordena por</option>
+                                <option value="nombre">Nombre: A - Z</option>
+                                <option value="-nombre">Nombre: Z - A</option>
+                                <option value="-precio">Precio: Mayor a menor</option>
+                                <option value="precio">Precio: Menor a mayor</option>
+                            </select>
+                        </form> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="productos">
+                <div id="cartas" class="cartas">
+
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer class="footer">
         <div class="col">
@@ -100,8 +149,6 @@
         </div>
     </footer>
 
-
-    <script src="https://kit.fontawesome.com/63a49e22be.js" crossorigin="anonymous"></script>
-    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/productos.js"></script>
 </body>
 </html>
