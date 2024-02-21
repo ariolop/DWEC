@@ -27,3 +27,7 @@ document.getElementById("orden").addEventListener("input", () => {
 
     Paginacion.cargarPaginaProductos(1,categoria,undefined,document.getElementById("orden").value);
 });
+
+document.getElementById("paginacion").addEventListener( ("click"), () => {
+
+});

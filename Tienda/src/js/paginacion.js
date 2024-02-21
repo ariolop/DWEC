@@ -12,6 +12,8 @@ export function cargarPaginaProductos(pagina,filtroCategoria=undefined,filtroSub
         let data = funkos.data;
         console.log(data);
 
+        crearPaginacion(funkos.pages,pagina);
+
         let fragmento = "";
 
         console.log(funkos);
@@ -38,3 +40,23 @@ export function cargarPaginaProductos(pagina,filtroCategoria=undefined,filtroSub
         document.getElementById("cartas").innerHTML = fragmento;
     });
 }
+
+export function crearPaginacion(cantidadPaginas, paginaActual)
+{
+    let paginacion = ``;
+
+    for (let i = 1; i <= cantidadPaginas; i++) {
+        if(i === paginaActual || i === paginaActual-1 || i === paginaActual+1 || i === 1 || i === cantidadPaginas)
+        {
+            paginacion += `<div id="${i}">${i}</div>`;
+        }
+    }
+
+    document.getElementById("paginacion").innerHTML = paginacion;
+
+    document.getElementById(paginaActual).classList.add("actual");
+
+    console.log(cantidadPaginas);
+    console.log(paginaActual);
+}
+
