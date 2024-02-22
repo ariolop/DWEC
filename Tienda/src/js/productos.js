@@ -6,8 +6,26 @@ Categorias.cargarFiltroCategorias();
 Categorias.cargarCategoriasMenu();
 
 /* Paginación */
-const categoria = location.search ? location.search.split('?')[1].split('=')[1] : "";
-Paginacion.cargarPaginaProductos(1,categoria);
+const categoria = location.search  
+                        ? (location.search.split('?')[1].split('=')[0] === "cat"  
+                                ? location.search.split('?')[1].split('=')[1] 
+                                :"")  
+                        : "";
+
+const busqueda = location.search  
+                        ? (location.search.split('?')[1].split('=')[0] === "buscar"  
+                                ? location.search.split('?')[1].split('=')[1] 
+                                :"")  
+                        : "";
+
+if(busqueda)
+{
+    Paginacion.cargarBusquedaProductos(1, busqueda);
+}
+else
+{
+    Paginacion.cargarPaginaProductos(1, categoria);
+}
 
 /* Función que usan los eventos para actualizar los productos */
 function actualizarProductos(pagina) {
@@ -35,5 +53,5 @@ document.getElementById("paginacion").addEventListener( ("click"), (e) => {
 
     console.log("Cambiar de página");
 
-    actualizarProductos(+e.target.id)
+    actualizarProductos(+e.target.id);
 });

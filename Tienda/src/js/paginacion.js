@@ -1,3 +1,41 @@
+export function cargarBusquedaProductos(pagina, busqueda) {
+
+    fetch(`http://localhost:3000/funkos`)
+    .then( resultado => resultado.json() )
+    .then( funkos => {
+        console.log(busqueda.toLowerCase().charAt(0).toUpperCase() + busqueda.slice(1).toLowerCase());
+
+        funkos = funkos.filter( f => {            
+            return f.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
+                f.categorias.includes(busqueda.toLowerCase().charAt(0).toUpperCase() + busqueda.slice(1).toLowerCase());
+        });
+
+        return funkos;
+    })
+    .then( funkosBusqueda => {
+        console.log(funkosBusqueda);
+        //modificarInformacionPaginacion(funkosBusqueda);
+
+        let fragmento = "";
+        funkosBusqueda.forEach(funko => {
+            const carta = `
+            <div class="carta">
+                <div id="imagenes" class="imagenes">
+                    <img class="funko" src="${funko.imagenFunko}">
+                    <img class="caja"  src="${funko.imagenCaja}">
+                </div>
+                <p id="nombre" class="nombre">${funko.nombre}</p>
+                <p id="precio" class="precio">${funko.precio}€</p>
+            </div>
+            `;
+
+            fragmento += carta; 
+        });
+
+        document.getElementById("cartas").innerHTML = fragmento;
+    });
+}
+
 export function cargarPaginaProductos(pagina,filtroCategoria,filtroSubcategoria,orden) {
 
     const cadenaPagina = `_page=${pagina}&_per_page=15`;

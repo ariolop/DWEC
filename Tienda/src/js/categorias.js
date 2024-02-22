@@ -25,7 +25,11 @@ export function cargarFiltroCategorias() {
         document.getElementById("filtroCategorias").innerHTML = checkboxCategorias;
     })
     .then( () => {
-        const categoria = location.search ? location.search.split('?')[1].split('=')[1] : undefined;
+        const categoria = location.search  
+                        ? (location.search.split('?')[1].split('=')[0] === "cat"  
+                                ? location.search.split('?')[1].split('=')[1] 
+                                : "")  
+                        : "";
         if(categoria) 
             document.getElementById(decodeURIComponent(categoria)).checked = true;
     });
