@@ -7,7 +7,7 @@ Categorias.cargarFiltroCategorias();
 Categorias.cargarCategoriasMenu();
 
 /* Paginación */
-Paginacion.cargarPaginaProductos(1);
+setTimeout(Paginacion.cargarPaginaProductos(1),0);
 
 document.getElementById("filtroCategorias").addEventListener("input", () => {
     console.log("Filtro aplicados");
