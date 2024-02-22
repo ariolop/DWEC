@@ -6,7 +6,6 @@ export function cargarFiltroCategorias() {
     fetch("http://localhost:3000/funkos")
     .then(resultado => resultado.json())
     .then(funkos => {
-        console.log(funkos);
         const categorias = extraerCategorias(funkos);
 
         let checkboxCategorias = "";
@@ -18,14 +17,17 @@ export function cargarFiltroCategorias() {
         categorias.forEach(c => {
             checkboxCategorias += `
                 <div>
-                    <input id="${c}" type="radio" name="categoriaFiltrada" value="${c}"> <label>${c[0].toUpperCase() + c.slice(1)}</label>
+                    <input id="${c}" type="radio" name="categoriaFiltrada" value="${c}"> <label>${c}</label>
                 </div>
             `
         });
 
         document.getElementById("filtroCategorias").innerHTML = checkboxCategorias;
-
-        return funkos;
+    })
+    .then( () => {
+        const categoria = location.search ? location.search.split('?')[1].split('=')[1] : undefined;
+        if(categoria) 
+            document.getElementById(decodeURIComponent(categoria)).checked = true;
     });
 }
 
@@ -47,7 +49,5 @@ export function cargarCategoriasMenu()
 
         document.getElementById("listaMenuCategorias").innerHTML = listaCategorias;
         document.getElementById("listaFooterCategorias").innerHTML = listaCategorias;
-
-        return funkos;
     });
 }

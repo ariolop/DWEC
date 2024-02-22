@@ -1,23 +1,17 @@
-export function cargarPaginaProductos(pagina,filtroCategoria=undefined,filtroSubcategoria=undefined,orden="") {
+export function cargarPaginaProductos(pagina,filtroCategoria,filtroSubcategoria,orden) {
 
     const cadenaPagina = `_page=${pagina}&_per_page=15`;
     const cadenaFiltroCategorias = filtroCategoria ? `&categorias[0]=${filtroCategoria}` : "";
     const cadenaFiltroSubcategorias = filtroSubcategoria ? `&categorias[1]=${filtroSubcategoria}` : "";
-    const cadenaOrdenacion = orden !== "" ? `&_sort=${orden}` : ""; 
+    const cadenaOrdenacion = orden ? `&_sort=${orden}` : ""; 
 
     console.log(`http://localhost:3000/funkos?${cadenaPagina}${cadenaOrdenacion}${cadenaFiltroCategorias}${cadenaFiltroSubcategorias}`);
 
     fetch(`http://localhost:3000/funkos?${cadenaPagina}${cadenaOrdenacion}${cadenaFiltroCategorias}${cadenaFiltroSubcategorias}`)
     .then( resultado => resultado.json() )
     .then( funkos => {
-
-        console.log(funkos);
-
         crearPaginacion(funkos.pages, pagina);
-        
-        document.getElementById("productoInicial").innerHTML = funkos.next ? (1 + (15*(funkos.next-2))) : (1 + (15*(funkos.pages-1))) ;
-        document.getElementById("productosPorPagina").innerHTML = funkos.next ? (15*(funkos.next-1)) : funkos.items;
-        document.getElementById("productosTotales").innerHTML = funkos.items;
+        modificarInformacionPaginacion(funkos);
 
         let fragmento = "";
         funkos.data.forEach(funko => {
@@ -39,7 +33,7 @@ export function cargarPaginaProductos(pagina,filtroCategoria=undefined,filtroSub
     });
 }
 
-export function crearPaginacion(cantidadPaginas, paginaActual)
+function crearPaginacion(cantidadPaginas, paginaActual)
 {
     let paginacion = ``;
 
@@ -52,12 +46,24 @@ export function crearPaginacion(cantidadPaginas, paginaActual)
         }
     }
 
-    console.log(cantidadPaginas);
-    console.log(paginaActual);
-
     document.getElementById("paginacion").innerHTML = paginacion;
+    document.getElementById(paginaActual).classList.add("actual");    
+}
 
-    document.getElementById(paginaActual).classList.add("actual");
+function modificarInformacionPaginacion(funkos) {
+    const productoInicial = funkos.next ? (1 + (15*(funkos.next-2))) : (1 + (15*(funkos.pages-1))) ;
+    const productoFinal = funkos.next ? (15*(funkos.next-1)) : funkos.items;
+    const productosTotales = funkos.items;
 
-    
+    const infoPaginacion = `
+    <p>Mostrando 
+        <span>${productoInicial}</span>
+    -
+        <span>${productoFinal}</span> 
+    de 
+        <span>${productosTotales}</span>
+    productos</p>
+    `
+
+    document.getElementById("cantidadProductos").innerHTML = infoPaginacion;
 }

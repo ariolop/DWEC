@@ -1,31 +1,32 @@
 import * as Categorias from './categorias.js';
 import * as Paginacion from './paginacion.js';
-//import * as Ordenacion from './ordenacion.js';
 
 /* Categorias */
 Categorias.cargarFiltroCategorias();
 Categorias.cargarCategoriasMenu();
 
 /* Paginación */
-setTimeout(Paginacion.cargarPaginaProductos(1),0);
+const categoria = location.search ? location.search.split('?')[1].split('=')[1] : "";
+Paginacion.cargarPaginaProductos(1,categoria);
 
+/* Función que usan los eventos para actualizar los productos */
+function actualizarProductos(pagina) {
+    const categoria = document.querySelector("input[name=categoriaFiltrada]:checked").value;
+
+    Paginacion.cargarPaginaProductos(pagina,categoria,"",document.getElementById("orden").value);
+}
+
+/* Eventos */
 document.getElementById("filtroCategorias").addEventListener("input", () => {
     console.log("Filtro aplicados");
 
-    const categoria = document.querySelector("input[name=categoriaFiltrada]:checked").value;
-
-    console.log(categoria);
-
-    Paginacion.cargarPaginaProductos(1,categoria,undefined,document.getElementById("orden").value);
+    actualizarProductos(1);
 });
 
 document.getElementById("orden").addEventListener("input", () => {
     console.log("Ordenacion aplicada");
 
-    const categoriaSeleccionada = document.querySelector("input[name=categoriaFiltrada]:checked");
-    const categoria = categoriaSeleccionada ? categoriaSeleccionada.value : undefined;
-
-    Paginacion.cargarPaginaProductos(1,categoria,undefined,document.getElementById("orden").value);
+    actualizarProductos(1);
 });
 
 document.getElementById("paginacion").addEventListener( ("click"), (e) => {
@@ -34,9 +35,5 @@ document.getElementById("paginacion").addEventListener( ("click"), (e) => {
 
     console.log("Cambiar de página");
 
-    const categoriaSeleccionada = document.querySelector("input[name=categoriaFiltrada]:checked");
-    const categoria = categoriaSeleccionada ? categoriaSeleccionada.value : undefined;
-
-
-    Paginacion.cargarPaginaProductos(+e.target.id,categoria,undefined,document.getElementById("orden").value);
+    actualizarProductos(+e.target.id)
 });

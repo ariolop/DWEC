@@ -6,8 +6,8 @@
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwa8818e75/images/funko/upload/74457_Encanto_BrunoProphecy_POP_GLAM.png", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwd7319ced/images/funko/upload/74457_Encanto_BrunoProphecy_POP_GLAM_1_BL-WEB.png",
             "categorias": [
-                "disney",
-                "encanto",
+                "Disney",
+                "Encanto",
                 "Bruno"
             ],
             "precio": 15 
@@ -19,8 +19,8 @@
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwc81563fb/images/funko/70118-1.png", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw3e36f349/images/funko/70118-2.png",
             "categorias": [
-                "disney",
-                "encanto",
+                "Disney",
+                "Encanto",
                 "Mirabel"
             ], 
             "precio": 12
@@ -32,8 +32,8 @@
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwd436a2e6/images/funko/57603-1.png", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw11cd751d/images/funko/57603-2.png",
             "categorias": [
-                "disney",
-                "encanto",
+                "Disney",
+                "Encanto",
                 "Antonio"
             ],
             "precio": 12 
@@ -45,8 +45,8 @@
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw4858fe4e/images/funko/57601-1.png", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw7bd5d390/images/funko/57601-2.png", 
             "categorias": [
-                "disney",
-                "encanto",
+                "Disney",
+                "Encanto",
                 "Luisa"
             ],
             "precio": 12 
@@ -58,8 +58,8 @@
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwae17d539/images/funko/57605-1.png", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwd79c2bef/images/funko/57605-2.png", 
             "categorias": [
-                "disney",
-                "encanto",
+                "Disney",
+                "Encanto",
                 "Alma"
             ],
             "precio": 12 
@@ -71,8 +71,8 @@
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwbf0df859/images/funko/upload/76777a_Encanto_IsabelaWithCactus_GLAM-WEB.png", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwa3137230/images/funko/upload/76777a_Encanto_IsabelaWithCactus_GLAM-1-Funko-WEB.png", 
             "categorias": [
-                "disney",
-                "encanto",
+                "Disney",
+                "Encanto",
                 "Isabela"
             ],
             "precio": 15 
@@ -84,8 +84,8 @@
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw1b50072d/images/funko/57599-1.png", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwebbc96a1/images/funko/57599-2.png", 
             "categorias": [
-                "disney",
-                "encanto",
+                "Disney",
+                "Encanto",
                 "Mirabel"
             ],
             "precio": 13 
@@ -97,7 +97,7 @@
             "imagenFunko": "https://funkoeurope.com/cdn/shop/files/65664_Disney_Bambi_Pop_Figure_GLAM-3-WEB_700x.png", 
             "imagenCaja": "https://funkoeurope.com/cdn/shop/files/65664_Disney_Bambi_Pop_BoxView_GLAM-1-WEB_700x.png",
             "categorias": [
-                "disney",
+                "Disney",
                 "Bambi"
             ], 
             "precio": 16
@@ -109,7 +109,7 @@
             "imagenFunko": "https://funkoeurope.com/cdn/shop/files/65666_Disney_Thumper_Pop_Figure_GLAM-3-WEB_700x.png", 
             "imagenCaja": "https://funkoeurope.com/cdn/shop/files/65666_Disney_Thumper_Pop_BoxView_GLAM-1-WEB_700x.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Bambi",
                 "Thumper"
             ], 
@@ -122,7 +122,7 @@
             "imagenFunko": "https://funkoeurope.com/cdn/shop/files/65665_Disney_Flower_Pop_Figure_GLAM-3-WEB_700x.png", 
             "imagenCaja": "https://funkoeurope.com/cdn/shop/files/65665_Disney_Flower_Pop_BoxView_GLAM-1-WEB_700x.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Bambi",
                 "Flower"
             ], 
@@ -135,7 +135,7 @@
             "imagenFunko": "https://funkoeurope.com/cdn/shop/files/70699_PeterPan70th_TinkOnMirror_POP_GLAM-WEB_700x.png", 
             "imagenCaja": "https://funkoeurope.com/cdn/shop/files/70699_Disney_PeterPan70yr_Tinkerbell_POPdisney_GLAM-1-WEB_700x.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Peter pan",
                 "Tinker bell"
             ], 
@@ -148,7 +148,7 @@
             "imagenFunko": "https://funkoeurope.com/cdn/shop/files/70697_PeterPan70th_PeterWithFlute_POP_GLAM-WEB_700x.png", 
             "imagenCaja": "https://funkoeurope.com/cdn/shop/files/70697_Disney_PeterPan70yr_PeterPan_POPdisney_GLAM-1-WEB_700x.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Peter pan"
             ], 
             "precio": 16 
@@ -160,7 +160,7 @@
             "imagenFunko": "https://funkoeurope.com/cdn/shop/files/70696_PeterPan_Mermaid_POP_GLAM-WEB_700x.png", 
             "imagenCaja": "https://funkoeurope.com/cdn/shop/files/70696_Disney_PeterPan70yr_Mermaid_POPdisney_GLAM-1-WEB_700x.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Peter pan"
             ], 
             "precio": 16 
@@ -172,7 +172,7 @@
             "imagenFunko": "https://funkoeurope.com/cdn/shop/files/70846_PeterPan_TinkonLantern_POP_GLAM-1-WEB_1_700x.png", 
             "imagenCaja": "https://funkoeurope.com/cdn/shop/files/70846_PeterPan_TinkonLantern_POP_GLAM-1-WEB_700x.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Peter pan",
                 "Tinker bell"
             ], 
@@ -185,7 +185,7 @@
             "imagenFunko": "https://funkoeurope.com/cdn/shop/files/70695_PeterPan70th_Hook_POP_GLAM-WEB_700x.png", 
             "imagenCaja": "https://funkoeurope.com/cdn/shop/files/70695_Disney_PeterPan70yr_CaptainHook_POPdisney_GLAM-1-WEB_700x.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Peter pan",
                 "Captain hook"
             ], 
@@ -198,7 +198,7 @@
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwfb10676b/images/funko/upload/75724_Disney_DD90th_DonaldDuckDapper_POP_GLAM-Web.png", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwa94301f3/images/funko/upload/75724_POP_Disney_Donald90th_DapperDonaldDuck_POP_GLAM-1-WEB.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Donald duck"
             ], 
             "precio": 12 
@@ -210,7 +210,7 @@
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw1839aa43/images/funko/upload/75723_Disney_DD90th_DonaldDuckAngry_POP_GLAM-WEB.png", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwebbb2c8b/images/funko/upload/75723_POP_Disney_Donald90th_AngryDonaldDuck_POP_GLAM-1-WEB.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Donald duck"
             ], 
             "precio": 12
@@ -222,7 +222,7 @@
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw3d8b30c7/images/funko/upload/75722_Disney_DD90th_DonaldDuck1938_POP_GLAM-WEB.png", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw3db56ddc/images/funko/upload/75722_POP_Disney_Donald90th_DonaldDuck1938_POP_GLAM-1-WEB.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Donald duck"
             ], 
             "precio": 12 
@@ -234,7 +234,7 @@
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwe80cf979/images/funko/59621-1.png", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw25df66ee/images/funko/59621-2.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Donald duck"
             ], 
             "precio": 12 
@@ -246,7 +246,7 @@
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw48765fb7/images/funko/upload/75725_Disney_DD90th_DonaldDuckHeartEyes_POP_GLAM-WEB.png", 
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dw8dcffe2d/images/funko/upload/75725_POP_Disney_Donald90th_DonaldDuckwHeartEyes_POP_GLAM-1-WEB.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Donald duck"
             ], 
             "precio": 12 
@@ -475,7 +475,7 @@
             "imagenFunko": "https://media.pop-busters.com/media/catalog/product/5/6/56348_Disney_UltimatePrincess_Anna_POP_Renders_GLAM_WEB__1__10d9.png", 
             "imagenCaja": "https://media.pop-busters.com/media/catalog/product/5/6/56348_Disney_UltimatePrincess_Anna_POP_Renders_GLAM_1_WEB__1__cef2.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Frozen",
                 "Anna"
             ], 
@@ -488,7 +488,7 @@
             "imagenFunko": "https://media.pop-busters.com/media/catalog/product/5/6/56350_Disney_UltimatePrincess_Elsa_POP_Renders_GLAM_WEB_d00f.png", 
             "imagenCaja": "https://media.pop-busters.com/media/catalog/product/5/6/56350_Disney_UltimatePrincess_Elsa_POP_Renders_GLAM_1_WEB_6de5.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Frozen",
                 "Elsa"
             ], 
@@ -501,7 +501,7 @@
             "imagenFunko": "https://media.pop-busters.com/media/catalog/product/6/7/67973_Disney_Elsa_POP_GLAM_WEB_615c.png", 
             "imagenCaja": "https://media.pop-busters.com/media/catalog/product/6/7/67973_Disney_Elsa_POP_GLAM_1_WEB_deac.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Frozen",
                 "Elsa" 
             ], 
@@ -852,7 +852,7 @@
             "imagenFunko": "https://media.pop-busters.com/media/catalog/product/7/0/70698_PeterPan70th_Wendy_POP_GLAM_WEB_56d1.png", 
             "imagenCaja": "https://media.pop-busters.com/media/catalog/product/7/0/70698_Disney_PeterPan70yr_WendyFlying_POPdisney_GLAM_1_WEB_c0ef.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Peter pan",
                 "Wendy"
             ], 
@@ -865,7 +865,7 @@
             "imagenFunko": "https://media.pop-busters.com/media/catalog/product/5/8/58794_Disney_TinkerBell_DeluxePOP_GLAM_1_WEB_5f9f.png", 
             "imagenCaja": "https://media.pop-busters.com/media/catalog/product/5/8/58794_Disney_TinkerBell_DeluxePOP_IE_GLAM_1_1_WEB__Copy__7869.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "Peter pan",
                 "Tinker bell"
             ], 
@@ -878,7 +878,7 @@
             "imagenFunko": "https://media.pop-busters.com/media/catalog/product/a/c/acb36e9b7162586aa22a68a486bce6063e8b4c6c_cb08.jpg", 
             "imagenCaja": "https://media.pop-busters.com/media/catalog/product/8/4/84c8c9c2c176b7d894c2197fdfc862c7df4648f5_0e37.jpg", 
             "categorias": [
-                "disney",
+                "Disney",
                 "La bella y la bestia"
             ], 
             "precio": 99.95
@@ -890,7 +890,7 @@
             "imagenFunko": "https://media.pop-busters.com/media/catalog/product/6/6/66d0758b8d473659f241400e0bd73057edf115bf_52dd.jpg", 
             "imagenCaja": "https://media.pop-busters.com/media/catalog/product/a/7/a721bbbb58ce56da02ade06aaab4c1d5eb7802a8_b099.jpg", 
             "categorias": [
-                "disney",
+                "Disney",
                 "La bella y la bestia",
                 "Cogsworth"
             ], 
@@ -903,7 +903,7 @@
             "imagenFunko": "https://media.pop-busters.com/media/catalog/product/1/f/1fd093d657b6406097bda0dac58418665870f0be_201e.jpg",
             "imagenCaja": "https://media.pop-busters.com/media/catalog/product/3/9/39f2bd0c6f155c439f2aebee175ca0e66ec92cff_7156.jpg", 
             "categorias": [
-                "disney",
+                "Disney",
                 "La bella y la bestia",
                 "Belle"
             ], 
@@ -916,7 +916,7 @@
             "imagenFunko": "https://media.pop-busters.com/media/catalog/product/a/9/a9476e1ac840d16f447fa1098826434c8ef36614_44ca.jpg",
             "imagenCaja": "https://media.pop-busters.com/media/catalog/product/7/1/717103ed552e57d9a9b020c48e547c60357466da_6b05.jpg", 
             "categorias": [
-                "disney",
+                "Disney",
                 "La bella y la bestia",
                 "The beast"
             ], 
@@ -929,7 +929,7 @@
             "imagenFunko": "https://media.pop-busters.com/media/catalog/product/e/b/eb7c3a574880054f722bccd3f5ad06e8adfbca9e_09fa.jpg",
             "imagenCaja": "https://media.pop-busters.com/media/catalog/product/0/4/047b64f56b897e74dbd3c1d29283bc3074c7ef8d_b68b.jpg", 
             "categorias": [
-                "disney",
+                "Disney",
                 "La bella y la bestia",
                 "Gaston"
             ], 
@@ -942,7 +942,7 @@
             "imagenFunko": "https://media.pop-busters.com/media/catalog/product/5/f/5ff7be826f0b5be8bda279984df78bed0d3beecf_6a4b.jpg",
             "imagenCaja": "https://media.pop-busters.com/media/catalog/product/5/2/5244a4fa6cb9553789a9808653f29aba982d78da_3d6e.jpg", 
             "categorias": [
-                "disney",
+                "Disney",
                 "La bella y la bestia",
                 "Lumiere"
             ], 
@@ -955,7 +955,7 @@
             "imagenFunko": "https://media.pop-busters.com/media/catalog/product/f/4/f4d012f59b1c4c7827e040194d25758b2188cb6b_930c.jpg",
             "imagenCaja": "https://media.pop-busters.com/media/catalog/product/2/f/2f80d5a5e31e84fe91b19af1bcf0330a1babb06e_af41.jpg", 
             "categorias": [
-                "disney",
+                "Disney",
                 "La bella y la bestia",
                 "Belle"
             ], 
@@ -968,7 +968,7 @@
             "imagenFunko": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwac2d737f/images/funko/56349-1.png",
             "imagenCaja": "https://funko.com/dw/image/v2/BGTS_PRD/on/demandware.static/-/Sites-funko-master-catalog/default/dwba24ff4d/images/funko/56349-2.png", 
             "categorias": [
-                "disney",
+                "Disney",
                 "La bella y la bestia",
                 "Belle"
             ], 
