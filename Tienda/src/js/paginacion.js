@@ -1,28 +1,26 @@
 export function cargarPaginaProductos(pagina,filtroCategoria=undefined,filtroSubcategoria=undefined,orden="") {
 
+    const cadenaPagina = `_page=${pagina}&_per_page=15`;
     const cadenaFiltroCategorias = filtroCategoria ? `&categorias[0]=${filtroCategoria}` : "";
     const cadenaFiltroSubcategorias = filtroSubcategoria ? `&categorias[1]=${filtroSubcategoria}` : "";
-    const cadenaOrdenacion = orden !== "" ? `&_sort=${orden}` : "";  
+    const cadenaOrdenacion = orden !== "" ? `&_sort=${orden}` : ""; 
 
-    console.log(`http://localhost:3000/funkos?_page=${pagina}&_per_page=15${cadenaOrdenacion}${cadenaFiltroCategorias}${cadenaFiltroSubcategorias}`);
+    console.log(`http://localhost:3000/funkos?${cadenaPagina}${cadenaOrdenacion}${cadenaFiltroCategorias}${cadenaFiltroSubcategorias}`);
 
-    fetch(`http://localhost:3000/funkos?_page=${pagina}&_per_page=15${cadenaOrdenacion}${cadenaFiltroCategorias}${cadenaFiltroSubcategorias}`)
+    fetch(`http://localhost:3000/funkos?${cadenaPagina}${cadenaOrdenacion}${cadenaFiltroCategorias}${cadenaFiltroSubcategorias}`)
     .then( resultado => resultado.json() )
     .then( funkos => {
-        let data = funkos.data;
-        console.log(data);
-
-        crearPaginacion(funkos.pages,pagina);
-
-        let fragmento = "";
 
         console.log(funkos);
 
+        crearPaginacion(funkos.pages, pagina);
+        
         document.getElementById("productoInicial").innerHTML = funkos.next ? (1 + (15*(funkos.next-2))) : (1 + (15*(funkos.pages-1))) ;
         document.getElementById("productosPorPagina").innerHTML = funkos.next ? (15*(funkos.next-1)) : funkos.items;
         document.getElementById("productosTotales").innerHTML = funkos.items;
 
-        data.forEach(funko => {
+        let fragmento = "";
+        funkos.data.forEach(funko => {
             const carta = `
             <div class="carta">
                 <div id="imagenes" class="imagenes">
@@ -48,15 +46,18 @@ export function crearPaginacion(cantidadPaginas, paginaActual)
     for (let i = 1; i <= cantidadPaginas; i++) {
         if(i === paginaActual || i === paginaActual-1 || i === paginaActual+1 || i === 1 || i === cantidadPaginas)
         {
-            paginacion += `<div id="${i}">${i}</div>`;
+            paginacion += `<div>
+                                <a id="${i}" href="#">${i}</a>
+                            </div>`;
         }
     }
+
+    console.log(cantidadPaginas);
+    console.log(paginaActual);
 
     document.getElementById("paginacion").innerHTML = paginacion;
 
     document.getElementById(paginaActual).classList.add("actual");
 
-    console.log(cantidadPaginas);
-    console.log(paginaActual);
+    
 }
-

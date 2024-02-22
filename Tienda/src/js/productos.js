@@ -28,6 +28,15 @@ document.getElementById("orden").addEventListener("input", () => {
     Paginacion.cargarPaginaProductos(1,categoria,undefined,document.getElementById("orden").value);
 });
 
-document.getElementById("paginacion").addEventListener( ("click"), () => {
+document.getElementById("paginacion").addEventListener( ("click"), (e) => {
 
+    if(!+e.target.id) return;
+
+    console.log("Cambiar de página");
+
+    const categoriaSeleccionada = document.querySelector("input[name=categoriaFiltrada]:checked");
+    const categoria = categoriaSeleccionada ? categoriaSeleccionada.value : undefined;
+
+
+    Paginacion.cargarPaginaProductos(+e.target.id,categoria,undefined,document.getElementById("orden").value);
 });

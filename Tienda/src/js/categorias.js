@@ -11,10 +11,14 @@ export function cargarFiltroCategorias() {
 
         let checkboxCategorias = "";
 
+        checkboxCategorias += `
+                <div>
+                    <input type="radio" name="categoriaFiltrada" value="" checked> <label>Todas</label>
+                </div>`;
         categorias.forEach(c => {
             checkboxCategorias += `
                 <div>
-                    <input type="radio" name="categoriaFiltrada" value="${c}"> <label>${c}</label>
+                    <input id="${c}" type="radio" name="categoriaFiltrada" value="${c}"> <label>${c[0].toUpperCase() + c.slice(1)}</label>
                 </div>
             `
         });
@@ -37,7 +41,7 @@ export function cargarCategoriasMenu()
         categorias.forEach(c => {
             listaCategorias += `
             <li>
-                <a href="categorias.html?cat=${c.replaceAll(" ","").toLowerCase()}">${c}</a>
+                <a href="productos.html?cat=${c}">${c}</a>
             </li>`
         });
 
