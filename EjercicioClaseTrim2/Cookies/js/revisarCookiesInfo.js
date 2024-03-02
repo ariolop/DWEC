@@ -6,7 +6,7 @@ import {existeCookie, getCookie} from "./funciones.js";
 //Los nombres de las cookies son "idioma" y "tema"
 if(!existeCookie(getCookie("idioma")))
 {
-    location.href = "/EjercicioClaseTrim2/Cookies/configuracion.html";
+    location.href = "./configuracion.html";
 }
 
 
@@ -21,6 +21,4 @@ else if (idioma === "ingles")
 {
     document.getElementById("container").innerHTML = informacionIngles;
 }
-
-// document.getElementById("")
 

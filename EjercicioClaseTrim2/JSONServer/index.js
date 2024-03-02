@@ -13,6 +13,7 @@ fetch("http://localhost:3000/funkos")
                 </div>
                 <p id="nombre" class="nombre">${funko.nombre}</p>
                 <p id="precio" class="precio">${funko.precio}€</p>
+                <button id="agregarCarrito" data-id="${funko.id}">Agregar al carrito</button>
             </div>
             `;
 
