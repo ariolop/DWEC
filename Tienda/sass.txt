@@ -1,3 +1,0 @@
-Iniciamos SASS:
-
-sass ./src/sass/:./src/css/ --watch
