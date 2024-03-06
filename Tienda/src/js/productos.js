@@ -1,57 +1,87 @@
 import * as Categorias from './categorias.js';
-import * as Paginacion from './paginacion.js';
+import * as Productos from './cargarProductos.js';
+import * as Carrito from './organizarCarrito.js';
+
+Carrito.añadirEventoAgregarCarrito();
 
 /* Categorias */
 Categorias.cargarFiltroCategorias();
 Categorias.cargarCategoriasMenu();
 
-/* Paginación */
-const categoria = location.search  
-                        ? (location.search.split('?')[1].split('=')[0] === "cat"  
-                                ? location.search.split('?')[1].split('=')[1] 
-                                :"")  
-                        : "";
+/* Comprobamos si venimos del enlace oferta */
+document.getElementById("oferta").checked = localStorage.getItem("oferta") ? true : false;
+localStorage.removeItem("oferta");
 
-const busqueda = location.search  
-                        ? (location.search.split('?')[1].split('=')[0] === "buscar"  
-                                ? location.search.split('?')[1].split('=')[1] 
-                                :"")  
-                        : "";
+/* Carga de productos */
+const categoria = localStorage.getItem("categoriaSeleccionada");
 
-if(busqueda)
+let busqueda = location.search  
+                ? location.search.split('?')[1].split('=')[1]
+                : "";
+
+if(busqueda) // Hemos abierto productos.html desde la búsqueda
 {
-    Paginacion.cargarBusquedaProductos(1, busqueda);
+    busqueda = busqueda.replaceAll("+"," ").trim();
 }
-else
-{
-    Paginacion.cargarPaginaProductos(1, categoria);
+else //Hemos abierto productos.html desde las categorías
+{   
+    if(categoria)
+        Categorias.cargarFiltroSubcategorias(categoria);
 }
+
+actualizarProductos();
+
 
 /* Función que usan los eventos para actualizar los productos */
-function actualizarProductos(pagina) {
-    const categoria = document.querySelector("input[name=categoriaFiltrada]:checked").value;
+function actualizarProductos() {
+    const categoria = localStorage.getItem("categoriaSeleccionada");
+    const subcategoria = localStorage.getItem("subcategoriaSeleccionada");
+    const oferta = document.getElementById("oferta").checked;
 
-    Paginacion.cargarPaginaProductos(pagina,categoria,"",document.getElementById("orden").value);
+    if(busqueda) // Hemos abierto productos.html desde la búsqueda
+        Productos.cargarBusquedaProductos(busqueda, document.getElementById("orden").value, oferta);
+    else
+        Productos.cargarCategoriaProductos(categoria, subcategoria, document.getElementById("orden").value, oferta);
 }
 
 /* Eventos */
 document.getElementById("filtroCategorias").addEventListener("input", () => {
     console.log("Filtro aplicados");
 
-    actualizarProductos(1);
+    const categoria = document.querySelector("input[name=categoriaFiltrada]:checked").value;
+
+    localStorage.setItem("categoriaSeleccionada", categoria);
+    localStorage.setItem("subcategoriaSeleccionada", "");
+
+    if(categoria)
+        Categorias.cargarFiltroSubcategorias(categoria);
+    else
+        document.getElementById("filtroSubcategorias").innerHTML = "<p>Selecciona una categoria</p>";
+
+    if(busqueda)
+        location.search = ``;
+
+    actualizarProductos();
+});
+
+document.getElementById("filtroSubcategorias").addEventListener("input", () => {
+    console.log("Filtro subcategoria aplicados");
+
+    const subcategoria = document.querySelector("input[name=subcategoriaFiltrada]:checked").value;
+
+    localStorage.setItem("subcategoriaSeleccionada", subcategoria);
+
+    actualizarProductos();
 });
 
 document.getElementById("orden").addEventListener("input", () => {
     console.log("Ordenacion aplicada");
 
-    actualizarProductos(1);
+    actualizarProductos();
 });
 
-document.getElementById("paginacion").addEventListener( ("click"), (e) => {
+document.getElementById("filtroOfertas").addEventListener("input", () => {
+    console.log("Filtro ofertas aplicada");
 
-    if(!+e.target.id) return;
-
-    console.log("Cambiar de página");
-
-    actualizarProductos(+e.target.id);
+    actualizarProductos();
 });

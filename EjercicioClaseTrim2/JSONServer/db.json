@@ -10,6 +10,8 @@
                 "Encanto",
                 "Bruno"
             ],
+            "oferta": true,
+            "descuentoPorcentaje": 10,
             "precio": 15 
         },
 

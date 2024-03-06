@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alfunk</title>
     <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon">
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="css/index.css">
-    <script src="https://kit.fontawesome.com/63a49e22be.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+
+    <!-- Fuentes -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 </head>
 <body>
@@ -17,47 +21,193 @@
         </div>
         <div class="cabecera">
             <div class="logo">
-                <a href="index.html">
-                    <img src="image/logo.png" alt="Logo de la página">
-                </a>
+                <a href="index.html"><img src="image/logo.png" alt="Logo de la página"></a>
             </div>
-            <div class="buscador">
-                <form id="formBuscaProductos" class="form" action="productos.html">
-                    <input id="buscador" name="buscar" type="text" placeholder="Buscar...">
-                    <button type="submit" value="submit"><i class="fas fa-search"></i></button>
-                </form>
+            <div class="buscador navbar navbar-expand-md">
+                <div class="botonLupa">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="navbar-toggler-icon fas fa-search"></i> <!-- Icono lupa para mostrar formulario -->  
+                    </button>
+                </div>
+                <div class="botonMenu">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="navbar-toggler-icon fas fa-list"></i> <!-- Icono lupa para mostrar formulario -->  
+                    </button>
+                </div>
+                <div class="contenedorBuscador collapse navbar-collapse" id="navbarSearch">
+                    <form id="formBuscaProductos" class="form" action="productos.html">
+                        <input id="buscador" name="buscar" type="text" placeholder="Buscar...">
+                        <button type="submit" value="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
             </div>
             <div class="iconos">
                 <div class="login">
-                    <i class="fas fa-user"></i>
+                    <p>
+                        <span id="usuario"></span>
+                    </p>
+                    <a id="enlaceInicioSesion" href="#" data-bs-toggle="modal" data-bs-target="#modalInicioSesion">
+                        <i class="fas fa-user"></i>
+                    </a>
                 </div>
-                <div>|</div>
+                <div class="separacion">|</div>
                 <div class="carrito">
-                    <i class="fas fa-shopping-cart"></i>
+                    <a href="carrito.html">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-        <nav class="menu">
-            <ul>
-                <li>
-                    <a href="productos.html">Categorías</a>
-                    <ul id="listaMenuCategorias">
-
+            <div class="navbarMenu navbar-expand-md">
+                <nav class="collapse navbar-collapse menu" id="navbarMenu">
+                    <ul class="">
+                        <li id="enlacesProductos">
+                            <a href="productos.html">Categorías</a>
+                            <ul id="listaMenuCategorias">
+        
+                            </ul>
+                        </li>
+                        <li id="enlaceOferta"><a href="productos.html">Ofertas</a></li>
+                        <li id="enlaceNovedades"><a href="productos.html">Novedades</a></li>
+                        <li><a href="acercaDe.html">Acerca de</a></li>
                     </ul>
-                </li>
-                <li><a href="#">Próximamente</a></li>
-                <li><a href="#">Exclusivos</a></li>
-                <li><a href="#">Acerca de</a></li>
-            </ul>
-        </nav>
+                </nav>
+            </div>
+        </div>  
     </header>
 
+    <!-- Modal Iniciar sesión -->
+    <div class="modal fade" id="modalInicioSesion" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalInicioSesionTitulo">Iniciar sesion en Alfunk</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" id="formInicioSesion">
+                    <div class="modal-body">
+                        <div>
+                            <label for="email">Correo eléctrónico:</label>
+                            <input type="email" name="emailInicioSesion" id="emailInicioSesion" required>
+                        </div>
+                        <div>
+                            <label for="email">Contraseña:</label>
+                            <input type="password" name="contraseña" id="contraseña" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" id="botonInicioSesion" value="Iniciar sesión">
+                        <a href="#">¿No tienes cuenta? Regístrate</a>
+                        <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalSesionLocal">¿Quieres guardar tu carrito sin iniciar sesión?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Iniciar sesión Local Storage-->
+    <div class="modal fade" id="modalSesionLocal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div id="contenidoModal" class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSesionLocalTitulo">Sesión local en Alfunk</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" id="formInicioSesionLocal">
+                    <div class="modal-body">
+                        <div>
+                            <label for="email">Correo eléctrónico:</label>
+                            <input type="email" name="emailLocal" id="emailLocal" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" id="botonInicioSesionLocal" value="Aceptar">
+                        <a href="#">Registrarse tiene muchas ventajas, anímate!</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal información usuario -->
+    <div class="modal fade" id="modalInformacionUsuario" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div id="contenidoModal" class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSesionLocalTitulo">Información de mi usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" id="formCambiarCorreo">
+                    <div class="modal-body">
+                        <div>
+                            <label for="email">¿Desea cambiar el correo eléctrónico?, escriba aquí el nuevo:</label>
+                            <input type="email" name="nuevoEmail" id="nuevoEmail" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" id="botonCambiarCorreo" value="Aceptar">
+                        <a href="#">Registrarse tiene muchas ventajas, anímate!</a>
+                        <a id="cerrarSesion" href="">Cerrar sesión (su carrito se guardará)</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
-        <div class="bannerPrincipal">
-            <img src="image/banners/banner_funkos_disney.jpg" alt="">
+        <!-- Carousel -->
+        <div id="carouselBannerPrincipal" class="bannerPrincipal carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="image/banners/Michael Jackson.png" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="image/banners/DB super.png" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="image/banners/disney.png" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="image/banners/starwars.png" alt="">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBannerPrincipal" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselBannerPrincipal" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
         </div>
         <div id="cartas" class="cartas">
 
+        </div>
+        <div class="banners">
+            <div class="bannerOferta">
+                <img src="image/banners/oferta.png" alt="">
+            </div>
+            <div class="contenedorOfertas">
+                <div class="funkosOferta" id="funkosOferta">
+                
+                </div>
+            </div>
+            <div class="contenedorBlackClover">
+                <div class="funkosBlackClover" id="funkosBlackClover">
+                
+                </div>
+            </div>
+            <div class="bannerBlackClover">
+                <img src="image/banners/blackclover.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- Alerta de "Producto añadido al carrito" -->
+    <div class="toast-container position-static">
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+            </div>
         </div>
     </div>
 
@@ -100,8 +250,19 @@
         </div>
     </footer>
 
-
+    <!-- Iconos -->
     <script src="https://kit.fontawesome.com/63a49e22be.js" crossorigin="anonymous"></script>
+
+    <!-- JS -->
+    <script type="importmap">
+        {
+          "imports": {
+            "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js"
+          }
+        }
+    </script>
+    <script type="module" src="js/bootstrap/bootstrap.esm.js"></script>
     <script type="module" src="js/index.js"></script>
+    <script src="js/iniciarSesion.js"></script>
 </body>
 </html>

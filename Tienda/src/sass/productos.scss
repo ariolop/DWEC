@@ -1,5 +1,6 @@
 @use './header.scss' as header;
 @use './footer.scss' as footer;
+@use './mixins.scss' as mixins;
 
 * {
     margin: 0px;
@@ -12,10 +13,11 @@
 
 main {
     display: flex;
+    min-height: 80vh;
+    background-color: #EEE;
 
     .filtrosOrdenacion {
-        width: 25%;
-        background-color: lightblue;
+        width: 20%;
         padding: 20px;
 
         .filtros {
@@ -25,20 +27,20 @@ main {
                 margin-top: 10px;
             }
 
-            .formCategorias {
-
-                input {
-                    display: inline;
-                    margin-top: 5px;
-                }
+            input {
+                display: inline;
+                margin-top: 5px;
             }
         }
     }
 
     .container {
-        width: 75%;
-        background-color: lightgreen;
+        width: 80%;
         padding: 20px;
+
+        .error {
+            display: none;
+        }
 
         .informacion {
             display: flex;
@@ -52,88 +54,35 @@ main {
             align-items: center;
 
             .cartas {
-                width: 100%;
-                max-width: 1000px;
                 margin: auto;
-                position: relative;
-                height: fit-content;
                 display: grid;
-                grid-template-columns: repeat(5, 1fr);
+                grid-template-columns: repeat(1, minmax(100px, 180px));
                 gap: 16px;
-        
-                .carta {
-                    height: 300px;
-                    background-color: white;
-                    border-radius: 10px;
-                    padding: 5px;
-                    display: flex;
-                    flex-flow: column;
-                    justify-content: space-evenly;
-        
-                    .nombre {
-                        font-weight: bold;
-                        padding: 10px;
-                    }
-        
-                    .precio {
-                        padding: 10px;
-                    }
-        
-                    .imagenes {
-                        height: 150px;
-                        position: relative;
-                        display: flex;
-                        justify-content: center;
-        
-                        img {
-                            position: absolute;
-                            height: 100%;
-                            max-width: 100%;
-                        }
-        
-                        .funko {
-                            opacity: 1;
-                            transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
-                            transform: translateY(0px) scale(1);
-                            filter: blur(0px);
-                        }
-                    
-                        .caja {
-                            opacity: 0;
-                            transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
-                            transform: translateY(15px) scale(1);
-                            filter: blur(12px);
-                        }
-                    }
-                
-                    .imagenes:hover .caja {
-                        opacity: 1;
-                        transform: translateY(0) scale(1);
-                        filter: blur(0);
-                    }
-                    
-                    .imagenes:hover .funko {
-                        opacity: 0;
-                        transform: translateY(15px) scale(1);
-                        filter: blur(12px);
-                    }
-        
-                    .añadirCarrito {
-                        width: 100%;
-                        border-radius: 10px;
-                        border: 0px;
-                        padding: 5px;
-                    }
+                box-sizing: border-box;
+
+                @include mixins.extrasmall {
+                    grid-template-columns: repeat(2, minmax(100px, 180px));
                 }
+        
+                @include mixins.small {
+                    grid-template-columns: repeat(3, minmax(100px, 180px));
+                }
+        
+                @include mixins.medium {
+                    grid-template-columns: repeat(5, minmax(100px, 180px));
+                }
+        
+                @include mixins.carta();
             }
 
             .paginacion {
                 display: flex;
                 flex-flow: row;
-                justify-content: space-evenly;
+                justify-content: center;
                 margin-top: 20px;
                 font-size: 20px;
-                width: 30%;
+                width: fit-content;
+                border-radius: 5px;
 
                 div {
                     text-align: center;
@@ -144,16 +93,37 @@ main {
                         height: 100%;
                         padding: 8px;
                         background-color: lightcoral;
-                        border-radius: 5px;
                         width: 20px;
                         height: 20px;
                         text-decoration: none;
+                        background-color: white;
+                        border: 1px solid black;
                         color: black;
                     }
 
                     .actual {
-                        background-color: red;
+                        background-color: black;
                         color: white;
+                    }
+                }
+
+                div:first-child {
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+
+                    a {
+                        border-top-left-radius: 5px;
+                        border-bottom-left-radius: 5px;    
+                    }
+                }
+
+                div:last-child {
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+
+                    a {
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;    
                     }
                 }
 

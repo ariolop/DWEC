@@ -1,0 +1,192 @@
+@use './header.scss' as header;
+@use './footer.scss' as footer;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Ubuntu;
+}
+
+@include header.header();
+@include footer.footer();
+
+.container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin: 0px auto;
+    width: 80%;
+    max-width: 1200px;
+    margin-top: 30px;
+
+    .cesta {
+        width: 60%;
+        padding: 10px 20px;
+
+        .titulo {
+
+            hr {
+                margin: 5px 0px 10px 0px;
+            }
+
+            h4 {
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+
+        .productos {
+
+            .carta {
+                height: 150px;
+                display: flex;
+                flex-flow: row;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #CCC;
+
+                .funko {
+                    height: 100%;
+                    width: 40%;
+                    display: flex;
+                    align-items: center;
+                    
+                    .foto {
+                        height: 100%;
+    
+                        img {
+                            height: 100%;
+                        }
+                    }
+
+                    .datos {
+                        .nombreFunko {
+                            font-weight: bold;
+                        }
+
+                        .categorias {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .contenedorCantidad {
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                    text-align: center;
+                    width: 40%;
+
+                    p {
+                        font-size: 14px;
+                    }
+
+                    .controlesCantidad {
+                        display: flex;
+                        justify-content: center;
+                        border: 1px solid black;
+                        margin-left: 20px;
+
+                        span {
+                            padding: 4px 8px;
+                        }
+
+                        .controlMas, .controlMenos {
+                            cursor: pointer;
+                        }
+
+                        .controlMas:hover, .controlMenos:hover {
+                            background-color: #EEE;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .informacion {
+        width: 30%;
+        padding: 10px 20px;
+
+        .informacionPrecio {
+            background-color: #EEE;
+            padding: 20px;
+   
+            .sinGastos {
+                color: red;
+            }
+
+            .precioTotal, .precioEnvio {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+    
+            .codigo {
+    
+                .inputCodigo {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+    
+                    input {
+                        padding: 5px;
+                        font-size: 15px;
+                        width: 65%;
+                    }
+    
+                    input::placeholder {
+                        font-size: 12px;
+                    }
+    
+                    button {
+                        padding: 5px 15px;
+                        background: white;
+                        transition: 1s background,color;
+                        font-size: 15px;
+                    }
+    
+                    button:hover {
+                        background: black;
+                        color: white;
+                    }
+                }
+    
+                input[type="submit"] {
+                    margin-top: 20px;
+                    font-size: 16px;
+                    width: 100%;
+                    padding: 6px;
+                    background: white;
+                    cursor: pointer;
+                    transition: 1s background,color;
+                    font-weight: bold;
+                }
+
+                input[type="submit"]:hover {
+                    background: black;
+                    color: white;
+                }
+            }
+        }
+
+        .formasPago {
+            display: flex;
+            padding: 10px;
+            background-color: #EEE;
+            margin-top: 20px;
+            justify-content: space-evenly;
+            align-items: center;
+
+            img {
+                height: 100%;
+                width: 20%;
+            }
+
+            .bizum,.paypal {
+                height: 30px;
+                width: 25%;
+            }
+        }
+    }
+}

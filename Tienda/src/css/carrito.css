@@ -1,0 +1,495 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Ubuntu;
+}
+
+.header {
+  text-align: center;
+  background-color: black;
+}
+.header .miniCabecera {
+  height: 20px;
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .cabecera {
+  min-height: 80px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .cabecera .logo {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  width: 45%;
+  order: 1;
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .logo {
+    width: 30%;
+  }
+}
+.header .cabecera .logo a {
+  max-width: 300px;
+  height: 60%;
+  text-decoration: none;
+  display: block;
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .logo a {
+    height: 90%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .header .cabecera .logo a {
+    height: 100%;
+  }
+}
+.header .cabecera .logo a img {
+  width: 100%;
+  height: 100%;
+}
+.header .cabecera .buscador {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  order: 4;
+  margin: 0px 10px;
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .buscador {
+    order: 2;
+    width: 30%;
+    max-width: 400px;
+    margin: 0px;
+  }
+}
+.header .cabecera .buscador .botonLupa, .header .cabecera .buscador .botonMenu {
+  height: 40px;
+}
+.header .cabecera .buscador .botonLupa button, .header .cabecera .buscador .botonMenu button {
+  height: 100%;
+  color: white;
+}
+.header .cabecera .buscador .contenedorBuscador .form {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  width: 100%;
+}
+.header .cabecera .buscador .contenedorBuscador .form input {
+  height: 100%;
+  border: 0px;
+  padding: 0px 10px;
+  width: 100%;
+  border-radius: 5px 0px 0px 5px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.header .cabecera .buscador .contenedorBuscador .form input:focus-visible {
+  outline: 0px;
+}
+.header .cabecera .buscador .contenedorBuscador .form button {
+  border-radius: 0px 5px 5px 0px;
+  height: 100%;
+  border: 0px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: darkgray;
+}
+.header .cabecera .iconos {
+  display: flex;
+  justify-content: end;
+  width: 45%;
+  color: white;
+  order: 3;
+  margin-right: 20px;
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .iconos {
+    width: 30%;
+  }
+}
+.header .cabecera .iconos .login {
+  display: flex;
+}
+.header .cabecera .iconos .login p {
+  margin-right: 10px;
+  font-size: 13px;
+}
+@media only screen and (min-width: 500px) {
+  .header .cabecera .iconos .login p {
+    font-size: 16px;
+  }
+}
+.header .cabecera .iconos .separacion {
+  margin: 0px 10px;
+}
+.header .cabecera .iconos a {
+  color: white;
+}
+.header .cabecera .iconos a:hover {
+  color: #CCC;
+}
+.header .cabecera .navbarMenu {
+  width: 100%;
+  order: 5;
+  position: relative;
+  z-index: 1000;
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .navbarMenu {
+    position: static;
+  }
+}
+.header .cabecera .navbarMenu .menu {
+  position: absolute;
+  width: 100%;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .navbarMenu .menu {
+    position: static;
+  }
+}
+.header .cabecera .navbarMenu .menu > ul {
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  min-height: 50px;
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .navbarMenu .menu > ul {
+    flex-flow: row;
+  }
+}
+.header .cabecera .navbarMenu .menu > ul > li {
+  display: inline;
+  position: relative;
+  margin: 10px 0px;
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .navbarMenu .menu > ul > li {
+    margin: 0px;
+  }
+}
+.header .cabecera .navbarMenu .menu > ul > li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+.header .cabecera .navbarMenu .menu > ul > li a:hover {
+  color: #CCC;
+}
+.header .cabecera .navbarMenu .menu > ul > li ul {
+  display: none;
+  position: absolute;
+  background-color: rgb(51, 51, 51);
+  list-style: none;
+  width: 200px;
+  z-index: 10;
+  /* items del menu desplegable */
+}
+.header .cabecera .navbarMenu .menu > ul > li ul li {
+  display: inline;
+  /* enlaces de los items del menu desplegable */
+}
+.header .cabecera .navbarMenu .menu > ul > li ul li a {
+  font-size: 16px;
+  padding: 8px 10px;
+  display: block;
+}
+.header .cabecera .navbarMenu .menu > ul > li ul li:hover {
+  background-color: blue;
+}
+.header .cabecera .navbarMenu .menu > ul li:hover > ul {
+  display: flex;
+  flex-flow: column;
+}
+
+.modal-content {
+  box-sizing: border-box;
+}
+.modal-content .modal-header {
+  border: 0px;
+}
+.modal-content .modal-header .modal-title {
+  font-size: 20px;
+}
+.modal-content .modal-header button {
+  margin: 0px;
+}
+.modal-content .modal-body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.modal-content .modal-body div {
+  width: 100%;
+  margin: 10px 0px;
+}
+.modal-content .modal-body div input {
+  box-sizing: border-box;
+  display: block;
+  margin: 0px;
+  margin-top: 5px;
+  width: 100%;
+  padding: 5px 10px;
+}
+.modal-content .modal-footer {
+  border: 0px;
+  justify-content: center;
+}
+.modal-content .modal-footer input {
+  padding: 5px;
+  display: block;
+  width: 100%;
+}
+.modal-content .modal-footer a {
+  text-align: center;
+  width: 100%;
+  border-radius: 2px;
+  padding: 5px 0px;
+  color: black;
+  font-size: 12px;
+  text-decoration: none;
+}
+.modal-content .modal-footer a:hover {
+  background-color: #DDD;
+}
+
+.footer {
+  height: 200px;
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0px;
+}
+.footer .col {
+  width: 25%;
+  background-color: gray;
+  color: white;
+  padding: 10px;
+}
+.footer .col h2 {
+  text-align: center;
+}
+.footer .col .redesSociales {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+.footer .col .redesSociales a {
+  color: white;
+  text-decoration: none;
+}
+.footer .col .redesSociales a:hover {
+  color: #CCC;
+}
+.footer .col .categorias {
+  margin-top: 20px;
+}
+.footer .col .categorias ul {
+  list-style: none;
+  text-align: center;
+}
+.footer .col .categorias ul li {
+  margin: 5px 0px;
+}
+.footer .col .categorias ul li a {
+  color: white;
+  text-decoration: none;
+}
+.footer .col .categorias ul li a:hover {
+  color: #CCC;
+}
+.footer .col .buscador {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.footer .col .buscador .form {
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
+}
+.footer .col .buscador .form input {
+  border: 0px;
+  padding: 0px 10px;
+  width: 100%;
+  border-radius: 5px 0px 0px 5px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.footer .col .buscador .form input:focus-visible {
+  outline: 0px;
+}
+.footer .col .buscador .form button {
+  border-radius: 0px 5px 5px 0px;
+  height: 100%;
+  border: 0px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: darkgray;
+}
+
+.container {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  margin: 0px auto;
+  width: 80%;
+  max-width: 1200px;
+  margin-top: 30px;
+}
+.container .cesta {
+  width: 60%;
+  padding: 10px 20px;
+}
+.container .cesta .titulo hr {
+  margin: 5px 0px 10px 0px;
+}
+.container .cesta .titulo h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.container .cesta .productos .carta {
+  height: 150px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #CCC;
+}
+.container .cesta .productos .carta .funko {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+.container .cesta .productos .carta .funko .foto {
+  height: 100%;
+}
+.container .cesta .productos .carta .funko .foto img {
+  height: 100%;
+}
+.container .cesta .productos .carta .funko .datos .nombreFunko {
+  font-weight: bold;
+}
+.container .cesta .productos .carta .funko .datos .categorias {
+  font-size: 14px;
+}
+.container .cesta .productos .carta .contenedorCantidad {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  text-align: center;
+  width: 40%;
+}
+.container .cesta .productos .carta .contenedorCantidad p {
+  font-size: 14px;
+}
+.container .cesta .productos .carta .contenedorCantidad .controlesCantidad {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  margin-left: 20px;
+}
+.container .cesta .productos .carta .contenedorCantidad .controlesCantidad span {
+  padding: 4px 8px;
+}
+.container .cesta .productos .carta .contenedorCantidad .controlesCantidad .controlMas, .container .cesta .productos .carta .contenedorCantidad .controlesCantidad .controlMenos {
+  cursor: pointer;
+}
+.container .cesta .productos .carta .contenedorCantidad .controlesCantidad .controlMas:hover, .container .cesta .productos .carta .contenedorCantidad .controlesCantidad .controlMenos:hover {
+  background-color: #EEE;
+}
+.container .informacion {
+  width: 30%;
+  padding: 10px 20px;
+}
+.container .informacion .informacionPrecio {
+  background-color: #EEE;
+  padding: 20px;
+}
+.container .informacion .informacionPrecio .sinGastos {
+  color: red;
+}
+.container .informacion .informacionPrecio .precioTotal, .container .informacion .informacionPrecio .precioEnvio {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.container .informacion .informacionPrecio .codigo .inputCodigo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.container .informacion .informacionPrecio .codigo .inputCodigo input {
+  padding: 5px;
+  font-size: 15px;
+  width: 65%;
+}
+.container .informacion .informacionPrecio .codigo .inputCodigo input::placeholder {
+  font-size: 12px;
+}
+.container .informacion .informacionPrecio .codigo .inputCodigo button {
+  padding: 5px 15px;
+  background: white;
+  transition: 1s background, color;
+  font-size: 15px;
+}
+.container .informacion .informacionPrecio .codigo .inputCodigo button:hover {
+  background: black;
+  color: white;
+}
+.container .informacion .informacionPrecio .codigo input[type=submit] {
+  margin-top: 20px;
+  font-size: 16px;
+  width: 100%;
+  padding: 6px;
+  background: white;
+  cursor: pointer;
+  transition: 1s background, color;
+  font-weight: bold;
+}
+.container .informacion .informacionPrecio .codigo input[type=submit]:hover {
+  background: black;
+  color: white;
+}
+.container .informacion .formasPago {
+  display: flex;
+  padding: 10px;
+  background-color: #EEE;
+  margin-top: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container .informacion .formasPago img {
+  height: 100%;
+  width: 20%;
+}
+.container .informacion .formasPago .bizum, .container .informacion .formasPago .paypal {
+  height: 30px;
+  width: 25%;
+}
+
+/*# sourceMappingURL=carrito.css.map */

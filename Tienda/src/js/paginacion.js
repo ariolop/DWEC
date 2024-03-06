@@ -1,107 +1,108 @@
-export function cargarBusquedaProductos(pagina, busqueda) {
+export class Paginacion extends Object { //Hereda de 'object' algunos métodos importantes de los objetos 
 
-    fetch(`http://localhost:3000/funkos`)
-    .then( resultado => resultado.json() )
-    .then( funkos => {
-        console.log(busqueda.toLowerCase().charAt(0).toUpperCase() + busqueda.slice(1).toLowerCase());
+    #primera;
+    #anterior;
+    #actual;
+    #siguiente;
+    #ultima;
+    #datosTotal;
+    #datosPagina;
+    #elementosPorPagina;
 
-        funkos = funkos.filter( f => {            
-            return f.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-                f.categorias.includes(busqueda.toLowerCase().charAt(0).toUpperCase() + busqueda.slice(1).toLowerCase());
-        });
-
-        return funkos;
-    })
-    .then( funkosBusqueda => {
-        console.log(funkosBusqueda);
-        //modificarInformacionPaginacion(funkosBusqueda);
-
-        let fragmento = "";
-        funkosBusqueda.forEach(funko => {
-            const carta = `
-            <div class="carta">
-                <div id="imagenes" class="imagenes">
-                    <img class="funko" src="${funko.imagenFunko}">
-                    <img class="caja"  src="${funko.imagenCaja}">
-                </div>
-                <p id="nombre" class="nombre">${funko.nombre}</p>
-                <p id="precio" class="precio">${funko.precio}€</p>
-            </div>
-            `;
-
-            fragmento += carta; 
-        });
-
-        document.getElementById("cartas").innerHTML = fragmento;
-    });
-}
-
-export function cargarPaginaProductos(pagina,filtroCategoria,filtroSubcategoria,orden) {
-
-    const cadenaPagina = `_page=${pagina}&_per_page=15`;
-    const cadenaFiltroCategorias = filtroCategoria ? `&categorias[0]=${filtroCategoria}` : "";
-    const cadenaFiltroSubcategorias = filtroSubcategoria ? `&categorias[1]=${filtroSubcategoria}` : "";
-    const cadenaOrdenacion = orden ? `&_sort=${orden}` : ""; 
-
-    console.log(`http://localhost:3000/funkos?${cadenaPagina}${cadenaOrdenacion}${cadenaFiltroCategorias}${cadenaFiltroSubcategorias}`);
-
-    fetch(`http://localhost:3000/funkos?${cadenaPagina}${cadenaOrdenacion}${cadenaFiltroCategorias}${cadenaFiltroSubcategorias}`)
-    .then( resultado => resultado.json() )
-    .then( funkos => {
-        crearPaginacion(funkos.pages, pagina);
-        modificarInformacionPaginacion(funkos);
-
-        let fragmento = "";
-        funkos.data.forEach(funko => {
-            const carta = `
-            <div class="carta">
-                <div id="imagenes" class="imagenes">
-                    <img class="funko" src="${funko.imagenFunko}">
-                    <img class="caja"  src="${funko.imagenCaja}">
-                </div>
-                <p id="nombre" class="nombre">${funko.nombre}</p>
-                <p id="precio" class="precio">${funko.precio}€</p>
-            </div>
-            `;
-
-            fragmento += carta; 
-        });
-
-        document.getElementById("cartas").innerHTML = fragmento;
-    });
-}
-
-function crearPaginacion(cantidadPaginas, paginaActual)
-{
-    let paginacion = ``;
-
-    for (let i = 1; i <= cantidadPaginas; i++) {
-        if(i === paginaActual || i === paginaActual-1 || i === paginaActual+1 || i === 1 || i === cantidadPaginas)
-        {
-            paginacion += `<div>
-                                <a id="${i}" href="#">${i}</a>
-                            </div>`;
-        }
+    constructor(datos, elementosPorPagina) {
+        super();
+        this.#elementosPorPagina = elementosPorPagina;
+        this.#datosTotal = Array(...datos);
+        this.#primera = this.#datosTotal.length > 0 ? 1 : undefined;
+        this.#actual = this.#datosTotal.length > 0 ? 1 : undefined;
+        this.#ultima = this.#datosTotal.length > 0 ? Math.ceil(datos.length / this.#elementosPorPagina) : undefined;
+        this.#siguiente = this.#ultima > 1 ? 2 : undefined;
+        this.#anterior = this.#actual != 1 ? this.#actual - 1 : undefined;
+        this.#datosPagina = datos.slice(0, this.#elementosPorPagina);
     }
 
-    document.getElementById("paginacion").innerHTML = paginacion;
-    document.getElementById(paginaActual).classList.add("actual");    
-}
+    getPrimera()
+    {
+        return this.#primera;
+    }
 
-function modificarInformacionPaginacion(funkos) {
-    const productoInicial = funkos.next ? (1 + (15*(funkos.next-2))) : (1 + (15*(funkos.pages-1))) ;
-    const productoFinal = funkos.next ? (15*(funkos.next-1)) : funkos.items;
-    const productosTotales = funkos.items;
+    getAnterior()
+    {
+        return this.#anterior;
+    }
 
-    const infoPaginacion = `
-    <p>Mostrando 
-        <span>${productoInicial}</span>
-    -
-        <span>${productoFinal}</span> 
-    de 
-        <span>${productosTotales}</span>
-    productos</p>
-    `
+    getActual()
+    {
+        return this.#actual;
+    }
 
-    document.getElementById("cantidadProductos").innerHTML = infoPaginacion;
+    getSiguiente()
+    {
+        return this.#siguiente;
+    }
+
+    getUltima()
+    {
+        return this.#ultima;
+    }
+
+    getDatosTotal()
+    {
+        return this.#datosTotal;
+    }
+
+    getDatosPagina()
+    {
+        return this.#datosPagina;
+    }
+
+    moverPagina(pag)
+    {
+        if(pag < this.#primera || pag > this.#ultima) return;
+    
+        this.#actual = pag;
+        this.#siguiente = this.#actual + 1 > this.#ultima ? undefined : this.#actual + 1;
+        this.#anterior = this.#actual - 1 < this.#primera ? undefined : this.#actual - 1;
+        this.#datosPagina = this.#datosTotal.slice(0 + (this.#elementosPorPagina*(this.#actual-1)), this.#elementosPorPagina * this.#actual);
+        console.log(this.#datosPagina);
+    }
+
+    paginaAnterior()
+    {
+        console.log("Página anterior");
+        if(this.#actual-1 < this.#primera) return;
+        
+        this.#actual -= 1;
+        this.#siguiente = this.#siguiente ? this.#siguiente + 1 : this.#ultima;
+        this.#anterior = this.#anterior-1 === 0 ? undefined : this.#anterior - 1;  //Comprobamos si es Undefined
+        this.#datosPagina = this.#datosTotal.slice(0 + (this.#elementosPorPagina*(this.#actual-1)), this.#elementosPorPagina * this.#actual);
+        console.log(this.#datosPagina);
+    }
+
+    paginaSiguiente()
+    {
+        console.log("Página siguiente");
+        //Comprobamos para no pasarnos de página
+        if(this.#actual+1 > this.#ultima) return;
+
+        this.#actual += 1; 
+        this.#siguiente = this.#siguiente+1 > this.#ultima ? undefined : this.#siguiente + 1;
+        this.#anterior = this.#anterior ? this.#anterior + 1 : this.#primera; //Comprobamos si es Undefined
+        this.#datosPagina = this.#datosTotal.slice(0 + (this.#elementosPorPagina*(this.#actual-1)), this.#elementosPorPagina * this.#actual);
+        console.log(this.#datosPagina);
+    }
+
+    toString()
+    {
+        return `{
+            primera: ${this.#primera}
+            anterior: ${this.#anterior}
+            actual: ${this.#actual}
+            siguiente: ${this.#siguiente}
+            ultima: ${this.#ultima}
+            datosTotal: ${this.#datosTotal}
+            datosPagina: ${this.#datosPagina}
+            elementosPorPagina: ${this.#elementosPorPagina}
+        }`;
+    }
 }
