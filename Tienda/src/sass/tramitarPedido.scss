@@ -1,0 +1,44 @@
+@use './header.scss' as header;
+@use './footer.scss' as footer;
+@use './mixins.scss' as mixins;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Ubuntu;
+}
+
+@include header.header();
+@include footer.footer();
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+
+    .formularioDatos {
+        display: flex;
+        flex-flow: column;
+        width: 60%;
+
+        input {
+            font-size: 16px;
+            padding: 5px 5px;
+        }
+
+        &>div {
+            margin-bottom: 30px;
+        }
+
+        &>h2 {
+            margin-bottom: 10px;
+        }
+    }
+
+    .precios {
+        width: 30%;
+        background-color: #CCC;
+        height: 500px;
+    }
+}

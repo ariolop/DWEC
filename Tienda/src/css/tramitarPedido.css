@@ -1,0 +1,403 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Ubuntu;
+}
+
+.header {
+  text-align: center;
+  background-color: black;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+}
+.header .miniCabecera {
+  height: 20px;
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .cabecera {
+  min-height: 80px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .cabecera .logo {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  width: 45%;
+  order: 1;
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .logo {
+    width: 30%;
+  }
+}
+.header .cabecera .logo a {
+  max-width: 300px;
+  height: 60%;
+  text-decoration: none;
+  display: block;
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .logo a {
+    height: 90%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .header .cabecera .logo a {
+    height: 100%;
+  }
+}
+.header .cabecera .logo a img {
+  width: 100%;
+  height: 100%;
+}
+.header .cabecera .buscador {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  order: 4;
+  margin: 0px 10px;
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .buscador {
+    order: 2;
+    width: 30%;
+    max-width: 400px;
+    margin: 0px;
+  }
+}
+.header .cabecera .buscador .botonLupa, .header .cabecera .buscador .botonMenu {
+  height: 40px;
+}
+.header .cabecera .buscador .botonLupa button, .header .cabecera .buscador .botonMenu button {
+  height: 100%;
+  color: white;
+}
+.header .cabecera .buscador .contenedorBuscador .form {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  width: 100%;
+}
+.header .cabecera .buscador .contenedorBuscador .form input {
+  height: 100%;
+  border: 0px;
+  padding: 0px 10px;
+  width: 100%;
+  border-radius: 5px 0px 0px 5px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.header .cabecera .buscador .contenedorBuscador .form input:focus-visible {
+  outline: 0px;
+}
+.header .cabecera .buscador .contenedorBuscador .form button {
+  border-radius: 0px 5px 5px 0px;
+  height: 100%;
+  border: 0px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: darkgray;
+}
+.header .cabecera .iconos {
+  display: flex;
+  justify-content: end;
+  width: 45%;
+  color: white;
+  margin-right: 10px;
+  order: 3;
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .iconos {
+    width: 30%;
+    margin-right: 30px;
+  }
+}
+.header .cabecera .iconos .login {
+  display: flex;
+}
+.header .cabecera .iconos .login p {
+  margin-right: 10px;
+  font-size: 13px;
+}
+@media only screen and (min-width: 500px) {
+  .header .cabecera .iconos .login p {
+    font-size: 16px;
+  }
+}
+.header .cabecera .iconos .separacion {
+  margin: 0px 10px;
+}
+.header .cabecera .iconos a {
+  color: white;
+}
+.header .cabecera .iconos a:hover {
+  color: #CCC;
+}
+.header .cabecera .navbarMenu {
+  width: 100%;
+  order: 5;
+  position: relative;
+  z-index: 1000;
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .navbarMenu {
+    position: static;
+  }
+}
+.header .cabecera .navbarMenu .menu {
+  position: absolute;
+  width: 100%;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .navbarMenu .menu {
+    position: static;
+  }
+}
+.header .cabecera .navbarMenu .menu > ul {
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  min-height: 50px;
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .navbarMenu .menu > ul {
+    flex-flow: row;
+  }
+}
+.header .cabecera .navbarMenu .menu > ul > li {
+  display: inline;
+  position: relative;
+  margin: 10px 0px;
+}
+@media only screen and (min-width: 720px) {
+  .header .cabecera .navbarMenu .menu > ul > li {
+    margin: 0px;
+  }
+}
+.header .cabecera .navbarMenu .menu > ul > li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 24px;
+}
+.header .cabecera .navbarMenu .menu > ul > li a:hover {
+  color: #CCC;
+}
+.header .cabecera .navbarMenu .menu > ul > li ul {
+  display: none;
+  position: absolute;
+  background-color: rgb(51, 51, 51);
+  list-style: none;
+  width: 200px;
+  z-index: 10;
+  /* items del menu desplegable */
+}
+.header .cabecera .navbarMenu .menu > ul > li ul li {
+  display: inline;
+  /* enlaces de los items del menu desplegable */
+}
+.header .cabecera .navbarMenu .menu > ul > li ul li a {
+  font-size: 16px;
+  padding: 8px 10px;
+  display: block;
+}
+.header .cabecera .navbarMenu .menu > ul > li ul li:hover {
+  background-color: blue;
+}
+.header .cabecera .navbarMenu .menu > ul li:hover > ul {
+  display: flex;
+  flex-flow: column;
+}
+
+.modal-content {
+  box-sizing: border-box;
+}
+.modal-content .modal-header {
+  border: 0px;
+}
+.modal-content .modal-header .modal-title {
+  font-size: 20px;
+}
+.modal-content .modal-header button {
+  margin: 0px;
+}
+.modal-content .modal-body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.modal-content .modal-body div {
+  width: 100%;
+  margin: 10px 0px;
+}
+.modal-content .modal-body div input {
+  box-sizing: border-box;
+  display: block;
+  margin: 0px;
+  margin-top: 5px;
+  width: 100%;
+  padding: 5px 10px;
+}
+.modal-content .modal-footer {
+  border: 0px;
+  justify-content: center;
+}
+.modal-content .modal-footer input {
+  padding: 5px;
+  display: block;
+  width: 100%;
+}
+.modal-content .modal-footer a {
+  text-align: center;
+  width: 100%;
+  border-radius: 2px;
+  padding: 5px 0px;
+  color: black;
+  font-size: 12px;
+  text-decoration: none;
+}
+.modal-content .modal-footer a:hover {
+  background-color: #DDD;
+}
+
+.footer {
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0px;
+}
+.footer .col {
+  width: 25%;
+  color: white;
+  padding: 10px;
+}
+.footer .col h2 {
+  text-align: center;
+}
+.footer .col .redesSociales {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.footer .col .redesSociales a {
+  width: 30%;
+  text-align: center;
+  color: white;
+  padding: 5px 20px;
+  margin: 5px 0px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: black;
+  transition: color, background 0.5s;
+}
+.footer .col .redesSociales a:hover {
+  background-color: white;
+  color: black;
+}
+.footer .col .categorias {
+  margin-top: 20px;
+}
+.footer .col .categorias ul {
+  list-style: none;
+  text-align: center;
+}
+.footer .col .categorias ul li {
+  margin: 10px 0px;
+  padding: 5px 20px;
+  font-size: 18px;
+}
+.footer .col .categorias ul li a {
+  width: 30%;
+  text-align: center;
+  color: white;
+  padding: 5px 20px;
+  margin: 5px 0px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: black;
+  transition: color, background 0.5s;
+}
+.footer .col .categorias ul li a:hover {
+  background-color: white;
+  color: black;
+}
+.footer .col .otros {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  text-align: center;
+  margin-top: 20px;
+}
+.footer .col .otros p {
+  margin: 5px 0px;
+  padding: 5px 20px;
+  font-size: 18px;
+}
+.footer .col .otros p a {
+  width: 30%;
+  text-align: center;
+  color: white;
+  padding: 5px 20px;
+  margin: 5px 0px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: black;
+  transition: color, background 0.5s;
+}
+.footer .col .otros p a:hover {
+  background-color: white;
+  color: black;
+}
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.container .formularioDatos {
+  display: flex;
+  flex-flow: column;
+  width: 60%;
+}
+.container .formularioDatos input {
+  font-size: 16px;
+  padding: 5px 5px;
+}
+.container .formularioDatos > div {
+  margin-bottom: 30px;
+}
+.container .formularioDatos > h2 {
+  margin-bottom: 10px;
+}
+.container .precios {
+  width: 30%;
+  background-color: #CCC;
+  height: 500px;
+}
+
+/*# sourceMappingURL=tramitarPedido.css.map */
