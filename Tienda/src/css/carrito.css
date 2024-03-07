@@ -63,7 +63,7 @@
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: start;
+  justify-content: end;
   align-items: center;
   order: 4;
   margin: 0px 10px;
@@ -115,12 +115,13 @@
   justify-content: end;
   width: 45%;
   color: white;
+  margin-right: 10px;
   order: 3;
-  margin-right: 20px;
 }
 @media only screen and (min-width: 720px) {
   .header .cabecera .iconos {
     width: 30%;
+    margin-right: 30px;
   }
 }
 .header .cabecera .iconos .login {
@@ -194,7 +195,7 @@
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 24px;
 }
 .header .cabecera .navbarMenu .menu > ul > li a:hover {
   color: #CCC;
@@ -353,16 +354,34 @@
 
 .container {
   display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  margin: 0px auto;
-  width: 80%;
-  max-width: 1200px;
+  flex-flow: row wrap;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 50px;
+  max-width: 1300px;
+  width: 100%;
   margin-top: 30px;
+  font-size: 14px;
+}
+@media only screen and (min-width: 720px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 30px;
+    justify-content: space-between;
+    font-size: 15px;
+  }
 }
 .container .cesta {
-  width: 60%;
-  padding: 10px 20px;
+  width: 100%;
+  max-width: 800px;
+}
+@media only screen and (min-width: 720px) {
+  .container .cesta {
+    width: 60%;
+  }
 }
 .container .cesta .titulo hr {
   margin: 5px 0px 10px 0px;
@@ -374,69 +393,124 @@
 .container .cesta .productos .carta {
   height: 150px;
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #CCC;
 }
 .container .cesta .productos .carta .funko {
   height: 100%;
-  width: 40%;
+  width: 60%;
   display: flex;
   align-items: center;
 }
+@media only screen and (min-width: 500px) {
+  .container .cesta .productos .carta .funko {
+    width: 50%;
+  }
+}
 .container .cesta .productos .carta .funko .foto {
-  height: 100%;
+  min-width: 80px;
+  max-width: 130px;
 }
 .container .cesta .productos .carta .funko .foto img {
-  height: 100%;
+  width: 100%;
 }
 .container .cesta .productos .carta .funko .datos .nombreFunko {
   font-weight: bold;
+  font-size: 12px;
+}
+@media only screen and (min-width: 500px) {
+  .container .cesta .productos .carta .funko .datos .nombreFunko {
+    font-size: 16px;
+  }
 }
 .container .cesta .productos .carta .funko .datos .categorias {
-  font-size: 14px;
+  font-size: 10px;
 }
-.container .cesta .productos .carta .contenedorCantidad {
+@media only screen and (min-width: 500px) {
+  .container .cesta .productos .carta .funko .datos .categorias {
+    font-size: 14px;
+  }
+}
+.container .cesta .productos .carta .precio {
   display: flex;
   align-items: center;
-  justify-content: end;
+  flex-flow: row wrap;
+  justify-content: center;
   text-align: center;
-  width: 40%;
+  width: 25%;
 }
-.container .cesta .productos .carta .contenedorCantidad p {
+@media only screen and (min-width: 500px) {
+  .container .cesta .productos .carta .precio {
+    justify-content: end;
+    width: 35%;
+  }
+}
+.container .cesta .productos .carta .precio p {
   font-size: 14px;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
 }
-.container .cesta .productos .carta .contenedorCantidad .controlesCantidad {
+@media only screen and (min-width: 500px) {
+  .container .cesta .productos .carta .precio p {
+    text-align: left;
+    margin: 0;
+    width: auto;
+  }
+}
+.container .cesta .productos .carta .precio .controlesCantidad {
   display: flex;
   justify-content: center;
   border: 1px solid black;
-  margin-left: 20px;
+  margin: 0px;
 }
-.container .cesta .productos .carta .contenedorCantidad .controlesCantidad span {
+@media only screen and (min-width: 500px) {
+  .container .cesta .productos .carta .precio .controlesCantidad {
+    margin-right: 20px;
+  }
+}
+.container .cesta .productos .carta .precio .controlesCantidad span {
   padding: 4px 8px;
 }
-.container .cesta .productos .carta .contenedorCantidad .controlesCantidad .controlMas, .container .cesta .productos .carta .contenedorCantidad .controlesCantidad .controlMenos {
+.container .cesta .productos .carta .precio .controlesCantidad .controlMas, .container .cesta .productos .carta .precio .controlesCantidad .controlMenos {
   cursor: pointer;
 }
-.container .cesta .productos .carta .contenedorCantidad .controlesCantidad .controlMas:hover, .container .cesta .productos .carta .contenedorCantidad .controlesCantidad .controlMenos:hover {
+.container .cesta .productos .carta .precio .controlesCantidad .controlMas:hover, .container .cesta .productos .carta .precio .controlesCantidad .controlMenos:hover {
   background-color: #EEE;
 }
+.container .cesta .productos .carta .precio .precioFunko {
+  font-weight: bold;
+}
 .container .informacion {
-  width: 30%;
+  width: 100%;
+  max-width: 370px;
   padding: 10px 20px;
+}
+@media only screen and (min-width: 720px) {
+  .container .informacion {
+    width: 30%;
+  }
 }
 .container .informacion .informacionPrecio {
   background-color: #EEE;
   padding: 20px;
 }
-.container .informacion .informacionPrecio .sinGastos {
+.container .informacion .informacionPrecio .sinGastos, .container .informacion .informacionPrecio .descuento {
   color: red;
 }
-.container .informacion .informacionPrecio .precioTotal, .container .informacion .informacionPrecio .precioEnvio {
+.container .informacion .informacionPrecio .precioSubtotal, .container .informacion .informacionPrecio .precioEnvio, .container .informacion .informacionPrecio .precioTotal, .container .informacion .informacionPrecio .descuento, .container .informacion .informacionPrecio .porcentajeIVA, .container .informacion .informacionPrecio .cantidadIVA {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+.container .informacion .informacionPrecio .precioTotal {
+  font-weight: bold;
+  font-size: 18px;
+}
+.container .informacion .informacionPrecio .descuento {
+  display: none;
 }
 .container .informacion .informacionPrecio .codigo .inputCodigo {
   display: flex;
@@ -484,12 +558,7 @@
   align-items: center;
 }
 .container .informacion .formasPago img {
-  height: 100%;
   width: 20%;
-}
-.container .informacion .formasPago .bizum, .container .informacion .formasPago .paypal {
-  height: 30px;
-  width: 25%;
 }
 
 /*# sourceMappingURL=carrito.css.map */

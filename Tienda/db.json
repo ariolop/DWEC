@@ -592,7 +592,7 @@
             "precio": 16,
             "oferta" : "false",
             "descuentoPorcentaje" : 0,
-            "stock": 92,
+            "stock": 0,
             "cantidadVendidos": 0
         },
 
@@ -814,7 +814,7 @@
             "precio": 12,
             "oferta" : "false",
             "descuentoPorcentaje" : 0,
-            "stock": 43,
+            "stock": 0,
             "cantidadVendidos": 0
         },
 
@@ -933,7 +933,7 @@
             "precio": 23.95,
             "oferta" : "false",
             "descuentoPorcentaje" : 0,
-            "stock": 82,
+            "stock": 0,
             "cantidadVendidos": 0
         },
 
@@ -1868,30 +1868,29 @@
                 }
             ],
             "tarjetasBancarias": []
-        },
-        
-        {
-
         }
     ],
 
     "codigosDescuento": [
         {
             "codigo": "INVIERNO2024",
-            "fechaInicio": "01/12/2023",
-            "fechaFin": "30/04/2023"
+            "fechaInicio": "2023/12/01",
+            "fechaFin": "2024/03/30",
+            "descuentoPorcentaje": 10 
         },
 
         {
             "codigo": "PRIMAVERA2024",
             "fechaInicio": "21/03/2024",
-            "fechaFin": "20/06/2024"
+            "fechaFin": "20/06/2024",
+            "descuentoPorcentaje": 15 
         },
 
         {
             "codigo": "VERANO2024",
             "fechaInicio": "01/12/2023",
-            "fechaFin": "30/04/2023"
+            "fechaFin": "30/04/2023",
+            "descuentoPorcentaje": 10
         }
     ]
 }

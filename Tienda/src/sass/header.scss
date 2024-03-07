@@ -63,7 +63,7 @@
                 height: 100%;
                 width: 100%;
                 display: flex;
-                justify-content: start;
+                justify-content: end;
                 align-items: center;
                 order: 4;
                 margin: 0px 10px;
@@ -127,11 +127,12 @@
                 justify-content: end;
                 width: 45%;
                 color: white;
+                margin-right: 10px;
                 order: 3;
-                margin-right: 20px;
     
                 @include mixins.small {
                     width: 30%;
+                    margin-right: 30px;
                 }
     
                 .login {
@@ -204,7 +205,7 @@
                                 color: white;
                                 text-decoration: none;
                                 font-weight: bold;
-                                font-size: 18px;
+                                font-size: 24px;
                             }
             
                             a:hover {

@@ -2,11 +2,10 @@ import {Paginacion} from './paginacion.js';
 import * as Cartas from './cartas.js';
 
 /* Librería para cargar los productos en función de la búsqueda o de la/s categoria/s seleccionada/s */
-
-export function cargarBusquedaProductos(busqueda, orden, oferta) {
+export function cargarBusquedaProductos(busqueda, orden, oferta, stock) {
     
-    const cadenaFetch = obtenerFetch("","",orden, oferta);
-
+    const cadenaFetch = obtenerFetch("","",orden, oferta, stock);
+    console.log(cadenaFetch);
     fetch(cadenaFetch)
     .then( resultado => resultado.json() )
     .then( funkos => orden === "id" ? funkos.reverse() : funkos)
@@ -28,14 +27,15 @@ export function cargarBusquedaProductos(busqueda, orden, oferta) {
     });
 }
 
-export function cargarCategoriaProductos(filtroCategoria, filtroSubcategoria, orden, oferta) {
+export function cargarCategoriaProductos(filtroCategoria, filtroSubcategoria, orden, oferta, stock) {
 
-    const cadenaFetch = obtenerFetch(filtroCategoria, filtroSubcategoria, orden, oferta);
+    const cadenaFetch = obtenerFetch(filtroCategoria, filtroSubcategoria, orden, oferta, stock);
     console.log(cadenaFetch);
     fetch(cadenaFetch)
     .then( resultado => resultado.json())
     .then( funkos => orden === "id" ? funkos.reverse() : funkos)
     .then( funkos => {
+        console.log(funkos);
         const pag = new Paginacion(funkos, 15);
         console.log("Paginacion creada");
         
@@ -56,15 +56,33 @@ function crearPaginacion(cantidadPaginas, paginaActual)
 {
     let paginacion = ``;
 
-    for (let i = 1; i <= cantidadPaginas && cantidadPaginas; i++) {
-        if(i === paginaActual || i === paginaActual-1 || i === paginaActual+1 || i === 1 || i === cantidadPaginas)
-        {
-            paginacion += `<div>
-                                <a id="${i}" href="#">${i}</a>
-                            </div>`;
+    if(cantidadPaginas > 1)
+    {
+        for (let i = 1; i <= cantidadPaginas && cantidadPaginas; i++) {
+            if(i === paginaActual || i === paginaActual-1 || i === paginaActual+1 || i === 1 || i === cantidadPaginas)
+            {
+                if(i === 1)
+                {
+                    paginacion += `<div>
+                    <a id="${i}" href="#">Inicio</a>
+                    </div>`;
+                }
+                else if(i === cantidadPaginas)
+                {
+                    paginacion += `<div>
+                    <a id="${i}" href="#">Fin</a>
+                    </div>`;
+                }
+                else
+                {
+                    paginacion += `<div>
+                    <a id="${i}" href="#">${i}</a>
+                    </div>`;
+                }
+            }
         }
     }
-
+    
     const paginacionElement = document.getElementById("paginacion");
     
     paginacionElement.innerHTML = paginacion;
@@ -106,11 +124,12 @@ function modificarInformacionPaginacion(pag) {
     document.getElementById("cantidadProductos").innerHTML = infoPaginacion;
 }
 
-function obtenerFetch(filtroCategoria, filtroSubcategoria, orden, oferta) {
+function obtenerFetch(filtroCategoria, filtroSubcategoria, orden, oferta, stock) {
     const cadenaFiltroCategorias = filtroCategoria ? `categorias[0]=${filtroCategoria}` : "";
     const cadenaFiltroSubcategorias = filtroSubcategoria ? `&categorias[1]=${filtroSubcategoria}` : "";
     const cadenaOrdenacion = orden ? `_sort=${orden}&` : "";
     const cadenaOferta = oferta ? `oferta=${oferta}&` : "";
+    const cadenaStock = stock ? `stock_gt=0&` : "";
 
-    return `http://localhost:3000/funkos?${cadenaOferta}${cadenaOrdenacion}${cadenaFiltroCategorias}${cadenaFiltroSubcategorias}`;
+    return `http://localhost:3000/funkos?${cadenaStock}${cadenaOferta}${cadenaOrdenacion}${cadenaFiltroCategorias}${cadenaFiltroSubcategorias}`;
 }

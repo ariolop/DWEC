@@ -64,7 +64,7 @@
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: start;
+  justify-content: end;
   align-items: center;
   order: 4;
   margin: 0px 10px;
@@ -116,12 +116,13 @@
   justify-content: end;
   width: 45%;
   color: white;
+  margin-right: 10px;
   order: 3;
-  margin-right: 20px;
 }
 @media only screen and (min-width: 720px) {
   .header .cabecera .iconos {
     width: 30%;
+    margin-right: 30px;
   }
 }
 .header .cabecera .iconos .login {
@@ -195,7 +196,7 @@
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 24px;
 }
 .header .cabecera .navbarMenu .menu > ul > li a:hover {
   color: #CCC;
@@ -513,12 +514,13 @@ main .container .productos .paginacion div a {
   height: 100%;
   padding: 8px;
   background-color: lightcoral;
-  width: 20px;
-  height: 20px;
+  min-width: 40px;
+  height: 40px;
   text-decoration: none;
   background-color: white;
   border: 1px solid black;
   color: black;
+  box-sizing: border-box;
 }
 main .container .productos .paginacion div .actual {
   background-color: black;

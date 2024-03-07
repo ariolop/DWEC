@@ -1,5 +1,6 @@
 @use './header.scss' as header;
 @use './footer.scss' as footer;
+@use './mixins.scss' as mixins;
 
 * {
     margin: 0px;
@@ -12,16 +13,32 @@
 
 .container {
     display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    margin: 0px auto;
-    width: 80%;
-    max-width: 1200px;
+    flex-flow: row wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 50px;
+    max-width: 1300px;
+    width: 100%;
     margin-top: 30px;
+    font-size: 14px;
+
+    @include mixins.small {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px 30px;
+        justify-content: space-between;
+        font-size: 15px;
+    }
 
     .cesta {
-        width: 60%;
-        padding: 10px 20px;
+        width: 100%;
+        max-width: 800px;
+
+        @include mixins.small {
+            width: 60%;
+        }
 
         .titulo {
 
@@ -36,56 +53,88 @@
         }
 
         .productos {
-
             .carta {
                 height: 150px;
                 display: flex;
-                flex-flow: row;
+                flex-flow: row wrap;
                 justify-content: space-between;
                 align-items: center;
                 border-bottom: 1px solid #CCC;
 
                 .funko {
                     height: 100%;
-                    width: 40%;
+                    width: 60%;
                     display: flex;
                     align-items: center;
+
+                    @include mixins.extrasmall {
+                        width: 50%;
+                    }
                     
                     .foto {
-                        height: 100%;
-    
+                        min-width: 80px;
+                        max-width: 130px;
+
                         img {
-                            height: 100%;
+                            width: 100%;
                         }
                     }
 
                     .datos {
                         .nombreFunko {
                             font-weight: bold;
+                            font-size: 12px;
+
+                            @include mixins.extrasmall {
+                                font-size: 16px;
+                            }
                         }
 
                         .categorias {
-                            font-size: 14px;
+                            font-size: 10px;
+
+                            @include mixins.extrasmall {
+                                font-size: 14px;
+                            }
                         }
                     }
                 }
 
-                .contenedorCantidad {
+                .precio {
                     display: flex;
                     align-items: center;
-                    justify-content: end;
+                    flex-flow: row wrap;
+                    justify-content: center;
                     text-align: center;
-                    width: 40%;
+                    width: 25%;
+
+                    @include mixins.extrasmall {
+                        justify-content: end;
+                        width: 35%;
+                    }
 
                     p {
                         font-size: 14px;
+                        text-align: center;
+                        width: 100%;
+                        margin-top: 10px;
+
+                        @include mixins.extrasmall {
+                            text-align: left;
+                            margin: 0;
+                            width: auto;
+                        }
                     }
 
                     .controlesCantidad {
                         display: flex;
                         justify-content: center;
                         border: 1px solid black;
-                        margin-left: 20px;
+                        margin: 0px;
+
+                        @include mixins.extrasmall {
+                            margin-right: 20px;
+                        }
 
                         span {
                             padding: 4px 8px;
@@ -99,27 +148,45 @@
                             background-color: #EEE;
                         }
                     }
+
+                    .precioFunko {
+                        font-weight: bold;
+                    }
                 }
             }
         }
     }
 
     .informacion {
-        width: 30%;
+        width: 100%;
+        max-width: 370px;
         padding: 10px 20px;
+
+        @include mixins.small {
+            width: 30%;
+        }
 
         .informacionPrecio {
             background-color: #EEE;
             padding: 20px;
    
-            .sinGastos {
+            .sinGastos, .descuento {
                 color: red;
             }
 
-            .precioTotal, .precioEnvio {
+            .precioSubtotal, .precioEnvio, .precioTotal, .descuento, .porcentajeIVA, .cantidadIVA {
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 20px;
+            }
+
+            .precioTotal {
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            .descuento {
+                display: none;
             }
     
             .codigo {
@@ -179,13 +246,7 @@
             align-items: center;
 
             img {
-                height: 100%;
                 width: 20%;
-            }
-
-            .bizum,.paypal {
-                height: 30px;
-                width: 25%;
             }
         }
     }

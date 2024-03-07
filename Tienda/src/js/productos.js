@@ -37,11 +37,12 @@ function actualizarProductos() {
     const categoria = localStorage.getItem("categoriaSeleccionada");
     const subcategoria = localStorage.getItem("subcategoriaSeleccionada");
     const oferta = document.getElementById("oferta").checked;
+    const stock = document.getElementById("stock").checked;
 
     if(busqueda) // Hemos abierto productos.html desde la búsqueda
-        Productos.cargarBusquedaProductos(busqueda, document.getElementById("orden").value, oferta);
+        Productos.cargarBusquedaProductos(busqueda, document.getElementById("orden").value, oferta, stock);
     else
-        Productos.cargarCategoriaProductos(categoria, subcategoria, document.getElementById("orden").value, oferta);
+        Productos.cargarCategoriaProductos(categoria, subcategoria, document.getElementById("orden").value, oferta, stock);
 }
 
 /* Eventos */
@@ -85,3 +86,10 @@ document.getElementById("filtroOfertas").addEventListener("input", () => {
 
     actualizarProductos();
 });
+
+document.getElementById("filtroStock").addEventListener("input", () => {
+    console.log("Filtro stock aplicada");
+
+    actualizarProductos();
+});
+

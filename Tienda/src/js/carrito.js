@@ -32,16 +32,13 @@ function cargarProductos() {
                         </p>
                     </div>
                 </div>
-                <div class="contenedorCantidad">
-                    <p>Cantidad</p>
+                <div class="precio">
                     <div id="controlCantidad${funko.id}" class="controlesCantidad">
                         <span class="controlMenos" id="-">-</span>
                         <span class="cantidad">${productosCarritoCantidad[funko.id]}</span>
                         <span class="controlMas" id="+">+</span>
                     </div>
-                </div>
-                <div class="precio">
-                    <span class="precioFunko">${funko.precio.toFixed(2)}€</span>
+                    <p class="precioFunko">${funko.precio.toFixed(2)}€</p>
                 </div>
             </div>
             `;
@@ -73,27 +70,48 @@ function cargarProductos() {
         })
     })
     .then(_ => calcularCantidadArticulos(productosCarritoCantidad))
-    .then(_ => calcularSubtotal())
-    .then(subtotal => calcularGastosEnvio(subtotal));
+    .then(_ => calcularPrecios())
 
     console.log("Productos cargados");
 }
 
-function calcularSubtotal() {
+async function calcularPrecios() {
+    const subtotal = await calcularSubtotal();
+    console.log("Subtotal " + subtotal);
+    const gastosEnvio = calcularGastosEnvio(subtotal);
+    console.log("Gastos envio " + gastosEnvio);
+    const IVA = 21;
+    const cantIVA = calcularIVA(subtotal, gastosEnvio, IVA);
+    calcularTotal(subtotal, gastosEnvio, cantIVA);
+}
+
+function calcularTotal(subtotal, gastosEnvio, cantIVA) {
+    const total = subtotal + gastosEnvio + cantIVA;
+    document.getElementById("precioTotal").innerText = total.toFixed(2);
+
+    return total;
+}
+
+async function calcularSubtotal() {
 
     const spanPreciosFunkos = document.getElementsByClassName("precioFunko");
     const precios = Array.from(spanPreciosFunkos).map(f => +f.innerText.slice(0,f.innerText.length-1));
     const spanCantidadFunkos = document.getElementsByClassName("cantidad");
     const cantidades = Array.from(spanCantidadFunkos).map(f => +f.innerText);
 
-    let precioTotal = 0;
+    let subtotal = 0;
 
     for (let i = 0; i < precios.length; i++) {
-        precioTotal += precios[i] * cantidades[i];
+        subtotal += precios[i] * cantidades[i];
     }
 
-    document.getElementById("precioTotal").innerText = precioTotal.toFixed(2);
-    return precioTotal;
+    const codigo = document.getElementById("codigo").value;
+
+    const subtotalConDescuento = codigo ? await calcularDescuento(subtotal, codigo) : subtotal;
+
+    document.getElementById("precioSubtotal").innerText = subtotal.toFixed(2);
+
+    return subtotalConDescuento;
 }
 
 function calcularGastosEnvio(subtotal) {
@@ -105,6 +123,53 @@ function calcularGastosEnvio(subtotal) {
         document.getElementById("contEnvio").classList.remove("sinGastos");
 
     document.getElementById("precioEnvio").innerText = gastosEnvio.toFixed(2);
+
+    return gastosEnvio;
+}
+
+function calcularDescuento(total, codigo)
+{
+    return fetch(`http://localhost:3000/codigosDescuento?codigo=${codigo}`)
+    .then(resul => resul.json())
+    .then(codigoDescuento => {
+        console.log(codigoDescuento);
+        
+        if(codigoDescuento.length === 0) return total;
+
+        const fechaInicio = new Date(codigoDescuento[0].fechaInicio)
+        const hoy = new Date();
+        const fechaFin = new Date(codigoDescuento[0].fechaFin)
+
+
+        console.log(fechaInicio);
+        console.log(hoy);
+        console.log(fechaFin);
+
+        if(fechaInicio <= hoy && fechaFin >= hoy)
+        {
+            console.log("Codigo valido");
+            document.getElementById("contDescuento").style.display = "flex";
+            const precioConDescuento = total * (1 - (+codigoDescuento[0].descuentoPorcentaje/100));
+            const cantDescuento = total * (+codigoDescuento[0].descuentoPorcentaje/100);
+            document.getElementById("descuento").innerText = cantDescuento.toFixed(2);
+
+            return precioConDescuento;
+        }
+        else
+        {
+            console.log("Codigo no valido");
+            return total;
+        }
+    });
+}
+
+function calcularIVA(subtotal, gastosEnvio, IVA)
+{
+    const cantIVA = (subtotal + gastosEnvio) * (IVA / 100);
+
+    document.getElementById("cantIVA").innerText = cantIVA.toFixed(2);
+
+    return cantIVA; 
 }
 
 function calcularCantidadArticulos(productosCarritoCantidad) {
@@ -120,6 +185,7 @@ function agregarCantidadProducto(funko, productosCarritoCantidad) {
     productosCarritoCantidad[funko.id] += 1;
 
     localStorage.setItem(usuario, JSON.stringify(productosCarritoCantidad));
+    calcularPrecios();
 }
 
 function quitarCantidadProducto(funko, productosCarritoCantidad) {
@@ -140,4 +206,13 @@ function quitarCantidadProducto(funko, productosCarritoCantidad) {
     {
         cargarProductos();
     }
+
+    calcularPrecios();
 }
+
+document.getElementById("botonCodigoDescuento").addEventListener("click", (e) => {
+    e.preventDefault();
+
+    document.getElementById("contDescuento").style.display = "none";
+    calcularPrecios();
+});

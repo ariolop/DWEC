@@ -93,12 +93,13 @@ main {
                         height: 100%;
                         padding: 8px;
                         background-color: lightcoral;
-                        width: 20px;
-                        height: 20px;
+                        min-width: 40px;
+                        height: 40px;
                         text-decoration: none;
                         background-color: white;
                         border: 1px solid black;
                         color: black;
+                        box-sizing: border-box;
                     }
 
                     .actual {
