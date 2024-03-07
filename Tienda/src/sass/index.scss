@@ -19,10 +19,13 @@
     background-color: #EEE;
 
     h1 {
+        font-family: Gluten;
+        font-size: 40px;
+        margin-top: 10px;
+
         span {
             font-family: Gluten;
             animation: 2.2s letras infinite both;
-            color: black;
         }
 
         span:nth-child(2)
@@ -128,7 +131,6 @@
         max-width: 1500px;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        grid-auto-rows: 400px;
         grid-template-areas: "bannerOferta"
                              "contenedorOferta"
                              "bannerBlackClover"
@@ -167,14 +169,146 @@
 
         .contenedorOfertas {
             grid-area: contenedorOferta;
+    
+            h1 {
+                color: yellow;
+
+                span {
+                    font-family: Gluten;
+                    animation: 2.2s letrasAmarillas infinite both;
+                }
+
+                span:nth-child(2)
+                {
+                    animation-delay: .2s;
+                }
+
+                span:nth-child(3)
+                {
+                    animation-delay: .4s;
+                }
+
+                span:nth-child(4)
+                {
+                    animation-delay: .6s;
+                }
+
+                span:nth-child(5)
+                {
+                    animation-delay: .8s;
+                }
+
+                span:nth-child(6)
+                {
+                    animation-delay: 1s;
+                }
+
+                span:nth-child(7)
+                {
+                    animation-delay: 1.2s;
+                }
+
+                span:nth-child(8)
+                {
+                    animation-delay: 1.4s;
+                }
+
+                @keyframes letrasAmarillas {
+                    to {
+                        color: rgb(124, 124, 0);
+                    }
+        
+                    50% {
+                        color: yellow;
+                    }
+        
+                    from {
+                        color: rgb(124, 124, 0);
+                    }
+                }
+            }
         }
 
         .contenedorBlackClover {
             grid-area: contenedorBlackClover;
+
+            h1 {
+                color: rgb(138,132,94);
+
+                span {
+                    font-family: Gluten;
+                    animation: 2.2s letrasBlackClover infinite both;
+                }
+
+                span:nth-child(2)
+                {
+                    animation-delay: .2s;
+                }
+
+                span:nth-child(3)
+                {
+                    animation-delay: .4s;
+                }
+
+                span:nth-child(4)
+                {
+                    animation-delay: .6s;
+                }
+
+                span:nth-child(5)
+                {
+                    animation-delay: .8s;
+                }
+
+                span:nth-child(6)
+                {
+                    animation-delay: 1s;
+                }
+
+                span:nth-child(7)
+                {
+                    animation-delay: 1.2s;
+                }
+
+                span:nth-child(8)
+                {
+                    animation-delay: 1.4s;
+                }
+
+                span:nth-child(9)
+                {
+                    animation-delay: 1.6s;
+                }
+
+                span:nth-child(10)
+                {
+                    animation-delay: 1.8s;
+                }
+
+                span:nth-child(11)
+                {
+                    animation-delay: 2s;
+                }
+
+                @keyframes letrasBlackClover {
+                    to {
+                        color: rgb(138,132,94);
+                    }
+        
+                    50% {
+                        color: rgb(224,174,100);
+                    }
+        
+                    from {
+                        color: rgb(138,132,94);
+                    }
+                }
+            }
         }
         
         .bannerOferta {
             grid-area: bannerOferta;
+            max-height: 400px;
             height: 100%;
 
             img {
@@ -185,6 +319,7 @@
     
         .bannerBlackClover {
             grid-area: bannerBlackClover;
+            max-height: 400px;
             height: 100%;
 
             img {

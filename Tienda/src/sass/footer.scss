@@ -1,15 +1,15 @@
 @mixin footer()
 {
-    .footer {
-        height: 200px;
+    .footer 
+    {
         background-color: black;
         display: flex;
         justify-content: space-evenly;
         padding: 20px 0px;
     
-        .col {
+        .col 
+        {
             width: 25%;
-            background-color: gray;
             color: white;
             padding: 10px;
     
@@ -26,6 +26,11 @@
                 a {
                     color: white;
                     text-decoration: none;
+                    font-size: 20px;
+                }
+
+                .fa-facebook:hover {
+                    color: rgb(0, 140, 255);
                 }
     
                 a:hover{
@@ -56,38 +61,15 @@
                 }
             }
     
-            .buscador {
+            .otros {
                 display: flex;
                 justify-content: center;
+                flex-flow: column;
+                text-align: center;
                 margin-top: 20px;
-    
-                .form {            
-                    display: flex;
-                    justify-content: space-around;
-                    width: 75%;
-    
-                    input {
-                        border: 0px;
-                        padding: 0px 10px;
-                        width: 100%;
-                        border-radius: 5px 0px 0px 5px;
-                        font-weight: 400;
-                        font-size: 16px;
-                    }
-    
-                    input:focus-visible{
-                        outline: 0px;
-                    }
-        
-                    button {
-                        border-radius: 0px 5px 5px 0px;
-        
-                        height: 100%;
-                        border: 0px;
-                        padding: 10px;
-                        cursor: pointer;
-                        background-color: darkgray;
-                    }
+
+                p {
+                    margin: 5px 0px;
                 }
             }
         }

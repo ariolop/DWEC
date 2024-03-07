@@ -278,7 +278,6 @@
 }
 
 .footer {
-  height: 200px;
   background-color: black;
   display: flex;
   justify-content: space-evenly;
@@ -286,7 +285,6 @@
 }
 .footer .col {
   width: 25%;
-  background-color: gray;
   color: white;
   padding: 10px;
 }
@@ -301,6 +299,10 @@
 .footer .col .redesSociales a {
   color: white;
   text-decoration: none;
+  font-size: 20px;
+}
+.footer .col .redesSociales .fa-facebook:hover {
+  color: rgb(0, 140, 255);
 }
 .footer .col .redesSociales a:hover {
   color: #CCC;
@@ -322,34 +324,15 @@
 .footer .col .categorias ul li a:hover {
   color: #CCC;
 }
-.footer .col .buscador {
+.footer .col .otros {
   display: flex;
   justify-content: center;
+  flex-flow: column;
+  text-align: center;
   margin-top: 20px;
 }
-.footer .col .buscador .form {
-  display: flex;
-  justify-content: space-around;
-  width: 75%;
-}
-.footer .col .buscador .form input {
-  border: 0px;
-  padding: 0px 10px;
-  width: 100%;
-  border-radius: 5px 0px 0px 5px;
-  font-weight: 400;
-  font-size: 16px;
-}
-.footer .col .buscador .form input:focus-visible {
-  outline: 0px;
-}
-.footer .col .buscador .form button {
-  border-radius: 0px 5px 5px 0px;
-  height: 100%;
-  border: 0px;
-  padding: 10px;
-  cursor: pointer;
-  background-color: darkgray;
+.footer .col .otros p {
+  margin: 5px 0px;
 }
 
 .container {

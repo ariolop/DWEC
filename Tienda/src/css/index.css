@@ -279,7 +279,6 @@
 }
 
 .footer {
-  height: 200px;
   background-color: black;
   display: flex;
   justify-content: space-evenly;
@@ -287,7 +286,6 @@
 }
 .footer .col {
   width: 25%;
-  background-color: gray;
   color: white;
   padding: 10px;
 }
@@ -302,6 +300,10 @@
 .footer .col .redesSociales a {
   color: white;
   text-decoration: none;
+  font-size: 20px;
+}
+.footer .col .redesSociales .fa-facebook:hover {
+  color: rgb(0, 140, 255);
 }
 .footer .col .redesSociales a:hover {
   color: #CCC;
@@ -323,34 +325,15 @@
 .footer .col .categorias ul li a:hover {
   color: #CCC;
 }
-.footer .col .buscador {
+.footer .col .otros {
   display: flex;
   justify-content: center;
+  flex-flow: column;
+  text-align: center;
   margin-top: 20px;
 }
-.footer .col .buscador .form {
-  display: flex;
-  justify-content: space-around;
-  width: 75%;
-}
-.footer .col .buscador .form input {
-  border: 0px;
-  padding: 0px 10px;
-  width: 100%;
-  border-radius: 5px 0px 0px 5px;
-  font-weight: 400;
-  font-size: 16px;
-}
-.footer .col .buscador .form input:focus-visible {
-  outline: 0px;
-}
-.footer .col .buscador .form button {
-  border-radius: 0px 5px 5px 0px;
-  height: 100%;
-  border: 0px;
-  padding: 10px;
-  cursor: pointer;
-  background-color: darkgray;
+.footer .col .otros p {
+  margin: 5px 0px;
 }
 
 .container {
@@ -359,10 +342,14 @@
   align-items: center;
   background-color: #EEE;
 }
+.container h1 {
+  font-family: Gluten;
+  font-size: 40px;
+  margin-top: 10px;
+}
 .container h1 span {
   font-family: Gluten;
   animation: 2.2s letras infinite both;
-  color: black;
 }
 .container h1 span:nth-child(2) {
   animation-delay: 0.2s;
@@ -452,6 +439,12 @@
   height: 100%;
   padding: 10px;
   box-sizing: border-box;
+  position: relative;
+}
+.container .contenedorCartas .cartas .carta a .imagenOferta {
+  position: absolute;
+  width: 70px;
+  z-index: 10;
 }
 .container .contenedorCartas .cartas .carta a .nombre {
   font-weight: bold;
@@ -526,7 +519,6 @@
   max-width: 1500px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-auto-rows: 400px;
   grid-template-areas: "bannerOferta" "contenedorOferta" "bannerBlackClover" "contenedorBlackClover";
 }
 @media only screen and (min-width: 1024px) {
@@ -566,6 +558,12 @@
   height: 100%;
   padding: 10px;
   box-sizing: border-box;
+  position: relative;
+}
+.container .banners .funkosOferta .carta a .imagenOferta, .container .banners .funkosBlackClover .carta a .imagenOferta {
+  position: absolute;
+  width: 70px;
+  z-index: 10;
 }
 .container .banners .funkosOferta .carta a .nombre, .container .banners .funkosBlackClover .carta a .nombre {
   font-weight: bold;
@@ -645,11 +643,99 @@
 .container .banners .contenedorOfertas {
   grid-area: contenedorOferta;
 }
+.container .banners .contenedorOfertas h1 {
+  color: yellow;
+}
+.container .banners .contenedorOfertas h1 span {
+  font-family: Gluten;
+  animation: 2.2s letrasAmarillas infinite both;
+}
+.container .banners .contenedorOfertas h1 span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.container .banners .contenedorOfertas h1 span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.container .banners .contenedorOfertas h1 span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.container .banners .contenedorOfertas h1 span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.container .banners .contenedorOfertas h1 span:nth-child(6) {
+  animation-delay: 1s;
+}
+.container .banners .contenedorOfertas h1 span:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.container .banners .contenedorOfertas h1 span:nth-child(8) {
+  animation-delay: 1.4s;
+}
+@keyframes letrasAmarillas {
+  to {
+    color: rgb(124, 124, 0);
+  }
+  50% {
+    color: yellow;
+  }
+  from {
+    color: rgb(124, 124, 0);
+  }
+}
 .container .banners .contenedorBlackClover {
   grid-area: contenedorBlackClover;
 }
+.container .banners .contenedorBlackClover h1 {
+  color: rgb(138, 132, 94);
+}
+.container .banners .contenedorBlackClover h1 span {
+  font-family: Gluten;
+  animation: 2.2s letrasBlackClover infinite both;
+}
+.container .banners .contenedorBlackClover h1 span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.container .banners .contenedorBlackClover h1 span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.container .banners .contenedorBlackClover h1 span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.container .banners .contenedorBlackClover h1 span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.container .banners .contenedorBlackClover h1 span:nth-child(6) {
+  animation-delay: 1s;
+}
+.container .banners .contenedorBlackClover h1 span:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.container .banners .contenedorBlackClover h1 span:nth-child(8) {
+  animation-delay: 1.4s;
+}
+.container .banners .contenedorBlackClover h1 span:nth-child(9) {
+  animation-delay: 1.6s;
+}
+.container .banners .contenedorBlackClover h1 span:nth-child(10) {
+  animation-delay: 1.8s;
+}
+.container .banners .contenedorBlackClover h1 span:nth-child(11) {
+  animation-delay: 2s;
+}
+@keyframes letrasBlackClover {
+  to {
+    color: rgb(138, 132, 94);
+  }
+  50% {
+    color: rgb(224, 174, 100);
+  }
+  from {
+    color: rgb(138, 132, 94);
+  }
+}
 .container .banners .bannerOferta {
   grid-area: bannerOferta;
+  max-height: 400px;
   height: 100%;
 }
 .container .banners .bannerOferta img {
@@ -658,6 +744,7 @@
 }
 .container .banners .bannerBlackClover {
   grid-area: bannerBlackClover;
+  max-height: 400px;
   height: 100%;
 }
 .container .banners .bannerBlackClover img {
