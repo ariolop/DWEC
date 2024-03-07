@@ -18,23 +18,28 @@
             }
     
             .redesSociales {
-                
                 display: flex;
-                justify-content: space-evenly;
+                flex-flow: column;
+                align-items: center;
                 margin-top: 20px;
     
                 a {
+                    width: 30%;
+                    text-align: center;
                     color: white;
+                    padding: 5px 20px;
+                    margin: 5px 0px;
+                    border-radius: 10px;
                     text-decoration: none;
-                    font-size: 20px;
+                    font-size: 18px;
+                    background-color: black;
+                    transition: color, background 0.5s;
                 }
 
-                .fa-facebook:hover {
-                    color: rgb(0, 140, 255);
-                }
-    
                 a:hover{
-                    color: #CCC;
+                    background-color: white;
+                    color: black;
+
                 }
             }
     
@@ -47,15 +52,27 @@
                     text-align: center;
     
                     li {
-                        margin: 5px 0px;
+                        margin: 10px 0px;
+                        padding: 5px 20px;
+                        font-size: 18px;
     
                         a {
+                            width: 30%;
+                            text-align: center;
                             color: white;
+                            padding: 5px 20px;
+                            margin: 5px 0px;
+                            border-radius: 10px;
                             text-decoration: none;
+                            font-size: 18px;
+                            background-color: black;
+                            transition: color, background 0.5s;
                         }
-                        
+        
                         a:hover{
-                            color: #CCC;
+                            background-color: white;
+                            color: black;
+        
                         }
                     }
                 }
@@ -70,6 +87,27 @@
 
                 p {
                     margin: 5px 0px;
+                    padding: 5px 20px;
+                    font-size: 18px;
+
+                    a {
+                        width: 30%;
+                        text-align: center;
+                        color: white;
+                        padding: 5px 20px;
+                        margin: 5px 0px;
+                        border-radius: 10px;
+                        text-decoration: none;
+                        font-size: 18px;
+                        background-color: black;
+                        transition: color, background 0.5s;
+                    }
+    
+                    a:hover{
+                        background-color: white;
+                        color: black;
+    
+                    }
                 }
             }
         }

@@ -4,6 +4,9 @@
     .header {
         text-align: center;
         background-color: black;
+        position: sticky;
+        z-index: 1000;
+        top: 0;
     
         .miniCabecera {
             height: 20px;

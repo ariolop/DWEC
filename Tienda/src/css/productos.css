@@ -8,6 +8,9 @@
 .header {
   text-align: center;
   background-color: black;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
 }
 .header .miniCabecera {
   height: 20px;
@@ -294,19 +297,25 @@
 }
 .footer .col .redesSociales {
   display: flex;
-  justify-content: space-evenly;
+  flex-flow: column;
+  align-items: center;
   margin-top: 20px;
 }
 .footer .col .redesSociales a {
+  width: 30%;
+  text-align: center;
   color: white;
+  padding: 5px 20px;
+  margin: 5px 0px;
+  border-radius: 10px;
   text-decoration: none;
-  font-size: 20px;
-}
-.footer .col .redesSociales .fa-facebook:hover {
-  color: rgb(0, 140, 255);
+  font-size: 18px;
+  background-color: black;
+  transition: color, background 0.5s;
 }
 .footer .col .redesSociales a:hover {
-  color: #CCC;
+  background-color: white;
+  color: black;
 }
 .footer .col .categorias {
   margin-top: 20px;
@@ -316,14 +325,25 @@
   text-align: center;
 }
 .footer .col .categorias ul li {
-  margin: 5px 0px;
+  margin: 10px 0px;
+  padding: 5px 20px;
+  font-size: 18px;
 }
 .footer .col .categorias ul li a {
+  width: 30%;
+  text-align: center;
   color: white;
+  padding: 5px 20px;
+  margin: 5px 0px;
+  border-radius: 10px;
   text-decoration: none;
+  font-size: 18px;
+  background-color: black;
+  transition: color, background 0.5s;
 }
 .footer .col .categorias ul li a:hover {
-  color: #CCC;
+  background-color: white;
+  color: black;
 }
 .footer .col .otros {
   display: flex;
@@ -334,6 +354,24 @@
 }
 .footer .col .otros p {
   margin: 5px 0px;
+  padding: 5px 20px;
+  font-size: 18px;
+}
+.footer .col .otros p a {
+  width: 30%;
+  text-align: center;
+  color: white;
+  padding: 5px 20px;
+  margin: 5px 0px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: black;
+  transition: color, background 0.5s;
+}
+.footer .col .otros p a:hover {
+  background-color: white;
+  color: black;
 }
 
 body {

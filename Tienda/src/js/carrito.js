@@ -186,6 +186,7 @@ function agregarCantidadProducto(funko, productosCarritoCantidad) {
 
     localStorage.setItem(usuario, JSON.stringify(productosCarritoCantidad));
     calcularPrecios();
+    calcularCantidadArticulos(productosCarritoCantidad);
 }
 
 function quitarCantidadProducto(funko, productosCarritoCantidad) {
@@ -208,6 +209,7 @@ function quitarCantidadProducto(funko, productosCarritoCantidad) {
     }
 
     calcularPrecios();
+    calcularCantidadArticulos(productosCarritoCantidad)
 }
 
 document.getElementById("botonCodigoDescuento").addEventListener("click", (e) => {
