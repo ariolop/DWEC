@@ -14,7 +14,7 @@
       "oferta": "true",
       "descuentoPorcentaje": 15,
       "stock": 52,
-      "cantidadVendidos": 1
+      "cantidadVendidos": 2
     },
     {
       "id": "1",
@@ -30,7 +30,7 @@
       "oferta": "false",
       "descuentoPorcentaje": 0,
       "stock": 136,
-      "cantidadVendidos": 3
+      "cantidadVendidos": 4
     },
     {
       "id": "2",

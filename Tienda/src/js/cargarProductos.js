@@ -8,7 +8,7 @@ export function cargarBusquedaProductos(busqueda, orden, oferta, stock) {
     console.log(cadenaFetch);
     fetch(cadenaFetch)
     .then( resultado => resultado.json() )
-    .then( funkos => orden === "id" ? funkos.reverse() : funkos)
+    .then( funkos => orden === "+id" ? funkos.reverse() : funkos)
     .then( funkos => funkos.filter( f => 
             f.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
             f.categorias[0].toLowerCase().includes(busqueda.toLowerCase()) ||
@@ -33,7 +33,7 @@ export function cargarCategoriaProductos(filtroCategoria, filtroSubcategoria, or
     console.log(cadenaFetch);
     fetch(cadenaFetch)
     .then( resultado => resultado.json())
-    .then( funkos => orden === "id" ? funkos.reverse() : funkos)
+    .then( funkos => orden === "+id" ? funkos.reverse() : funkos)
     .then( funkos => {
         console.log(funkos);
         const pag = new Paginacion(funkos, 15);
