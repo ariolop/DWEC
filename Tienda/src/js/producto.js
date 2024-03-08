@@ -1,4 +1,8 @@
+import * as Categorias from './categorias.js';
 import { agregarProducto } from "./organizarCarrito.js";
+import {Toast} from './bootstrap/bootstrap.esm.js';
+
+Categorias.cargarCategoriasMenu();
 
 const funkoId = location.search.split("=")[1];
 
@@ -47,17 +51,7 @@ fetch(`http://localhost:3000/funkos?id=${funkoId}`)
     .then(_ => {
         document.getElementById("agregarCarrito").addEventListener("click", (e) => {
             agregarProducto(e.target.dataset.id);
+            const toast = new Toast(document.getElementById("liveToast"));
+            toast.show();
         });
     });
-
-
-
-function añadirEventoAgregarCarrito() {
-    document.getElementById("cartas").addEventListener("click", e => {
-        if(!e.target.closest("[data-id]")) return;
-    
-    
-        const toast = new Toast(document.getElementById("liveToast"));
-        toast.show();
-    });
-}

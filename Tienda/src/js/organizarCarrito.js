@@ -34,6 +34,4 @@ export function añadirEventoAgregarCarrito() {
         const toast = new Toast(document.getElementById("liveToast"));
         toast.show();
     });
-
-    console.log("Añadir evento carrito");
 }

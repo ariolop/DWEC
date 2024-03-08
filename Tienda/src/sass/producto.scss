@@ -1,5 +1,7 @@
 @use './header.scss' as header;
 @use './footer.scss' as footer;
+@use './mixins.scss' as mixins;
+@use './toast.scss' as toast;
 
 * {
     margin: 0px;
@@ -9,19 +11,32 @@
 
 @include header.header();
 @include footer.footer();
+@include toast.toast();
 
 .container {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     justify-content: center;
 
     .imagen {
         display: flex;
         justify-content: space-between;
-        width: 40%;
+        width: 100%;
         background-color: #f3f3f7;
         padding: 10px;
         padding-top: 50px;
+        max-width: 500px;
+
+        @include mixins.small {
+            width: 50%;
+            max-width: 700px;
+        }
+
+        .carousel-indicators {
+            top: 10px;
+            margin-left: 5%;
+            bottom: auto;
+        }
 
         .galeria {
             width: 100px;
@@ -52,9 +67,14 @@
     }
     
     .informacion {
-        width: 40%;
+        width: 80%;
         padding: 40px;
         padding-top: 50px;
+        box-sizing: border-box;
+
+        @include mixins.small{
+            width: 35%;
+        }
 
         div {
             margin-bottom: 20px;
@@ -80,7 +100,7 @@
         .agregarCarrito {
 
             button {
-                width: 300px;
+                width: 100%;
                 border-radius: 10px;
                 font-size: 20px;
                 font-weight: bold;
@@ -92,16 +112,11 @@
                 border: 2px solid black;
                 transition: 0.5s background,color;
             }
-        }
-
-        .agregarCarrito {
 
             button:hover {
                 background: white;
                 color: black;
             }
-        }
-        
-            
+        }       
     }
 }

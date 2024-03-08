@@ -383,18 +383,37 @@
   color: black;
 }
 
+.toast {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
 .container {
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
   justify-content: center;
 }
 .container .imagen {
   display: flex;
   justify-content: space-between;
-  width: 40%;
+  width: 100%;
   background-color: #f3f3f7;
   padding: 10px;
   padding-top: 50px;
+  max-width: 500px;
+}
+@media only screen and (min-width: 720px) {
+  .container .imagen {
+    width: 50%;
+    max-width: 700px;
+  }
+}
+.container .imagen .carousel-indicators {
+  top: 10px;
+  margin-left: 5%;
+  bottom: auto;
 }
 .container .imagen .galeria {
   width: 100px;
@@ -420,9 +439,15 @@
   aspect-ratio: 1/1;
 }
 .container .informacion {
-  width: 40%;
+  width: 80%;
   padding: 40px;
   padding-top: 50px;
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 720px) {
+  .container .informacion {
+    width: 35%;
+  }
 }
 .container .informacion div {
   margin-bottom: 20px;
@@ -438,7 +463,7 @@
   font-size: 20px;
 }
 .container .informacion .agregarCarrito button {
-  width: 300px;
+  width: 100%;
   border-radius: 10px;
   font-size: 20px;
   font-weight: bold;
