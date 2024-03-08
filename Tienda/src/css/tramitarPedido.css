@@ -419,7 +419,15 @@
   flex-flow: row wrap;
   justify-content: center;
 }
-.container .formularioDatos .datos input[type=text], .container .formularioDatos .datos input[type=number], .container .formularioDatos .datos input[type=month] {
+.container .formularioDatos .datos .metodoPago .accordion-body {
+  display: flex;
+  justify-content: start;
+  flex-flow: row wrap;
+}
+.container .formularioDatos .datos .metodoPago label[for=metodoPago] {
+  width: 90%;
+}
+.container .formularioDatos .datos input:not([type=radio]) {
   height: 20px;
   font-size: 16px;
   padding: 5px 5px;

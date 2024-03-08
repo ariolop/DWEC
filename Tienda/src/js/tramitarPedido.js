@@ -27,3 +27,23 @@ function cargarInformacionPrecios() {
         document.getElementById("contDescuento").style.display = "flex";
     }
 }
+
+document.getElementById("metodosDePago").addEventListener("change", e => {
+    if(e.target.tagName !== "INPUT") return;
+    if(e.target.type !== "radio") return;
+
+    if(e.target.id === "metodoPagoTarjeta")
+    {
+        document.getElementById("numeroTarjeta").removeAttribute("disabled");
+        document.getElementById("fechaExpiracion").removeAttribute("disabled");
+        document.getElementById("cvv").removeAttribute("disabled");
+        document.getElementById("titularTarjeta").removeAttribute("disabled");
+    }
+    else
+    {
+        document.getElementById("numeroTarjeta").setAttribute("disabled","");
+        document.getElementById("fechaExpiracion").setAttribute("disabled","");
+        document.getElementById("cvv").setAttribute("disabled","");
+        document.getElementById("titularTarjeta").setAttribute("disabled","");
+    }
+});

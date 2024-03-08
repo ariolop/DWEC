@@ -154,12 +154,12 @@
     </div>
 
     <div class="container">
-        <form class="formularioDatos" action="#">
+        <form class="formularioDatos" id="formularioDatos" action="#">
             <div class="datos">
                 <h2>Datos personales</h2>
                 <div class="datosPersonales">
-                    <input id="nombre" type="text" placeholder="Nombre*" required>
-                    <input id="apellidos" type="text" placeholder="Apellidos*" required>
+                    <input id="nombre" type="text" name="nombre" placeholder="Nombre*" required>
+                    <input id="apellidos" type="text" name="apellidos" placeholder="Apellidos*" required>
                     <fieldset class="inputPais">
                         <legend>País*</legend>
                         <select name="pais" id="pais">
@@ -169,17 +169,17 @@
                             <option value="Andorra">Andorra</option>
                         </select>
                     </fieldset>
-                    <input id="telefono" type="tel" placeholder="Móvil*" required>
+                    <input id="telefono" name="telefono" type="tel" placeholder="Móvil*" required>
                 </div>
 
                 <h2>Dirección de envío</h2>
                 <div class="direccionEnvio">
-                    <input id="direccion" type="text" placeholder="Dirección y número*" required>
-                    <input id="datosAdicionales" type="text" placeholder="Datos adicionales (piso, puerta, barrio...)">
-                    <input id="observaciones" type="text" placeholder="Observaciones extras">
-                    <input id="codigoPostal" type="number" min="0" max="99999" maxlength="5" placeholder="Código postal*" required>
-                    <input id="poblacion" type="text" placeholder="Población*" required>
-                    <input id="provincia" type="text" placeholder="Provincia*" required>
+                    <input id="direccion" name="direccion" type="text" placeholder="Dirección y número*" required>
+                    <input id="datosAdicionales" name="datosAdicionales" type="text" placeholder="Datos adicionales (piso, puerta, barrio...)">
+                    <input id="observaciones" name="observaciones" type="text" placeholder="Observaciones extras">
+                    <input id="codigoPostal" name="codigoPostal" type="number" min="0" max="99999" maxlength="5" placeholder="Código postal*" required>
+                    <input id="poblacion" name="poblacion" type="text" placeholder="Población*" required>
+                    <input id="provincia" name="provincia" type="text" placeholder="Provincia*" required>
                 </div>
 
                 <h2>Método de pago</h2>
@@ -194,12 +194,12 @@
                             <div id="metodoUno" class="accordion-collapse collapse show" aria-labelledby="cabeceraUno" data-bs-parent="#metodosDePago">
                                 <div class="accordion-body">
                                     <!-- Tarjeta de crédito -->
+                                    <input type="radio" name="metodoPago" id="metodoPagoTarjeta" value="Tarjeta" checked>
                                     <label for="metodoPago">Tarjeta de crédito</label>
-                                    <input type="radio" name="metodoPago" value="Bizum">
-                                    <input type="text" name="numeroTarjeta" id="numeroTarjeta" placeholder="Número de la tarjeta">
-                                    <input type="text" name="fechaExpiracion" id="fechaExpiracion" maxlength="5" placeholder="MM/YY">
-                                    <input type="number" name="cvv" id="cvv" placeholder="CVV">
-                                    <input type="text" name="titularTarjeta" id="titularTarjeta" placeholder="Nombre del titular de la tarjeta">
+                                    <input required type="text" name="numeroTarjeta" id="numeroTarjeta" placeholder="Número de la tarjeta">
+                                    <input required type="text" name="fechaExpiracion" id="fechaExpiracion" maxlength="5" placeholder="MM/YY">
+                                    <input required type="number" name="cvv" id="cvv" placeholder="CVV">
+                                    <input required type="text" name="titularTarjeta" id="titularTarjeta" placeholder="Nombre del titular de la tarjeta">
                                 </div>
                             </div>
                         </div>

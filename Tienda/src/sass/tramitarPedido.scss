@@ -60,8 +60,22 @@
                 flex-flow: row wrap;
                 justify-content: center;
             }
+
+            .metodoPago {
+                
+                .accordion-body 
+                {
+                    display: flex;
+                    justify-content: start;
+                    flex-flow: row wrap;
+                }
+
+                label[for="metodoPago"] {
+                    width: 90%;
+                }
+            }
     
-            input[type="text"], input[type="number"], input[type="month"] {
+            input:not([type="radio"]) {
                 height: 20px;
                 font-size: 16px;
                 padding: 5px 5px;
