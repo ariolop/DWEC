@@ -29,11 +29,16 @@
 
     .formularioDatos {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        flex-flow: row wrap;
         width: 100%;
 
+        @include mixins.small {
+            justify-content: space-between;
+        }
+
         .datos {
-            width: 60%;
+            width: 100%;
             
             .datosPersonales {
                 display: flex;
@@ -70,8 +75,12 @@
                 height: 20px;
                 font-size: 16px;
                 padding: 5px 5px;
-                width: 45%;
+                width: 90%;
                 margin: 5px 5px;
+
+                @include mixins.small {
+                    width: 40%;
+                }
             }
     
             &>div {

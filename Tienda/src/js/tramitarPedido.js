@@ -84,7 +84,7 @@ document.getElementById("formularioDatos").addEventListener("submit", async e =>
     const carrito = JSON.parse(localStorage.getItem(usuario))
 
     actualizarProductosVendidos(carrito);
-    //realizarPedido(informacion);
+    realizarPedido(informacion);
 });
 
 async function obtenerInformacion() {
@@ -92,7 +92,7 @@ async function obtenerInformacion() {
     const ultimoID = await obtenerUltimoID();
 
     return {
-        "id": ultimoID + 1,
+        "id": (ultimoID + 1).toString(),
         "idUsuario": null,
         "carrito": JSON.parse(localStorage.getItem(usuario)),
         "direccionEnvio": {
@@ -132,7 +132,7 @@ function actualizarProductosVendidos(carrito) {
         fetch(`http://localhost:3000/funkos/${producto}`)
         .then(resul => resul.json())
         .then(datosProducto => {
-            datosProducto.cantidadVendidos += 1;
+            datosProducto.cantidadVendidos += carrito[datosProducto.id];
             return JSON.stringify(datosProducto);
         })
         .then(datosProducto => {

@@ -475,7 +475,7 @@
 @media only screen and (min-width: 500px) {
   .container .cesta .productos .carta .precio {
     justify-content: end;
-    width: 35%;
+    width: 40%;
   }
 }
 .container .cesta .productos .carta .precio p {

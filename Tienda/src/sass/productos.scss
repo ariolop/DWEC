@@ -33,23 +33,20 @@ main {
         }
 
         .filtros {
-            margin-top: 20px;
-
             @include mixins.small {
                 display: flex;
                 flex-flow: column;
+                margin-top: 20px;
+
+                .btn-close {
+                    display: none;
+                }
             }
 
             .cabeceraFiltros {
                 display: flex;
-
-                .offcanvas-close {
-                    display: inline-block;
-
-                    @include mixins.small {
-                        display: none;
-                    }
-                }
+                justify-content: space-between;
+                margin-top: 0px;
             }
 
             &>div {
@@ -78,6 +75,20 @@ main {
         .informacion {
             display: flex;
             justify-content: space-between;
+
+            .cantidadProductos {
+                display: flex;
+                align-items: center;
+            }
+
+            .botonOffcanvas {
+                padding: 5px;
+                font-size: 20px;
+
+                @include mixins.small {
+                    display: none;
+                }
+            }
         }
 
         .productos {

@@ -154,9 +154,12 @@
     </div>
 
     <main>
-        <div class="filtrosOrdenacion">
-            <div class="filtros">
-                <h2>Filtros</h2>
+        <div id="offcanvasFiltros" data-bs-scroll="false" class="filtrosOrdenacion offcanvas-md offcanvas-end">
+            <div class="filtros offcanvas-body">
+                <div class="cabeceraFiltros">
+                    <h2>Filtros</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasFiltros" aria-label="Close"></button>    
+                </div>
 
                 <div class="filtroCategoria">
                     <h4>Filtro categoria</h4>
@@ -219,6 +222,9 @@
                 <div id="cantidadProductos" class="cantidadProductos">
                     <p>Mostrando <span id="productoInicial">1</span>-<span id="productosPorPagina">x</span> de <span id="productosTotales">xxx</span> productos</p>
                 </div>
+                <button class="botonOffcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFiltros" aria-controls="offcanvasResponsive">
+                    <i class="fas fa-sliders-h"></i>
+                </button>
             </div>
 
             <div id="productos" class="productos">
