@@ -414,6 +414,11 @@
 .container .formularioDatos .datos {
   width: 100%;
 }
+@media only screen and (min-width: 720px) {
+  .container .formularioDatos .datos {
+    width: 60%;
+  }
+}
 .container .formularioDatos .datos .datosPersonales {
   display: flex;
   flex-flow: row wrap;

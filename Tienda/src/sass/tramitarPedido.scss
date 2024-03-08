@@ -39,6 +39,10 @@
 
         .datos {
             width: 100%;
+
+            @include mixins.small {
+                width: 60%;
+            }
             
             .datosPersonales {
                 display: flex;

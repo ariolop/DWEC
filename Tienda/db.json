@@ -14,7 +14,7 @@
       "oferta": "true",
       "descuentoPorcentaje": 15,
       "stock": 52,
-      "cantidadVendidos": 43
+      "cantidadVendidos": 117
     },
     {
       "id": "1",
@@ -30,7 +30,7 @@
       "oferta": "false",
       "descuentoPorcentaje": 0,
       "stock": 136,
-      "cantidadVendidos": 18
+      "cantidadVendidos": 38
     },
     {
       "id": "2",
@@ -46,7 +46,7 @@
       "oferta": "false",
       "descuentoPorcentaje": 0,
       "stock": 87,
-      "cantidadVendidos": 6
+      "cantidadVendidos": 10
     },
     {
       "id": "3",
@@ -62,7 +62,7 @@
       "oferta": "false",
       "descuentoPorcentaje": 0,
       "stock": 125,
-      "cantidadVendidos": 5
+      "cantidadVendidos": 7
     },
     {
       "id": "4",
@@ -174,7 +174,7 @@
       "oferta": "false",
       "descuentoPorcentaje": 0,
       "stock": 46,
-      "cantidadVendidos": 5
+      "cantidadVendidos": 7
     },
     {
       "id": "11",
@@ -254,7 +254,7 @@
       "oferta": "true",
       "descuentoPorcentaje": 15,
       "stock": 130,
-      "cantidadVendidos": 7
+      "cantidadVendidos": 9
     },
     {
       "id": "16",
@@ -286,7 +286,7 @@
       "oferta": "false",
       "descuentoPorcentaje": 0,
       "stock": 63,
-      "cantidadVendidos": 5
+      "cantidadVendidos": 7
     },
     {
       "id": "18",
@@ -590,7 +590,7 @@
       "oferta": "true",
       "descuentoPorcentaje": 15,
       "stock": 70,
-      "cantidadVendidos": 5
+      "cantidadVendidos": 7
     },
     {
       "id": "37",
@@ -1054,7 +1054,7 @@
       "oferta": "true",
       "descuentoPorcentaje": 15,
       "stock": 32,
-      "cantidadVendidos": 5
+      "cantidadVendidos": 7
     },
     {
       "id": "66",
@@ -1614,7 +1614,7 @@
       "oferta": "true",
       "descuentoPorcentaje": 15,
       "stock": 82,
-      "cantidadVendidos": 8
+      "cantidadVendidos": 14
     }
   ],
   "pedidos": [
@@ -1777,6 +1777,75 @@
         "direccionPais": "España"
       },
       "metodoPago": "Paypal"
+    },
+    {
+      "id": "10",
+      "idUsuario": null,
+      "carrito": {
+        "0": 37,
+        "1": 10,
+        "2": 2,
+        "3": 1,
+        "10": 1,
+        "15": 1,
+        "17": 1,
+        "36": 1,
+        "65": 1,
+        "100": 3
+      },
+      "direccionEnvio": {
+        "direccionCalle": "C. Jazmín 12 1º",
+        "direccionCodigoPostal": "18800",
+        "direccionProvincia": "Granada",
+        "direccionPais": "España"
+      },
+      "metodoPago": "Bizum"
+    },
+    {
+      "id": "11",
+      "idUsuario": null,
+      "carrito": {
+        "0": 37,
+        "1": 10,
+        "2": 2,
+        "3": 1,
+        "10": 1,
+        "15": 1,
+        "17": 1,
+        "36": 1,
+        "65": 1,
+        "100": 3
+      },
+      "direccionEnvio": {
+        "direccionCalle": "C. Jazmín 12 1º",
+        "direccionCodigoPostal": "18800",
+        "direccionProvincia": "Granada",
+        "direccionPais": "España"
+      },
+      "metodoPago": "Bizum"
+    },
+    {
+      "id": "12",
+      "idUsuario": null,
+      "carrito": {
+        "0": 37,
+        "1": 10,
+        "2": 2,
+        "3": 1,
+        "10": 1,
+        "15": 1,
+        "17": 1,
+        "36": 1,
+        "65": 1,
+        "100": 3
+      },
+      "direccionEnvio": {
+        "direccionCalle": "C. Jazmín 12 1º",
+        "direccionCodigoPostal": "18800",
+        "direccionProvincia": "Granada",
+        "direccionPais": "España"
+      },
+      "metodoPago": "Bizum"
     }
   ],
   "usuarios": [

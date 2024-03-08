@@ -85,7 +85,15 @@ document.getElementById("formularioDatos").addEventListener("submit", async e =>
 
     actualizarProductosVendidos(carrito);
     realizarPedido(informacion);
+    vaciarCarrito();
+
+    location.href = "./index.html";
 });
+
+function vaciarCarrito() {
+    const usuario = localStorage.getItem("sesionLocal");
+    localStorage.removeItem(usuario);
+}
 
 async function obtenerInformacion() {
     const usuario = localStorage.getItem("sesionLocal");
