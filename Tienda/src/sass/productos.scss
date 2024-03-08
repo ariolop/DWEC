@@ -1,7 +1,8 @@
 @use './header.scss' as header;
 @use './footer.scss' as footer;
-@use './mixins.scss' as mixins;
+@use './breakpoints.scss' as breakpoints;
 @use './toast.scss' as toast;
+@use './mixins.scss' as mixins;
 
 * {
     margin: 0px;
@@ -27,13 +28,13 @@ main {
 
     .filtrosOrdenacion {
         width: 100%;
-        @include mixins.small {
+        @include breakpoints.small {
             width: 20%;
             padding: 20px;
         }
 
         .filtros {
-            @include mixins.small {
+            @include breakpoints.small {
                 display: flex;
                 flex-flow: column;
                 margin-top: 20px;
@@ -64,7 +65,7 @@ main {
         width: 100%;
         padding: 20px;
 
-        @include mixins.small {
+        @include breakpoints.small {
             width: 65%;
         }
 
@@ -85,7 +86,7 @@ main {
                 padding: 5px;
                 font-size: 20px;
 
-                @include mixins.small {
+                @include breakpoints.small {
                     display: none;
                 }
             }
@@ -104,15 +105,15 @@ main {
                 gap: 16px;
                 box-sizing: border-box;
 
-                @include mixins.extrasmall {
+                @include breakpoints.extrasmall {
                     grid-template-columns: repeat(2, minmax(100px, 180px));
                 }
         
-                @include mixins.small {
+                @include breakpoints.small {
                     grid-template-columns: repeat(3, minmax(100px, 180px));
                 }
         
-                @include mixins.medium {
+                @include breakpoints.medium {
                     grid-template-columns: repeat(5, minmax(100px, 180px));
                 }
         

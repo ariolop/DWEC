@@ -1,6 +1,6 @@
 @use './header.scss' as header;
 @use './footer.scss' as footer;
-@use './mixins.scss' as mixins;
+@use './breakpoints.scss' as breakpoints;
 @use './toast.scss' as toast;
 
 * {
@@ -27,7 +27,7 @@
         padding-top: 50px;
         max-width: 500px;
 
-        @include mixins.small {
+        @include breakpoints.small {
             width: 50%;
             max-width: 700px;
         }
@@ -72,7 +72,7 @@
         padding-top: 50px;
         box-sizing: border-box;
 
-        @include mixins.small{
+        @include breakpoints.small{
             width: 35%;
         }
 

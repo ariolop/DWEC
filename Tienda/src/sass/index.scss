@@ -1,7 +1,8 @@
 @use './header.scss' as header;
 @use './footer.scss' as footer;
-@use './mixins.scss' as mixins;
+@use './breakpoints.scss' as breakpoints;
 @use './toast.scss' as toast;
+@use './mixins.scss' as mixins;
 
 * {
     margin: 0px;
@@ -104,17 +105,17 @@
             grid-template-columns: repeat(1, minmax(100px, 180px));
             grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     
-            @include mixins.extrasmall {
+            @include breakpoints.extrasmall {
                 grid-template-columns: repeat(2, minmax(100px, 180px));
                 grid-template-rows: 1fr 1fr 1fr;
             }
     
-            @include mixins.small {
+            @include breakpoints.small {
                 grid-template-columns: repeat(3, minmax(100px, 180px));
                 grid-template-rows: 1fr 1fr;
             }
     
-            @include mixins.medium {
+            @include breakpoints.medium {
                 grid-template-columns: repeat(6, minmax(100px, 180px));
                 grid-template-rows: 1fr;
             }
@@ -138,7 +139,7 @@
                              "bannerBlackClover"
                              "contenedorBlackClover";
 
-        @include mixins.medium {
+        @include breakpoints.medium {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, 400px);
             grid-template-areas: "bannerOferta contenedorOferta"
@@ -154,7 +155,7 @@
             padding: 16px;
             box-sizing: border-box;
 
-            @include mixins.extrasmall {
+            @include breakpoints.extrasmall {
                 grid-template-columns: repeat(3, minmax(100px, 180px));
                 grid-template-rows: 1fr;
             }

@@ -1,4 +1,4 @@
-@use './mixins.scss' as mixins;
+@use './breakpoints.scss' as breakpoints;
 
 @mixin header {
     .header {
@@ -36,7 +36,7 @@
                 width: 45%;
                 order: 1;
     
-                @include mixins.small {
+                @include breakpoints.small {
                     width: 30%;
                 }
     
@@ -44,11 +44,11 @@
                     max-width: 300px;
                     height: 60%;
     
-                    @include mixins.small {
+                    @include breakpoints.small {
                         height: 90%;
                     }
     
-                    @include mixins.medium {
+                    @include breakpoints.medium {
                         height: 100%;
                     }
     
@@ -71,7 +71,7 @@
                 order: 4;
                 margin: 0px 10px;
     
-                @include mixins.small {
+                @include breakpoints.small {
                     order: 2;
                     width: 30%;
                     max-width: 400px;
@@ -133,7 +133,7 @@
                 margin-right: 10px;
                 order: 3;
     
-                @include mixins.small {
+                @include breakpoints.small {
                     width: 30%;
                     margin-right: 30px;
                 }
@@ -146,7 +146,7 @@
                         margin-right: 10px;
                         font-size: 13px;
     
-                        @include mixins.extrasmall {
+                        @include breakpoints.extrasmall {
                             font-size: 16px;
                         }
                     }
@@ -171,13 +171,13 @@
                 position: relative;
                 z-index: 1000;
 
-                @include mixins.small {
+                @include breakpoints.small {
                     position: static;
                 }
     
                 .menu {
                     position: absolute;
-                    @include mixins.small {
+                    @include breakpoints.small {
                         position: static;
                     }
                     width: 100%;
@@ -188,7 +188,7 @@
                         list-style: none;
                         display: flex;
                         flex-flow: column;
-                        @include mixins.small {
+                        @include breakpoints.small {
                             flex-flow: row;
                         }
                         justify-content: space-evenly;
@@ -200,7 +200,7 @@
                             display: inline;
                             position: relative;
                             margin: 10px 0px;
-                            @include mixins.small {
+                            @include breakpoints.small {
                                 margin: 0px;
                             }
             
