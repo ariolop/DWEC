@@ -194,7 +194,6 @@ document.getElementById("botonCodigoDescuento").addEventListener("click", async 
     const funkosCarrito = await obtenerFunkosCarrito(productosCarritoID);
 
     calcularPrecios(funkosCarrito, productosCarritoCantidad);
-    calcularCantidadArticulos(productosCarritoCantidad);
 });
 
 
@@ -249,3 +248,18 @@ async function quitarCantidadProducto(funko) {
         console.log(funkosCarrito);
     }
 }
+
+document.getElementById("formTramitarPedido").addEventListener("submit", (e) => {
+    const informacionPago = {
+        "subtotal": +document.getElementById("precioSubtotal").innerText || 0,
+        "gastosEnvio": +document.getElementById("precioEnvio").innerText || 0,
+        "cantidadIVA": +document.getElementById("cantIVA").innerText || 0,
+        "total": +document.getElementById("precioTotal").innerText || 0,
+        "codigoDescuento": document.getElementById("codigo").value || "",
+        "cantidadDescuento": +document.getElementById("descuento").innerText || 0
+    }
+
+    localStorage.setItem("pedido", JSON.stringify(informacionPago))
+
+    console.log(informacionPago);
+});

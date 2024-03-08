@@ -13,7 +13,7 @@
 
 .container {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1000px;
     margin: 30px auto;
     padding: 0 50px;
     box-sizing: border-box;
@@ -29,7 +29,7 @@
 
     .formularioDatos {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         width: 100%;
 
         .datos {
@@ -49,13 +49,24 @@
                         font-weight: bold;
                     }
                 }
+
+                input {
+                    margin: 5px 5px;
+                }
+            }
+
+            .direccionEnvio {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
             }
     
-            input {
+            input[type="text"], input[type="number"], input[type="month"] {
                 height: 20px;
                 font-size: 16px;
                 padding: 5px 5px;
                 width: 45%;
+                margin: 5px 5px;
             }
     
             &>div {
@@ -123,7 +134,7 @@
                             font-size: 15px;
                         }
         
-                        button:hover {
+                        button:not(:disabled):hover {
                             background: black;
                             color: white;
                         }

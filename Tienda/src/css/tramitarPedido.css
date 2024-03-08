@@ -375,7 +375,7 @@
 
 .container {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1000px;
   margin: 30px auto;
   padding: 0 50px;
   box-sizing: border-box;
@@ -392,7 +392,7 @@
 }
 .container .formularioDatos {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
 }
 .container .formularioDatos .datos {
@@ -411,11 +411,20 @@
 .container .formularioDatos .datos .datosPersonales fieldset legend {
   font-weight: bold;
 }
-.container .formularioDatos .datos input {
+.container .formularioDatos .datos .datosPersonales input {
+  margin: 5px 5px;
+}
+.container .formularioDatos .datos .direccionEnvio {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.container .formularioDatos .datos input[type=text], .container .formularioDatos .datos input[type=number], .container .formularioDatos .datos input[type=month] {
   height: 20px;
   font-size: 16px;
   padding: 5px 5px;
   width: 45%;
+  margin: 5px 5px;
 }
 .container .formularioDatos .datos > div {
   margin-bottom: 30px;
@@ -471,7 +480,7 @@
   transition: 1s background, color;
   font-size: 15px;
 }
-.container .formularioDatos .informacion .informacionPrecio .codigo .inputCodigo button:hover {
+.container .formularioDatos .informacion .informacionPrecio .codigo .inputCodigo button:not(:disabled):hover {
   background: black;
   color: white;
 }

@@ -177,9 +177,9 @@
                     <input id="direccion" type="text" placeholder="Dirección y número*" required>
                     <input id="datosAdicionales" type="text" placeholder="Datos adicionales (piso, puerta, barrio...)">
                     <input id="observaciones" type="text" placeholder="Observaciones extras">
-                    <input id="codigoPostal" type="number" minlength="5" maxlength="5" placeholder="Código postal*">
-                    <input id="poblacion" type="text" placeholder="Población*">
-                    <input id="provincia" type="text" placeholder="Provincia*">
+                    <input id="codigoPostal" type="number" min="0" max="99999" maxlength="5" placeholder="Código postal*" required>
+                    <input id="poblacion" type="text" placeholder="Población*" required>
+                    <input id="provincia" type="text" placeholder="Provincia*" required>
                 </div>
 
                 <h2>Método de pago</h2>
@@ -193,7 +193,13 @@
                             </h2>
                             <div id="metodoUno" class="accordion-collapse collapse show" aria-labelledby="cabeceraUno" data-bs-parent="#metodosDePago">
                                 <div class="accordion-body">
-                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <!-- Tarjeta de crédito -->
+                                    <label for="metodoPago">Tarjeta de crédito</label>
+                                    <input type="radio" name="metodoPago" value="Bizum">
+                                    <input type="text" name="numeroTarjeta" id="numeroTarjeta" placeholder="Número de la tarjeta">
+                                    <input type="text" name="fechaExpiracion" id="fechaExpiracion" maxlength="5" placeholder="MM/YY">
+                                    <input type="number" name="cvv" id="cvv" placeholder="CVV">
+                                    <input type="text" name="titularTarjeta" id="titularTarjeta" placeholder="Nombre del titular de la tarjeta">
                                 </div>
                             </div>
                         </div>
@@ -205,7 +211,8 @@
                             </h2>
                             <div id="metodoDos" class="accordion-collapse collapse" aria-labelledby="cabeceraDos" data-bs-parent="#metodosDePago">
                                 <div class="accordion-body">
-                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <input type="radio" name="metodoPago" value="Bizum">
+                                    <label for="metodoPago">Bizum</label>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +224,8 @@
                             </h2>
                             <div id="metodoTres" class="accordion-collapse collapse" aria-labelledby="cabeceraTres" data-bs-parent="#metodosDePago">
                                 <div class="accordion-body">
-                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <input type="radio" name="metodoPago" value="Paypal">
+                                    <label for="metodoPago">Paypal</label>
                                 </div>
                             </div>
                         </div>
@@ -240,7 +248,7 @@
                     </div>
                     <div class="porcentajeIVA">
                         <p>Porcentaje IVA</p>
-                        <p><span id="precioEnvio">21</span>%</p>
+                        <p><span>21</span>%</p>
                     </div>
                     <div class="cantidadIVA">
                         <p>Cantidad IVA</p>
@@ -250,7 +258,15 @@
                         <p>Total</p>
                         <p><span id="precioTotal">0,00</span>€</p>
                     </div>
-                    <input type="submit" value="CONFIRMAR PEDIDO">
+                    <div class="codigo">
+                        <div class="inputCodigo">
+                            <input type="text" id="codigo" placeholder="" disabled>
+                            <button id="botonCodigoDescuento" disabled>Aplicar</button>
+                        </div>
+                        <form id="formTramitarPedido" action="tramitarPedido.html">
+                            <input type="submit" value="CONFIRMAR PEDIDO">
+                        </form>
+                    </div>
                 </div>
                 <div class="formasPago">
                     <img class="mastercard" src="image/formasPago/mastercard.png" alt="">
