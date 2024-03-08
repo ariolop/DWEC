@@ -1,6 +1,7 @@
 @use './header.scss' as header;
 @use './footer.scss' as footer;
 @use './mixins.scss' as mixins;
+@use './toast.scss' as toast;
 
 * {
     margin: 0px;
@@ -10,6 +11,7 @@
 
 @include header.header();
 @include footer.footer();
+@include toast.toast();
 
 body {
     background-color: #EEE;
@@ -167,3 +169,4 @@ main {
         }
     }
 }
+

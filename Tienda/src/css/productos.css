@@ -384,6 +384,13 @@
   color: black;
 }
 
+.toast {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
 body {
   background-color: #EEE;
 }
