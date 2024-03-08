@@ -31,7 +31,7 @@
                 </div>
                 <div class="botonMenu">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="navbar-toggler-icon fas fa-list"></i> <!-- Icono lupa para mostrar formulario -->  
+                        <i class="navbar-toggler-icon fas fa-list"></i> <!-- Icono menu para mostrar enlaces -->  
                     </button>
                 </div>
                 <div class="contenedorBuscador collapse navbar-collapse" id="navbarSearch">
@@ -46,7 +46,7 @@
                     <p>
                         <span id="usuario"></span>
                     </p>
-                    <a id="enlaceInicioSesion" href="#" data-bs-toggle="modal" data-bs-target="#modalInicioSesion">
+                    <a id="enlaceInicioSesion" data-bs-toggle="modal" data-bs-target="#modalInicioSesion">
                         <i class="fas fa-user"></i>
                     </a>
                 </div>
@@ -282,10 +282,10 @@
         <div class="col">
             <h2>Otros</h2>
             <div class="otros">
-                <p><a href="">Ofertas</a></p>
+                <p><a id="enlaceOferta2" href="productos.html">Ofertas</a></p>
                 <p><a href="">Novedades</a></p>
-                <p><a href="">Carrito</a></p>
-                <p><a href="">Inicio sesión</a></p>
+                <p><a href="carrito.html">Carrito</a></p>
+                <p><a id="enlaceInicioSesion2" data-bs-toggle="modal" data-bs-target="#modalInicioSesion">Inicio sesión</a></p>
             </div>
         </div>
     </footer>

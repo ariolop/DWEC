@@ -6,6 +6,7 @@ if(sesionLocal)
     document.getElementById("usuario").innerText = "Hola, " + sesionLocal.split('@')[0];
 
     document.getElementById("enlaceInicioSesion").setAttribute("data-bs-target","#modalInformacionUsuario");
+    document.getElementById("enlaceInicioSesion2").setAttribute("data-bs-target","#modalInformacionUsuario");
     document.getElementById("nuevoEmail").setAttribute("placeholder", sesionLocal);
 
     document.getElementById("formCambiarCorreo").addEventListener("submit", () => {

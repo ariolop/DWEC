@@ -67,18 +67,16 @@ export function cargarCategoriasMenu()
         document.getElementById("listaFooterCategorias").innerHTML = listaCategorias;
     })
     .then(() => {
-        document.getElementById("enlacesProductos").addEventListener(('click'), (e) => {
-            if(!e.target.tag === "A") return;
-
-            if(e.target.innerText === "Categorías")
-                localStorage.setItem("categoriaSeleccionada", "");
-            else
-                localStorage.setItem("categoriaSeleccionada", e.target.innerText);
-
-            localStorage.setItem("subcategoriaSeleccionada", "")
-        });
+        document.getElementById("enlacesProductos").addEventListener(('click'), (e) => enlaceCategoria(e));
+        document.getElementById("listaFooterCategorias").addEventListener(('click'), (e) => enlaceCategoria(e));
 
         document.getElementById("enlaceOferta").addEventListener(('click'), () => {
+            localStorage.setItem("categoriaSeleccionada", "");
+            localStorage.setItem("subcategoriaSeleccionada", "");
+            localStorage.setItem("oferta", "true");
+        });
+
+        document.getElementById("enlaceOferta2").addEventListener(('click'), () => {
             localStorage.setItem("categoriaSeleccionada", "");
             localStorage.setItem("subcategoriaSeleccionada", "");
             localStorage.setItem("oferta", "true");
@@ -90,6 +88,17 @@ export function cargarCategoriasMenu()
             localStorage.setItem("oferta", "false");
         });
     });
+}
+
+function enlaceCategoria(e) {
+    if(!e.target.tag === "A") return;
+
+    if(e.target.innerText === "Categorías")
+        localStorage.setItem("categoriaSeleccionada", "");
+    else
+        localStorage.setItem("categoriaSeleccionada", e.target.innerText);
+
+    localStorage.setItem("subcategoriaSeleccionada", "")
 }
 
 export function cargarFiltroSubcategorias(categoria) {
