@@ -1,17 +1,28 @@
+@use './mixins.scss' as mixins;
+
 @mixin footer()
 {
     .footer 
     {
         background-color: black;
         display: flex;
+        flex-flow: row wrap;
         justify-content: space-evenly;
         padding: 20px 0px;
     
         .col 
         {
-            width: 25%;
+            width: 100%;
             color: white;
             padding: 10px;
+
+            @include mixins.extrasmall {
+                width: 40%;
+            }
+
+            @include mixins.small {
+                width: 25%;
+            }
     
             h2 {
                 text-align: center;
@@ -24,7 +35,6 @@
                 margin-top: 20px;
     
                 a {
-                    width: 30%;
                     text-align: center;
                     color: white;
                     padding: 5px 20px;

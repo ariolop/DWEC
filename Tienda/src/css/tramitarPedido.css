@@ -283,13 +283,24 @@
 .footer {
   background-color: black;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-evenly;
   padding: 20px 0px;
 }
 .footer .col {
-  width: 25%;
+  width: 100%;
   color: white;
   padding: 10px;
+}
+@media only screen and (min-width: 500px) {
+  .footer .col {
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 720px) {
+  .footer .col {
+    width: 25%;
+  }
 }
 .footer .col h2 {
   text-align: center;
@@ -301,7 +312,6 @@
   margin-top: 20px;
 }
 .footer .col .redesSociales a {
-  width: 30%;
   text-align: center;
   color: white;
   padding: 5px 20px;

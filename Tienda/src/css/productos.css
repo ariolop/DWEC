@@ -284,13 +284,24 @@
 .footer {
   background-color: black;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-evenly;
   padding: 20px 0px;
 }
 .footer .col {
-  width: 25%;
+  width: 100%;
   color: white;
   padding: 10px;
+}
+@media only screen and (min-width: 500px) {
+  .footer .col {
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 720px) {
+  .footer .col {
+    width: 25%;
+  }
 }
 .footer .col h2 {
   text-align: center;
@@ -302,7 +313,6 @@
   margin-top: 20px;
 }
 .footer .col .redesSociales a {
-  width: 30%;
   text-align: center;
   color: white;
   padding: 5px 20px;
@@ -380,16 +390,30 @@ body {
 
 main {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   min-height: 80vh;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
 }
 main .filtrosOrdenacion {
-  width: 20%;
-  padding: 20px;
+  width: 100%;
+}
+@media only screen and (min-width: 720px) {
+  main .filtrosOrdenacion {
+    width: 20%;
+    padding: 20px;
+  }
 }
 main .filtrosOrdenacion .filtros {
   margin-top: 20px;
+  display: none;
+}
+@media only screen and (min-width: 720px) {
+  main .filtrosOrdenacion .filtros {
+    display: flex;
+    flex-flow: column;
+  }
 }
 main .filtrosOrdenacion .filtros > div {
   margin-top: 10px;
@@ -399,8 +423,13 @@ main .filtrosOrdenacion .filtros input {
   margin-top: 5px;
 }
 main .container {
-  width: 80%;
+  width: 100%;
   padding: 20px;
+}
+@media only screen and (min-width: 720px) {
+  main .container {
+    width: 65%;
+  }
 }
 main .container .error {
   display: none;
@@ -439,7 +468,7 @@ main .container .productos .cartas {
 }
 main .container .productos .cartas .carta {
   min-height: 300px;
-  max-width: 180px;
+  max-width: 160px;
   border-radius: 10px;
   background-color: white;
 }
