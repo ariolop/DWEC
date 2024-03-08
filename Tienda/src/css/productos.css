@@ -407,12 +407,22 @@ main .filtrosOrdenacion {
 }
 main .filtrosOrdenacion .filtros {
   margin-top: 20px;
-  display: none;
 }
 @media only screen and (min-width: 720px) {
   main .filtrosOrdenacion .filtros {
     display: flex;
     flex-flow: column;
+  }
+}
+main .filtrosOrdenacion .filtros .cabeceraFiltros {
+  display: flex;
+}
+main .filtrosOrdenacion .filtros .cabeceraFiltros .offcanvas-close {
+  display: inline-block;
+}
+@media only screen and (min-width: 720px) {
+  main .filtrosOrdenacion .filtros .cabeceraFiltros .offcanvas-close {
+    display: none;
   }
 }
 main .filtrosOrdenacion .filtros > div {

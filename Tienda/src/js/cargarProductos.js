@@ -80,6 +80,12 @@ function crearPaginacion(cantidadPaginas, paginaActual)
                     </div>`;
                 }
             }
+            else if(i === Math.floor(cantidadPaginas / 2))
+            {
+                paginacion += `<div>
+                <a>...</a>
+                </div>`;
+            }
         }
     }
     

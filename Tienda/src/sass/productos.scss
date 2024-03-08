@@ -32,11 +32,22 @@ main {
 
         .filtros {
             margin-top: 20px;
-            display: none;
 
             @include mixins.small {
                 display: flex;
                 flex-flow: column;
+            }
+
+            .cabeceraFiltros {
+                display: flex;
+
+                .offcanvas-close {
+                    display: inline-block;
+
+                    @include mixins.small {
+                        display: none;
+                    }
+                }
             }
 
             &>div {
