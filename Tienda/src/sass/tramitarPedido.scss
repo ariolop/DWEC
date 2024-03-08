@@ -40,15 +40,6 @@
                 flex-flow: row wrap;
                 justify-content: center;
                 align-items: end;
-    
-                fieldset {
-                    display: flex;
-                    align-items: center;
-        
-                    legend {
-                        font-weight: bold;
-                    }
-                }
 
                 input {
                     margin: 5px 5px;

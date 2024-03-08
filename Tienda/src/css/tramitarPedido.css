@@ -404,13 +404,6 @@
   justify-content: center;
   align-items: end;
 }
-.container .formularioDatos .datos .datosPersonales fieldset {
-  display: flex;
-  align-items: center;
-}
-.container .formularioDatos .datos .datosPersonales fieldset legend {
-  font-weight: bold;
-}
 .container .formularioDatos .datos .datosPersonales input {
   margin: 5px 5px;
 }
