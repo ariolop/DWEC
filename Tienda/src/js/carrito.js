@@ -8,24 +8,16 @@ cargarProductos();
 
 async function cargarProductos() {
     const productosCarritoCantidad = Object.values(JSON.parse(localStorage.getItem(usuario))); //Cantidad
-    const productosCarritoID = Object.keys(JSON.parse(localStorage.getItem(usuario))); 
-
-    console.log(productosCarritoCantidad);
-    console.log(productosCarritoID);
+    const productosCarritoID = Object.keys(JSON.parse(localStorage.getItem(usuario))); //ID
 
     const funkosCarrito = await obtenerFunkosCarrito(productosCarritoID);
-
-    console.log(funkosCarrito);
-
     const fragmento = crearCartas(funkosCarrito, productosCarritoCantidad);
 
     document.getElementById("productos").innerHTML = fragmento;
-
-    añadirEventoCantidad(funkosCarrito);
-
-    calcularPrecios(funkosCarrito, productosCarritoCantidad);
-
     calcularCantidadArticulos(productosCarritoCantidad);
+
+    añadirEventoCantidad(funkosCarrito, productosCarritoCantidad);
+    await calcularPrecios(funkosCarrito, productosCarritoCantidad);
 }
 
 async function obtenerFunkosCarrito(productosCarritoID) {
@@ -37,7 +29,7 @@ async function obtenerFunkosCarrito(productosCarritoID) {
 function crearCartas(funkosCarrito, productosCarritoCantidad) {
         let fragmento = "";
 
-        funkosCarrito.forEach(funko => {
+        funkosCarrito.forEach((funko, index) => {
             const carta = `
             <div class="carta" data-id="${funko.id}">
                 <div class="funko">
@@ -55,7 +47,7 @@ function crearCartas(funkosCarrito, productosCarritoCantidad) {
                 <div class="precio">
                     <div id="controlCantidad${funko.id}" class="controlesCantidad">
                         <span class="controlMenos" id="-">-</span>
-                        <span class="cantidad">${productosCarritoCantidad[funko.id]}</span>
+                        <span class="cantidad">${productosCarritoCantidad[index]}</span>
                         <span class="controlMas" id="+">+</span>
                     </div>
                     <p class="precioFunko">${funko.precio.toFixed(2)}€</p>
@@ -75,23 +67,26 @@ function añadirEventoCantidad(funkosCarrito) {
     
             if(e.target.id === "+")
             {
-                agregarCantidadProducto(funko, productosCarritoCantidad);
+                agregarCantidadProducto(funko);
             }
-            else
+            else if(e.target.id === "-")
             {
-                quitarCantidadProducto(funko, productosCarritoCantidad);
+                quitarCantidadProducto(funko);
             }
         });
     });
 }
 
-function calcularPrecios(funkosCarrito, productosCarritoCantidad) {
+async function calcularPrecios(funkosCarrito, productosCarritoCantidad) {
     
     const preciosFunkos = funkosCarrito.map(funko => +funko.precio);
 
-    const subtotal = calcularSubtotal(preciosFunkos, productosCarritoCantidad);
+    const subtotal = await calcularSubtotal(preciosFunkos, productosCarritoCantidad);
     const gastosEnvio = calcularGastosEnvio(subtotal);
-    const cantidadIVA = calcularIVA(subtotal, gastosEnvio);
+    const IVA = 21;
+    const cantidadIVA = calcularIVA(subtotal, gastosEnvio, IVA);
+    const total = subtotal + gastosEnvio + cantidadIVA;
+    document.getElementById("precioTotal").innerText = total.toFixed(2);
 }
 
 async function calcularSubtotal(preciosFunkos, productosCarritoCantidad) {
@@ -142,6 +137,13 @@ function calcularDescuento(subtotal, codigo)
 }
 
 function calcularGastosEnvio(subtotal) {
+    if(subtotal === 0 )
+    {
+        document.getElementById("contEnvio").classList.remove("sinGastos");
+        document.getElementById("precioEnvio").innerText = 0.00;
+        return 0.00;
+    }
+
     const gastosEnvio = subtotal < 40 ? 3.99 : 0;
 
     if(gastosEnvio === 0)
@@ -164,9 +166,18 @@ function calcularIVA(subtotal, gastosEnvio, IVA)
 }
 
 function calcularCantidadArticulos(productosCarritoCantidad) {
-    const totalCantidad = Object.values(productosCarritoCantidad).reduce((totalCantidades, cantidad) => {
-        return totalCantidades + cantidad;
-    });
+    let totalCantidad = 0;
+    
+    if(productosCarritoCantidad.length > 0)
+    {
+        totalCantidad = Object.values(productosCarritoCantidad).reduce((totalCantidades, cantidad) => {
+            return totalCantidades + cantidad;
+        });
+    }
+    else
+    {
+        totalCantidad = 0;
+    }
 
    document.getElementById("cantidadArticulos").innerText = totalCantidad;
 }
@@ -178,7 +189,7 @@ document.getElementById("botonCodigoDescuento").addEventListener("click", async 
     document.getElementById("contDescuento").style.display = "none";
 
     const productosCarritoCantidad = Object.values(JSON.parse(localStorage.getItem(usuario))); //Cantidad
-    const productosCarritoID = Object.keys(JSON.parse(localStorage.getItem(usuario))); 
+    const productosCarritoID = Object.keys(JSON.parse(localStorage.getItem(usuario))); //ID
 
     const funkosCarrito = await obtenerFunkosCarrito(productosCarritoID);
 
@@ -186,204 +197,55 @@ document.getElementById("botonCodigoDescuento").addEventListener("click", async 
     calcularCantidadArticulos(productosCarritoCantidad);
 });
 
-// function cargarProductos() {
 
-//     const productosCarritoCantidad = JSON.parse(localStorage.getItem(usuario)); //Con cantidades de cada uno
-//     const productosCarritoID = Object.keys(JSON.parse(localStorage.getItem(usuario))); //Sin cantidad
+async function agregarCantidadProducto(funko) {
+    const cantidad = +document.getElementById(`controlCantidad${funko.id}`).getElementsByClassName("cantidad")[0].innerText;
+    document.getElementById(`controlCantidad${funko.id}`).getElementsByClassName("cantidad")[0].innerText = cantidad + 1;
 
-//     fetch("http://localhost:3000/funkos")
-//     .then(resul => resul.json())
-//     .then(funkos => funkos.filter( (f) => productosCarritoID.includes(f.id)))
-//     .then(funkosCarrito => {
-//         let fragmento = "";
-//         funkosCarrito.forEach(funko => {
-//             const carta = `
-//             <div class="carta" data-id="${funko.id}">
-//                 <div class="funko">
-//                     <div class="foto">
-//                         <img src="${funko.imagenFunko}" alt="Imagen funko">
-//                     </div>
-//                     <div class="datos">
-//                         <p class="nombreFunko">${funko.nombre}</p>
-//                         <p class="categorias">
-//                             <span id="categoria">${funko.categorias[0]}</span> -
-//                             <span id="subcategoria">${funko.categorias[1]}</span>
-//                         </p>
-//                     </div>
-//                 </div>
-//                 <div class="precio">
-//                     <div id="controlCantidad${funko.id}" class="controlesCantidad">
-//                         <span class="controlMenos" id="-">-</span>
-//                         <span class="cantidad">${productosCarritoCantidad[funko.id]}</span>
-//                         <span class="controlMas" id="+">+</span>
-//                     </div>
-//                     <p class="precioFunko">${funko.precio.toFixed(2)}€</p>
-//                 </div>
-//             </div>
-//             `;
+    const productosCarrito = JSON.parse(localStorage.getItem(usuario));
+    productosCarrito[funko.id] += 1;
+    localStorage.setItem(usuario, JSON.stringify(productosCarrito));
 
-//             fragmento += carta;
-//         })
-        
-//         document.getElementById("productos").innerHTML = fragmento;
-//         return funkosCarrito;
-//     })
-//     .then(funkosCarrito => {
+    const productosCarritoCantidad = Object.values(JSON.parse(localStorage.getItem(usuario))); //Cantidad
+    const productosCarritoID = Object.keys(JSON.parse(localStorage.getItem(usuario))); //ID
+    const funkosCarrito = await obtenerFunkosCarrito(productosCarritoID);
 
-//         funkosCarrito.forEach(funko => {
-//             document.getElementById(`controlCantidad${funko.id}`).addEventListener("click", (e) => {
-//                 if(e.target.tagName !== "SPAN") return;
-            
-//                 if(e.target.id === "+")
-//                 {
-//                     agregarCantidadProducto(funko, productosCarritoCantidad);
-//                 }
-//                 else
-//                 {
-//                     quitarCantidadProducto(funko, productosCarritoCantidad);
-//                 }
-//             });
-//         })
-//     })
-//     .then(_ => calcularCantidadArticulos(productosCarritoCantidad))
-//     .then(_ => calcularPrecios());
+    console.log(productosCarritoCantidad + " " + productosCarritoID);
+    console.log(funkosCarrito);
 
-//     console.log("Productos cargados");
-// }
+    calcularPrecios(funkosCarrito, productosCarritoCantidad);
+    calcularCantidadArticulos(productosCarritoCantidad);
+}
 
-// export async function calcularPrecios() {
-//     const subtotal = await calcularSubtotal();
-//     console.log("Subtotal " + subtotal);
-//     const gastosEnvio = calcularGastosEnvio(subtotal);
-//     console.log("Gastos envio " + gastosEnvio);
-//     const IVA = 21;
-//     const cantIVA = calcularIVA(subtotal, gastosEnvio, IVA);
-//     calcularTotal(subtotal, gastosEnvio, cantIVA);
-// }
+async function quitarCantidadProducto(funko) {
+    const cantidadActual = +document.getElementById(`controlCantidad${funko.id}`).getElementsByClassName("cantidad")[0].innerText;
+    document.getElementById(`controlCantidad${funko.id}`).getElementsByClassName("cantidad")[0].innerText = cantidadActual - 1;
 
-// function calcularTotal(subtotal, gastosEnvio, cantIVA) {
-//     const total = subtotal + gastosEnvio + cantIVA;
-//     document.getElementById("precioTotal").innerText = total.toFixed(2);
+    const productosCarrito = JSON.parse(localStorage.getItem(usuario));
+    productosCarrito[funko.id] -= 1;
 
-//     return total;
-// }
+    if(productosCarrito[funko.id] == 0)
+    {
+        productosCarrito[funko.id] = undefined;
+    }
 
-// async function calcularSubtotal() {
+    localStorage.setItem(usuario, JSON.stringify(productosCarrito));
 
-//     const spanPreciosFunkos = document.getElementsByClassName("precioFunko");
-//     const precios = Array.from(spanPreciosFunkos).map(f => +f.innerText.slice(0,f.innerText.length-1));
-//     const spanCantidadFunkos = document.getElementsByClassName("cantidad");
-//     const cantidades = Array.from(spanCantidadFunkos).map(f => +f.innerText);
+    /* Si hemos asignado undefined en algún momento, volvemos a cargar los productos */
+    if(!productosCarrito[funko.id])
+    {
+        cargarProductos();
+    }
+    else
+    {
+        const productosCarritoCantidad = Object.values(JSON.parse(localStorage.getItem(usuario))); //Cantidad
+        const productosCarritoID = Object.keys(JSON.parse(localStorage.getItem(usuario))); //ID
+        const funkosCarrito = await obtenerFunkosCarrito(productosCarritoID);
 
-//     let subtotal = 0;
+        await calcularPrecios(funkosCarrito, productosCarritoCantidad);
+        calcularCantidadArticulos(productosCarritoCantidad);
 
-//     for (let i = 0; i < precios.length; i++) {
-//         subtotal += precios[i] * cantidades[i];
-//     }
-
-//     const codigo = document.getElementById("codigo").value;
-
-//     const subtotalConDescuento = codigo ? await calcularDescuento(subtotal, codigo) : subtotal;
-
-//     document.getElementById("precioSubtotal").innerText = subtotal.toFixed(2);
-
-//     return subtotalConDescuento;
-// }
-
-// function calcularGastosEnvio(subtotal) {
-//     const gastosEnvio = subtotal < 40 ? 3.99 : 0;
-
-//     if(gastosEnvio === 0)
-//         document.getElementById("contEnvio").classList.add("sinGastos");
-//     else
-//         document.getElementById("contEnvio").classList.remove("sinGastos");
-
-//     document.getElementById("precioEnvio").innerText = gastosEnvio.toFixed(2);
-
-//     return gastosEnvio;
-// }
-
-// function calcularDescuento(total, codigo)
-// {
-//     return fetch(`http://localhost:3000/codigosDescuento?codigo=${codigo}`)
-//     .then(resul => resul.json())
-//     .then(codigoDescuento => {
-//         console.log(codigoDescuento);
-        
-//         if(codigoDescuento.length === 0) return total;
-
-//         const fechaInicio = new Date(codigoDescuento[0].fechaInicio)
-//         const hoy = new Date();
-//         const fechaFin = new Date(codigoDescuento[0].fechaFin)
-
-
-//         console.log(fechaInicio);
-//         console.log(hoy);
-//         console.log(fechaFin);
-
-//         if(fechaInicio <= hoy && fechaFin >= hoy)
-//         {
-//             console.log("Codigo valido");
-//             document.getElementById("contDescuento").style.display = "flex";
-//             const precioConDescuento = total * (1 - (+codigoDescuento[0].descuentoPorcentaje/100));
-//             const cantDescuento = total * (+codigoDescuento[0].descuentoPorcentaje/100);
-//             document.getElementById("descuento").innerText = cantDescuento.toFixed(2);
-
-//             return precioConDescuento;
-//         }
-//         else
-//         {
-//             console.log("Codigo no valido");
-//             return total;
-//         }
-//     });
-// }
-
-// function calcularIVA(subtotal, gastosEnvio, IVA)
-// {
-//     const cantIVA = (subtotal + gastosEnvio) * (IVA / 100);
-
-//     document.getElementById("cantIVA").innerText = cantIVA.toFixed(2);
-
-//     return cantIVA; 
-// }
-
-// function calcularCantidadArticulos(productosCarritoCantidad) {
-//     const totalArticulos = Object.values(productosCarritoCantidad).reduce((totalArticulos, cantidad) => totalArticulos + cantidad);
-    
-//     document.getElementById("cantidadArticulos").innerText = totalArticulos;
-// }
-
-// function agregarCantidadProducto(funko, productosCarritoCantidad) {
-//     const cantidad = +document.getElementById(`controlCantidad${funko.id}`).getElementsByClassName("cantidad")[0].innerText;
-//     document.getElementById(`controlCantidad${funko.id}`).getElementsByClassName("cantidad")[0].innerText = cantidad + 1;
-
-//     productosCarritoCantidad[funko.id] += 1;
-
-//     localStorage.setItem(usuario, JSON.stringify(productosCarritoCantidad));
-//     calcularPrecios();
-//     calcularCantidadArticulos(productosCarritoCantidad);
-// }
-
-// function quitarCantidadProducto(funko, productosCarritoCantidad) {
-//     const cantidadActual = +document.getElementById(`controlCantidad${funko.id}`).getElementsByClassName("cantidad")[0].innerText;
-    
-//     document.getElementById(`controlCantidad${funko.id}`).getElementsByClassName("cantidad")[0].innerText = cantidadActual - 1;
-//     productosCarritoCantidad[funko.id] -= 1;
-
-//     if(productosCarritoCantidad[funko.id] === 0)
-//     {
-//         productosCarritoCantidad[funko.id] = undefined;
-//     }
-
-//     localStorage.setItem(usuario, JSON.stringify(productosCarritoCantidad));
-
-//     /* Si hemos asignado undefined en algún momento, volvemos a cargar los productos */
-//     if(productosCarritoCantidad[funko.id] === undefined)
-//     {
-//         cargarProductos();
-//     }
-
-//     calcularPrecios();
-//     calcularCantidadArticulos(productosCarritoCantidad)
-// }
+        console.log(productosCarritoCantidad + " " + productosCarritoID);
+        console.log(funkosCarrito);
+    }
+}

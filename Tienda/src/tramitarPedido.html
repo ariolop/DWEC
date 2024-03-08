@@ -154,77 +154,111 @@
     </div>
 
     <div class="container">
-        <form class="formularioDatos" action="confirmarPedido.html">
-            <h2>Datos personales</h2>
-            <div class="datosPersonales">
-                <input id="nombre" type="text" placeholder="Nombre*" required>
-                <input id="apellidos" type="text" placeholder="Apellidos*" required>
-                <fieldset class="inputPais">
-                    <select name="pais" id="pais">
-                        <option value="Espana">España</option>
-                        <option value="Francia">Francia</option>
-                        <option value="Italia">Italia</option>
-                        <option value="Andorra">Andorra</option>
-                    </select>
-                </fieldset>
-                <input id="telefono" type="tel" placeholder="Móvil*" required>
-            </div>
+        <form class="formularioDatos" action="#">
+            <div class="datos">
+                <h2>Datos personales</h2>
+                <div class="datosPersonales">
+                    <input id="nombre" type="text" placeholder="Nombre*" required>
+                    <input id="apellidos" type="text" placeholder="Apellidos*" required>
+                    <fieldset class="inputPais">
+                        <legend>País*</legend>
+                        <select name="pais" id="pais">
+                            <option value="Espana">España</option>
+                            <option value="Francia">Francia</option>
+                            <option value="Italia">Italia</option>
+                            <option value="Andorra">Andorra</option>
+                        </select>
+                    </fieldset>
+                    <input id="telefono" type="tel" placeholder="Móvil*" required>
+                </div>
 
-            <h2>Dirección de envío</h2>
-            <div class="direccionEnvio">
-                <input id="direccion" type="text" placeholder="Dirección y número*" required>
-                <input id="datosAdicionales" type="text" placeholder="Datos adicionales (piso, puerta, barrio...)">
-                <input id="observaciones" type="text" placeholder="Observaciones extras">
-                <input id="codigoPostal" type="text" placeholder="Código postal*">
-                <input id="poblacion" type="text" placeholder="Población*">
-                <input id="provincia" type="text" placeholder="Provincia*">
-            </div>
+                <h2>Dirección de envío</h2>
+                <div class="direccionEnvio">
+                    <input id="direccion" type="text" placeholder="Dirección y número*" required>
+                    <input id="datosAdicionales" type="text" placeholder="Datos adicionales (piso, puerta, barrio...)">
+                    <input id="observaciones" type="text" placeholder="Observaciones extras">
+                    <input id="codigoPostal" type="number" minlength="5" maxlength="5" placeholder="Código postal*">
+                    <input id="poblacion" type="text" placeholder="Población*">
+                    <input id="provincia" type="text" placeholder="Provincia*">
+                </div>
 
-            <h2>Método de pago</h2>
-            <div class="metodoPago">
-                <div class="accordion" id="metodosDePago">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="cabeceraUno">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#metodoUno" aria-expanded="true" aria-controls="metodoUno">
-                                Tarjeta de crédito
-                            </button>
-                        </h2>
-                        <div id="metodoUno" class="accordion-collapse collapse show" aria-labelledby="cabeceraUno" data-bs-parent="#metodosDePago">
-                            <div class="accordion-body">
-                                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <h2>Método de pago</h2>
+                <div class="metodoPago">
+                    <div class="accordion" id="metodosDePago">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="cabeceraUno">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#metodoUno" aria-expanded="true" aria-controls="metodoUno">
+                                    Tarjeta de crédito
+                                </button>
+                            </h2>
+                            <div id="metodoUno" class="accordion-collapse collapse show" aria-labelledby="cabeceraUno" data-bs-parent="#metodosDePago">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="cabeceraDos">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#metodoDos" aria-expanded="true" aria-controls="metodoDos">
-                                Bizum
-                            </button>
-                        </h2>
-                        <div id="metodoDos" class="accordion-collapse collapse" aria-labelledby="cabeceraDos" data-bs-parent="#metodosDePago">
-                            <div class="accordion-body">
-                                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="cabeceraDos">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#metodoDos" aria-expanded="true" aria-controls="metodoDos">
+                                    Bizum
+                                </button>
+                            </h2>
+                            <div id="metodoDos" class="accordion-collapse collapse" aria-labelledby="cabeceraDos" data-bs-parent="#metodosDePago">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="cabeceraTres">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#metodoTres" aria-expanded="true" aria-controls="metodoTres">
-                                PayPal
-                            </button>
-                        </h2>
-                        <div id="metodoTres" class="accordion-collapse collapse" aria-labelledby="cabeceraTres" data-bs-parent="#metodosDePago">
-                            <div class="accordion-body">
-                                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="cabeceraTres">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#metodoTres" aria-expanded="true" aria-controls="metodoTres">
+                                    PayPal
+                                </button>
+                            </h2>
+                            <div id="metodoTres" class="accordion-collapse collapse" aria-labelledby="cabeceraTres" data-bs-parent="#metodosDePago">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="informacion">
+                <div class="informacionPrecio">
+                    <div class="precioSubtotal">
+                        <p>Subtotal</p>
+                        <p><span id="precioSubtotal">0,00</span>€</p>
+                    </div>
+                    <div id="contDescuento" class="descuento">
+                        <p>Descuento</p>
+                        <p>-<span id="descuento">0,00</span>€</p>
+                    </div>
+                    <div class="precioEnvio">
+                        <p>Gastos de envio</p>
+                        <p id="contEnvio"><span id="precioEnvio">0,00</span>€</p>
+                    </div>
+                    <div class="porcentajeIVA">
+                        <p>Porcentaje IVA</p>
+                        <p><span id="precioEnvio">21</span>%</p>
+                    </div>
+                    <div class="cantidadIVA">
+                        <p>Cantidad IVA</p>
+                        <p><span id="cantIVA">0,00</span>€</p>
+                    </div>
+                    <div class="precioTotal">
+                        <p>Total</p>
+                        <p><span id="precioTotal">0,00</span>€</p>
+                    </div>
+                    <input type="submit" value="CONFIRMAR PEDIDO">
+                </div>
+                <div class="formasPago">
+                    <img class="mastercard" src="image/formasPago/mastercard.png" alt="">
+                    <img class="paypal" src="image/formasPago/paypal.png" alt="">
+                    <img class="bizum" src="image/formasPago/bizum.png" alt="">
+                </div>
+            </div>
         </form>
-        <div class="precios">
-            
-        </div>     
     </div>
 
     <footer class="footer">
@@ -278,5 +312,6 @@
     </script>
     <script type="module" src="js/bootstrap/bootstrap.esm.js"></script>
     <script src="js/iniciarSesion.js"></script>
+    <script type="module" src="js/tramitarPedido.js"></script>
 </body>
 </html>

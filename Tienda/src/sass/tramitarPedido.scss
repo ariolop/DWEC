@@ -12,33 +12,153 @@
 @include footer.footer();
 
 .container {
-    width: 80%;
-    margin: 20px auto;
+    width: 100%;
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 0 50px;
+    box-sizing: border-box;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+
+    @include mixins.small {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px 30px;
+        font-size: 15px;
+    }
 
     .formularioDatos {
         display: flex;
-        flex-flow: column;
-        width: 60%;
+        justify-content: center;
+        width: 100%;
 
-        input {
-            font-size: 16px;
-            padding: 5px 5px;
+        .datos {
+            width: 60%;
+            
+            .datosPersonales {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: end;
+    
+                fieldset {
+                    display: flex;
+                    align-items: center;
+        
+                    legend {
+                        font-weight: bold;
+                    }
+                }
+            }
+    
+            input {
+                height: 20px;
+                font-size: 16px;
+                padding: 5px 5px;
+                width: 45%;
+            }
+    
+            &>div {
+                margin-bottom: 30px;
+            }
+    
+            &>h2 {
+                margin-bottom: 10px;
+            }
         }
 
-        &>div {
-            margin-bottom: 30px;
+        .informacion {
+            width: 100%;
+            max-width: 370px;
+            padding: 10px 20px;
+    
+            @include mixins.small {
+                width: 30%;
+            }
+    
+            .informacionPrecio {
+                background-color: #EEE;
+                padding: 20px;
+       
+                .sinGastos, .descuento {
+                    color: red;
+                }
+    
+                .precioSubtotal, .precioEnvio, .precioTotal, .descuento, .porcentajeIVA, .cantidadIVA {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 20px;
+                }
+    
+                .precioTotal {
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+    
+                .descuento {
+                    display: none;
+                }
+        
+                .codigo {
+        
+                    .inputCodigo {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+        
+                        input {
+                            padding: 5px;
+                            font-size: 15px;
+                            width: 65%;
+                        }
+        
+                        input::placeholder {
+                            font-size: 12px;
+                        }
+        
+                        button {
+                            padding: 5px 15px;
+                            background: white;
+                            transition: 1s background,color;
+                            font-size: 15px;
+                        }
+        
+                        button:hover {
+                            background: black;
+                            color: white;
+                        }
+                    }
+        
+                    input[type="submit"] {
+                        margin-top: 20px;
+                        font-size: 16px;
+                        width: 100%;
+                        padding: 6px;
+                        background: white;
+                        cursor: pointer;
+                        transition: 1s background,color;
+                        font-weight: bold;
+                    }
+    
+                    input[type="submit"]:hover {
+                        background: black;
+                        color: white;
+                    }
+                }
+            }
+    
+            .formasPago {
+                display: flex;
+                padding: 10px;
+                background-color: #EEE;
+                margin-top: 20px;
+                justify-content: space-evenly;
+                align-items: center;
+    
+                img {
+                    width: 20%;
+                }
+            }
         }
-
-        &>h2 {
-            margin-bottom: 10px;
-        }
-    }
-
-    .precios {
-        width: 30%;
-        background-color: #CCC;
-        height: 500px;
     }
 }

@@ -374,30 +374,131 @@
 }
 
 .container {
-  width: 80%;
-  margin: 20px auto;
+  width: 100%;
+  max-width: 1300px;
+  margin: 30px auto;
+  padding: 0 50px;
+  box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+}
+@media only screen and (min-width: 720px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 30px;
+    font-size: 15px;
+  }
 }
 .container .formularioDatos {
   display: flex;
-  flex-flow: column;
+  justify-content: center;
+  width: 100%;
+}
+.container .formularioDatos .datos {
   width: 60%;
 }
-.container .formularioDatos input {
+.container .formularioDatos .datos .datosPersonales {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: end;
+}
+.container .formularioDatos .datos .datosPersonales fieldset {
+  display: flex;
+  align-items: center;
+}
+.container .formularioDatos .datos .datosPersonales fieldset legend {
+  font-weight: bold;
+}
+.container .formularioDatos .datos input {
+  height: 20px;
   font-size: 16px;
   padding: 5px 5px;
+  width: 45%;
 }
-.container .formularioDatos > div {
+.container .formularioDatos .datos > div {
   margin-bottom: 30px;
 }
-.container .formularioDatos > h2 {
+.container .formularioDatos .datos > h2 {
   margin-bottom: 10px;
 }
-.container .precios {
-  width: 30%;
-  background-color: #CCC;
-  height: 500px;
+.container .formularioDatos .informacion {
+  width: 100%;
+  max-width: 370px;
+  padding: 10px 20px;
+}
+@media only screen and (min-width: 720px) {
+  .container .formularioDatos .informacion {
+    width: 30%;
+  }
+}
+.container .formularioDatos .informacion .informacionPrecio {
+  background-color: #EEE;
+  padding: 20px;
+}
+.container .formularioDatos .informacion .informacionPrecio .sinGastos, .container .formularioDatos .informacion .informacionPrecio .descuento {
+  color: red;
+}
+.container .formularioDatos .informacion .informacionPrecio .precioSubtotal, .container .formularioDatos .informacion .informacionPrecio .precioEnvio, .container .formularioDatos .informacion .informacionPrecio .precioTotal, .container .formularioDatos .informacion .informacionPrecio .descuento, .container .formularioDatos .informacion .informacionPrecio .porcentajeIVA, .container .formularioDatos .informacion .informacionPrecio .cantidadIVA {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.container .formularioDatos .informacion .informacionPrecio .precioTotal {
+  font-weight: bold;
+  font-size: 18px;
+}
+.container .formularioDatos .informacion .informacionPrecio .descuento {
+  display: none;
+}
+.container .formularioDatos .informacion .informacionPrecio .codigo .inputCodigo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.container .formularioDatos .informacion .informacionPrecio .codigo .inputCodigo input {
+  padding: 5px;
+  font-size: 15px;
+  width: 65%;
+}
+.container .formularioDatos .informacion .informacionPrecio .codigo .inputCodigo input::placeholder {
+  font-size: 12px;
+}
+.container .formularioDatos .informacion .informacionPrecio .codigo .inputCodigo button {
+  padding: 5px 15px;
+  background: white;
+  transition: 1s background, color;
+  font-size: 15px;
+}
+.container .formularioDatos .informacion .informacionPrecio .codigo .inputCodigo button:hover {
+  background: black;
+  color: white;
+}
+.container .formularioDatos .informacion .informacionPrecio .codigo input[type=submit] {
+  margin-top: 20px;
+  font-size: 16px;
+  width: 100%;
+  padding: 6px;
+  background: white;
+  cursor: pointer;
+  transition: 1s background, color;
+  font-weight: bold;
+}
+.container .formularioDatos .informacion .informacionPrecio .codigo input[type=submit]:hover {
+  background: black;
+  color: white;
+}
+.container .formularioDatos .informacion .formasPago {
+  display: flex;
+  padding: 10px;
+  background-color: #EEE;
+  margin-top: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container .formularioDatos .informacion .formasPago img {
+  width: 20%;
 }
 
 /*# sourceMappingURL=tramitarPedido.css.map */
